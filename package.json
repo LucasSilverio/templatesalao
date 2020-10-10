@@ -1,0 +1,24 @@
+{
+  "name": "salaotemplate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.11.1",
+    "js-cookie": "^2.2.1",
+    "moment": "^2.29.1",
+    "next": "9.5.4",
+    "pure-react-carousel": "^1.27.5",
+    "qs": "^6.9.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-infinite-scroll-component": "^5.1.0",
+    "react-loader-spinner": "^3.1.14",
+    "react-responsive-carousel": "^3.2.10",
+    "styled-components": "^5.2.0"
+  }
+}
