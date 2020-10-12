@@ -53,7 +53,9 @@ class Home extends Component {
        <TopBarMobile 
         bgcolor={'#343261'}
        />
-       <Feed />
+       <Feed
+        slug={this.props.slug}
+       />
       </>
     )
   }

@@ -6,10 +6,12 @@ const company = 1;
 
 const osAPI = {
 
-    getProdutos:(jwt)=>{
+    getProdutos:(jwt, offset, limit)=>{
       let endpoint = 'produtos/getProdutos';
       let body = {
-        jwt
+        jwt,
+        offset,
+        limit
       }
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },
