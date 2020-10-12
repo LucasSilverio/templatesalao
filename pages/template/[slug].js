@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Cookie from 'js-cookie';
 import Head from 'next/head';
+import osAPI from '../../services/osAPI';
 
 import Feed from '../../components/Feed';
 import TopBarMobile from '../../components/TopBarMobile';
@@ -13,7 +14,26 @@ class Home extends Component {
     }
   }
 
+  static async getInitialProps({query, res}) {
+    const el = query.slug
+    const r = await osAPI.getProdutos(query.slug);
+    const json = await r.json();
+    if(!json.logged){
+      res.writeHead(301, {
+        Location:'/template'
+      });
+      res.end();
+    }
+   
+    return {
+      info:json,
+      slug:el,
+      // teste:res
+    }
+  }
+
   componentDidMount(){
+    console.log(this.props.info)
   }
 
   render(){
