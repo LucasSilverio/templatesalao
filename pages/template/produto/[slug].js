@@ -1,40 +1,37 @@
 import React, { Component } from 'react';
 import Cookie from 'js-cookie';
 import Head from 'next/head';
-import osAPI from '../../services/osAPI';
+import osAPI from '../../../services/osAPI';
 
-import Feed from '../../components/Feed';
-import TopBarMobile from '../../components/TopBarMobile';
+import ProdutoInfo from '../../../components/ProdutoInfo';
+import TopBarMobile from '../../../components/TopBarMobile';
 
-class Home extends Component {
+class Produto extends Component {
 
   constructor(props){
     super(props);
     this.state={
+        produto:[]
     }
   }
 
   static async getInitialProps({query, res}) {
     const el = query.slug
-    const r = await osAPI.getProdutos(query.slug);
-    const json = await r.json();
-    if(!json.logged){
-      res.writeHead(301, {
-        Location:'/template'
-      });
-      res.end();
-    }
+    const prod = query.item
    
     return {
-      info:json,
       slug:el,
-      // teste:res
+      z:prod
     }
   }
 
   componentDidMount(){
-    console.log(this.props.info)
-    Cookie.set('token', this.props.slug);
+      osAPI.getProdutoInfo(this.props.slug)
+      .then(r=>r.json())
+      .then(json=>{
+        this.setState({produto:json.data})
+      })
+      alert(Cookie.get('token'))
   }
 
   render(){
@@ -52,14 +49,15 @@ class Home extends Component {
           <meta name="theme-color" content="#E887B2"/>
        </Head>
        <TopBarMobile 
-        bgcolor={'#343261'}
+            bgcolor={'#343261'}
        />
-       <Feed
-        slug={this.props.slug}
+       <ProdutoInfo
+            slug={this.props.slug}
+            produto={this.state.produto}
        />
       </>
     )
   }
 }
 
-export default Home;
+export default Produto;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import { Carousel } from 'react-responsive-carousel';
+import Cookie from 'js-cookie';
 import { 
     Container,
     FeedArea,
@@ -35,6 +36,7 @@ class Feed extends Component {
   componentDidMount(){
     // this.getProdutos();
     this.requestProduts();
+    // alert(Cookie.get('token'));
   }
 
   getProdutos(){
@@ -57,10 +59,10 @@ class Feed extends Component {
   }
 
   render(){
-      console.lo
     return(
         <Container>
             <FeedArea>
+                {/* {Cookie.get('token')} */}
                 <InfiniteScroll 
                     dataLength={this.state.produtos.length}
                     next={this.requestProduts}
@@ -68,7 +70,7 @@ class Feed extends Component {
                     className='ScrollArea'
                 >
                     {this.state.produtos.map((i, index) => (
-                        <Link href='/' key={index}>
+                        <Link key={index} href={{ pathname: '/template/produto/'+i.id, query: { item:i.id, slug:this.props.slug } }} as={'/template/produto/'}>
                             <FeedItem>
                                 <ImagemArea>
                                     <Imagem src={i.img} />
