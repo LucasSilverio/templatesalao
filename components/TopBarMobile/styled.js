@@ -14,8 +14,10 @@ export const EstabelecimentoArea = styled.div`
     height:60px;
     padding-left:10px;
     line-height:60px;
+    position:relative;
     @media (max-width:600px){
         justify-content:center;
+        align-items:center;
     }
 `;
 
@@ -27,6 +29,15 @@ export const Icone = styled.img`
     width:24px;
     height:24px;
     margin:0px 10px 0px 10px;
+`;
+
+export const IconeCart = styled.img`
+    width:24px;
+    height:24px;
+    position:absolute;
+    right:0;
+    margin:0px 10px 0px 10px;
+
 `;
 
 export const Lk = styled.a`

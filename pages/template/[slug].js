@@ -33,7 +33,6 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    console.log(this.props.info)
     Cookie.set('token', this.props.slug);
   }
 

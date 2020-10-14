@@ -15,6 +15,17 @@ const osAPI = {
       }
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },
+
+    getProductById:(jwt, id, qtd)=>{
+      let endpoint = 'produtos/getproductbyid';
+      let body = {
+                    jwt,
+                    produto:id,
+                    qtd
+                }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
     getProdutoInfo:(jwt, produto)=>{
       let endpoint = 'produtos/getInfo';
       let body = {

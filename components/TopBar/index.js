@@ -9,6 +9,7 @@ import {
     EstabelecimentoArea,
     EstabelecimentoTitulo,
     Icone,
+    IconeCart,
     Lk,
     OpcoesArea,
     PageArea
@@ -31,8 +32,9 @@ class TopBar extends Component {
           <PageArea>
             <EstabelecimentoArea>
                 <EstabelecimentoTitulo>
-                    Nome do salão
+                    Nome do salãoss
                 </EstabelecimentoTitulo>
+                <IconeCart src='/cart.png' />
             </EstabelecimentoArea>
             <OpcoesArea>
                 <Link href='/teste'>

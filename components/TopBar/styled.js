@@ -29,6 +29,12 @@ export const Icone = styled.img`
     margin:0px 10px 0px 10px;
 `;
 
+export const IconeCart = styled.img`
+    width:24px;
+    height:24px;
+    margin:0px 10px 0px 10px;
+`;
+
 export const Lk = styled.a`
     cursor:pointer;
     margin:0px 10px 0px 10px;

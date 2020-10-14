@@ -15,27 +15,21 @@ class Produto extends Component {
     }
   }
 
-  static async getInitialProps({query, res}) {
-    const el = query.slug
-    const prod = query.item
-   
+  static getInitialProps({query}) {
     return {
-      slug:el,
-      z:prod
+      query
     }
   }
 
   componentDidMount(){
-      osAPI.getProdutoInfo(this.props.slug)
+      osAPI.getProdutoInfo(Cookie.get('token'), this.props.query.p)
       .then(r=>r.json())
       .then(json=>{
         this.setState({produto:json.data})
       })
-      alert(Cookie.get('token'))
   }
 
   render(){
-    
     return(
       <>
         <Head>
@@ -52,7 +46,7 @@ class Produto extends Component {
             bgcolor={'#343261'}
        />
        <ProdutoInfo
-            slug={this.props.slug}
+            // slug={this.props.slug}
             produto={this.state.produto}
        />
       </>

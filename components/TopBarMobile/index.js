@@ -9,6 +9,7 @@ import {
     EstabelecimentoArea,
     EstabelecimentoTitulo,
     Icone,
+    IconeCart,
     Lk,
     OpcoesArea,
     PageArea

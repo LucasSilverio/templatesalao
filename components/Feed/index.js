@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import { Carousel } from 'react-responsive-carousel';
+import Router from 'next/router';
 import Cookie from 'js-cookie';
 import { 
     Container,
@@ -43,10 +44,17 @@ class Feed extends Component {
     osAPI.getProdutos(this.props.slug)
     .then(r=>r.json())
     .then(json=>{
-        console.log(json.data)
+        // console.log(json.data)
         this.setState({produtos:json.data})
     })
     
+  }
+
+  handleProduct(e){
+      Router.push({
+          pathname: '/template/produto/'+e,
+          query: {p: e},
+        });
   }
 
   requestProduts(){
@@ -70,23 +78,23 @@ class Feed extends Component {
                     className='ScrollArea'
                 >
                     {this.state.produtos.map((i, index) => (
-                        <Link key={index} href={{ pathname: '/template/produto/'+i.id, query: { item:i.id, slug:this.props.slug } }} as={'/template/produto/'}>
-                            <FeedItem>
-                                <ImagemArea>
-                                    <Imagem src={i.img} />
-                                </ImagemArea>
-                                <ProdTitleArea>
-                                    <ProdTitle>
-                                        {i.nome}
-                                    </ProdTitle>
-                                </ProdTitleArea>
-                                <PrecoArea>
-                                    <Preco>
-                                        {'R$'+i.valor}
-                                    </Preco>
-                                </PrecoArea>                           
-                            </FeedItem>
-                        </Link>
+                        // <Link key={index} href={{ pathname: '/template/produto/'+i.id, query: { item:'3' } }} as={'/template/produto/'+i.id}>
+                        
+                        <FeedItem onClick={e=>this.handleProduct(i.id)}>
+                            <ImagemArea>
+                                <Imagem src={i.img} />
+                            </ImagemArea>
+                            <ProdTitleArea>
+                                <ProdTitle>
+                                    {i.nome}
+                                </ProdTitle>
+                            </ProdTitleArea>
+                            <PrecoArea>
+                                <Preco>
+                                    {'R$'+i.valor}
+                                </Preco>
+                            </PrecoArea>                           
+                        </FeedItem>
                     ))}
                 </InfiniteScroll>
                 {/* <Link href='/'>
