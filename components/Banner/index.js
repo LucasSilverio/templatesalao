@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import { Carousel } from 'react-responsive-carousel';
-import { BannerArea, Container, PageContainer, Logo, MenuItems, Opcoes } from './styled';
+import { BannerArea, Container, Coluna, Image, PageContainer, Logo, MenuItems, Subtitle, Title, Opcoes } from './styled';
 
 class Banner extends Component {
 
@@ -15,14 +15,19 @@ class Banner extends Component {
     return(
       <> 
         <PageContainer>
-            <Carousel autoPlay infiniteLoop={true} showThumbs={false} showStatus={false} swipeable={true} emulateTouch={true}>
-                <BannerArea> 
-                    <img src="/banner1.jpg" />
-                </BannerArea>
-                <BannerArea>
-                    <img src="banner2.jpg" />
-                </BannerArea>
-            </Carousel>
+          <Container> 
+            <Coluna center={true}>
+              <Title>
+                Aplicativo fácil e prático de agendamento para seu estabelecimento
+              </Title>
+              <Subtitle>
+                Tenha uma agenda bem organizada e ganhe mais tempo livre para atender novos clientes ou até mesmo para descansar
+              </Subtitle>
+            </Coluna>
+            <Coluna center={false}>
+              <Image src={'/bannerSalao.svg'} />
+            </Coluna>
+          </Container>
         </PageContainer>
       </>
     )

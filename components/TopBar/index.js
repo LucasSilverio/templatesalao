@@ -11,6 +11,7 @@ import {
     Icone,
     IconeCart,
     Lk,
+    Logo,
     OpcoesArea,
     PageArea
 } from './styled';
@@ -28,28 +29,26 @@ class TopBar extends Component {
   render(){     
 
     return(       
-      <Container bgcolor={this.props.bgcolor}>
+      <Container bgcolor={'#FFF'} altura={this.props.altura}>
           <PageArea>
             <EstabelecimentoArea>
                 <EstabelecimentoTitulo>
-                    Nome do salãoss
+                    <Logo src={'/logo.png'} />
                 </EstabelecimentoTitulo>
-                <IconeCart src='/cart.png' />
             </EstabelecimentoArea>
             <OpcoesArea>
-                <Link href='/teste'>
+                <Link href={'//wa.me/5534996960659'}>
+                  <a target={"_blank"}>
                     <Lk>
-                        Reserve seu horário
+                        Falar com consultor
                     </Lk>
-                </Link>
-                <Icone src='/facebook.png' />
-                <Icone src='/instagram.png' />
-                
+                  </a>
+                </Link>                
             </OpcoesArea>
           </PageArea>
       </Container>
     )
-  }
+  } 
 }
 
 

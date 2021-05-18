@@ -5,18 +5,31 @@ import Head from 'next/head';
 import AppArea from '../components/AppArea';
 import Banner from '../components/Banner';
 import Comentarios from '../components/Comentarios';
+import Contato from '../components/Contato';
+import Comecar from '../components/Comecar';
 import Destaques from '../components/Destaques';
 import TopBar from '../components/TopBar';
+import Recursos from '../components/Recursos';
+import Example from '../components/Example';
+import Divisao from '../components/Divisao';
+import Bottom from '../components/Bottom';
 
 class Home extends Component {
 
   constructor(props){
     super(props);
     this.state={
-    }
+      altura_atual:0
+    } 
+    this.scrollTest = this.scrollTest.bind(this);
   }
 
   componentDidMount(){
+    window.addEventListener('scroll', this.scrollTest);
+  }
+
+  scrollTest(){
+    this.setState({altura_atual:window.scrollY});
   }
 
   render(){
@@ -35,11 +48,19 @@ class Home extends Component {
        </Head>
        <TopBar 
         bgcolor={'#343261'}
+        altura={this.state.altura_atual}
        />
        <Banner />
-       <Destaques />
-       <Comentarios />
-       <AppArea />
+       <Divisao />
+       <Recursos />
+       <Divisao />
+       <Example />
+       <Divisao />
+       <Comecar />
+       <Bottom />
+       {/* <Destaques /> */}
+       {/* <Comentarios /> */}
+       {/* <AppArea /> */}
       </>
     )
   }
