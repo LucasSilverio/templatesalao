@@ -14,6 +14,7 @@ export const Brand = styled.img`
     height:auto;
     margin:5px;
     cursor:pointer;
+    border-radius:75px;
 `;
 
 export const PageArea = styled.div`
