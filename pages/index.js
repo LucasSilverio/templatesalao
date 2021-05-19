@@ -42,9 +42,9 @@ class Home extends Component {
           <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
           <meta name='description' content='Description' />
           <meta name='keywords' content='Keywords' />
-          <title>Home | Nome do Estabelecimento</title>
+          <title>The Shave | App de Agendamento para Barbearias e Salões de Beleza</title>
           {/* <link rel="manifest" href="/manifest.json" /> */}
-          <meta name="theme-color" content="#E887B2"/>
+          <meta name="theme-color" content="#716FF2"/>
        </Head>
        <TopBar 
         bgcolor={'#343261'}
