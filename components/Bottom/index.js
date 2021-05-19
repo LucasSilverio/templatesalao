@@ -23,6 +23,7 @@ class Bottom extends Component {
           <ItensArea>
             <Item>
               <Titulo>Contato</Titulo>
+              <TracoSm />
               <Ul>
                 <Li>
                   {/* <Span><Icon src='/endereco.png' /></Span>
@@ -31,7 +32,15 @@ class Bottom extends Component {
                   </Link> */}
                 </Li>
                 <Li>
-                  <Span><Icon src='/whatsapp.png' /></Span>
+                  <Span><Icon src='/email.svg' /></Span>
+                  <Link href={'mailto:contato@ellesolutions.com.br'}>
+                    <a target={"_blank"}>
+                      <Lk>{'contato@ellesolutions.com.br'}</Lk> 
+                    </a>
+                  </Link>
+                </Li>
+                <Li>
+                  <Span><Icon src='/whatsapp.svg' /></Span>
                   <Link href={'//wa.me/5534996960659'}>
                     <a target={"_blank"}>
                       <Lk>{'+55(34)99696-0659'}</Lk> 
@@ -44,6 +53,8 @@ class Bottom extends Component {
               <Img src={'/logo.png'} />
             </Item>
             <Item>
+              <Titulo>The Shave</Titulo>
+              <TracoSm />
               <BoxArea>
               {/* <Link href={this.props.infos.instagram}>
                 <a target="_blank" rel="noreferrer">
@@ -57,7 +68,10 @@ class Bottom extends Component {
               </Link> */}
               </BoxArea>
               <BoxArea>
-                <Credito>© 2017-2021 Elle Solutions Software</Credito>
+                <Credito>The Shave foi desenvolvido no Brasil pela empresa de tecnologia Elle Solutions. É uma solução 
+                  moderna e segura para a modernização de salões de beleza, barbearias e clinicas de estética.
+                </Credito>
+                {/* <Credito>© 2017-2021 Elle Solutions Software</Credito> */}
               </BoxArea>
             </Item>
           </ItensArea>

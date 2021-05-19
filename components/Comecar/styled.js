@@ -20,6 +20,10 @@ export const BtnAction = styled.button`
 
 `;
 
+export const BoxInfo = styled.div`
+    display:flex;
+`;
+
 export const Container = styled.div`
     padding:0;
     margin:0;
@@ -91,9 +95,9 @@ export const Content = styled.div`
 `;
 
 export const Img = styled.img`
-    width:300px;
+    width:350px;
     position:absolute;
-    top:-150px;
+    top:-180px;
     @media (max-width:1000px){
         display:none;
     }
@@ -204,6 +208,23 @@ export const SubTitleSm = styled.p`
     font-size:18px;
     color:#555;
     margin-top:40px;
+`;
+
+export const SubTitleDestak= styled.p`
+    text-align:initial;
+    font-size:18px;
+    color:#555;
+    font-weight:700;
+
+    small {
+        font-size:18px;
+        color:#716FF2;
+    }
+
+    strong {
+        font-size:28px;
+        color:#716FF2;
+    }
 `;
 
 export const TopItem = styled.div`

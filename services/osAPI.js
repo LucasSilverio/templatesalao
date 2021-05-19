@@ -6,31 +6,10 @@ const company = 1;
 
 const osAPI = {
 
-    getProdutos:(jwt, offset, limit)=>{
-      let endpoint = 'produtos/getProdutos';
+    getInfos:(slug)=>{
+      let endpoint = 'config/getInfosSite';
       let body = {
-        jwt,
-        offset,
-        limit
-      }
-      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
-    },
-
-    getProductById:(jwt, id, qtd)=>{
-      let endpoint = 'produtos/getproductbyid';
-      let body = {
-                    jwt,
-                    produto:id,
-                    qtd
-                }
-      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
-    },
-
-    getProdutoInfo:(jwt, produto)=>{
-      let endpoint = 'produtos/getInfo';
-      let body = {
-        jwt,
-        produto,
+        slug
       }
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },

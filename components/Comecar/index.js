@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import { BtnAction, Container, ContentArea, Content, Img, Item, ItemNumber, Line, Column, Lk, LineR, LineL, PageContainer, Paragrafo, SubTitle, SubContainer, SubTitleSm, TopItem } from './styled';
+import { BtnAction, BoxInfo, Container, ContentArea, Content, Img, Item, ItemNumber, Line, Column, Lk, LineR, LineL, PageContainer, Paragrafo, SubTitle, SubTitleDestak, SubContainer, SubTitleSm, TopItem } from './styled';
 import  Router from 'next/router';
 
 class Comecar extends Component {
@@ -43,6 +43,9 @@ class Comecar extends Component {
             <Container>
                 <SubTitle dark={true}>Vamos começar?</SubTitle>
                 <SubTitleSm>Entre em contato com um consultor gratuitamente e tire todas as suas dúvidas. </SubTitleSm>
+                <BoxInfo>
+                  <SubTitleDestak>Planos a partir de <small>R$</small><strong>49,90</strong> </SubTitleDestak>
+                </BoxInfo>
                 <SubContainer>
                     <Column>
                       <Link href={'//wa.me/5534996960659'} >

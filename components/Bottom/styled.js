@@ -111,7 +111,9 @@ export const Paragrafo = styled.p`
 export const TracoSm = styled.div`
     width:50px;
     height:2px;
-    background-color:#333;
+    background-color:#FFF;
+    margin-top:-5px;
+
 `;
 
 export const Titulo = styled.h3`
@@ -140,7 +142,6 @@ export const Item = styled.div`
     align-items:center;
     padding:10px;
     margin:10px;
-    justify-content:center;
 
     @media (max-width:690px){
         width:100%;
