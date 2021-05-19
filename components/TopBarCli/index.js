@@ -27,7 +27,7 @@ class TopBarCli extends Component {
   componentDidMount(){
   }
 
-  render(){     
+  render(){      
  
     return(       
       <Container bgcolor={'#000'} altura={this.props.altura}>

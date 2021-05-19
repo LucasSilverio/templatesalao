@@ -65,7 +65,7 @@ class Categoria extends Component {
   }
   
 
-  render(){
+  render(){ 
     return(
       <>
         <Head>
@@ -87,6 +87,7 @@ class Categoria extends Component {
        <Agende
         infos={this.props.info}  />
        <Maps
+        mob={false}
         infos={this.props.info}  />
        <Bottom
         infos={this.props.info}  />

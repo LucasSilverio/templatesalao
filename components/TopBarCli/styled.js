@@ -14,8 +14,8 @@ export const Container = styled.div`
     color:#FFF;
 
     @media (max-width:600px){
-        height:130px;
-        flex-direction:column;
+        // height:130px;
+        // flex-direction:column;
     }
 `;
 
@@ -26,9 +26,9 @@ export const EstabelecimentoArea = styled.div`
     padding-left:10px;
     line-height:60px;
     @media (max-width:600px){
-        justify-content:center;
-        line-height:20px;
-        margin-bottom:5px;
+        // justify-content:center;
+        // line-height:20px;
+        // margin-bottom:5px;
     }
 `;
 

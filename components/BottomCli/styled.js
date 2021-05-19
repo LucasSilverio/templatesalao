@@ -14,8 +14,8 @@ export const Container = styled.div`
     color:#FFF;
 
     @media (max-width:600px){
-        height:130px;
         flex-direction:column;
+        padding:5px;
     }
 `;
 

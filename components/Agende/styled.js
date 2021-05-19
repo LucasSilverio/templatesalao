@@ -7,6 +7,11 @@ export const Container = styled.div`
     width:100%;
     height:200px;
     position:relative;
+
+    @media (max-width:900px){
+        margin-top:60px;
+        padding:20px;
+    }
 `;
 
 export const Brand = styled.img`
@@ -34,6 +39,10 @@ export const PageArea = styled.div`
     display:flex;
     flex-direction:row;
 
+    @media (max-width:900px){
+        flex-direction:column;
+    }
+
 `;
 
 export const Titulo = styled.h2`
@@ -48,6 +57,10 @@ export const Titulo = styled.h2`
     border-top-left-radius:5px;
     border-bottom-left-radius:20px;
     border-bottom-right-radius:5px;
+
+    @media (max-width:700px){
+        font-size:36px;
+    }
 `;
 
 export const SubTitulo = styled.p`

@@ -25,4 +25,8 @@ export const PageArea = styled.div`
     align-items:center;
     justify-content:flex-end;
 
+    @media (max-width:900px){
+        justify-content:center;
+    }
+
 `;

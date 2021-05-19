@@ -40,7 +40,7 @@ class BottomCli extends Component {
                 <a target={'blank'}><Icone src='/instagramicon.svg' /></a>
               </Link>
               <Link href={this.props.infos.slug+'/endereco'}>
-                <a target={'blank'}>
+                <a>
                   <Icone src='/locationicon.svg' />
                 </a>
               </Link>

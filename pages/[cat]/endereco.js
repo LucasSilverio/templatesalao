@@ -85,6 +85,7 @@ class Categoria extends Component {
        <Logo
         infos={this.props.info}  /> 
        <Maps
+        mob={true}
         infos={this.props.info}  />
        <Bottom
         infos={this.props.info}  />
