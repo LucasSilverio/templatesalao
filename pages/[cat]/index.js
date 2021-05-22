@@ -72,7 +72,7 @@ class Categoria extends Component {
          <meta charset='utf-8' />
          <meta http-equiv='X-UA-Compatible' content='IE=edge' />
          <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
-         <meta name='description' content='Description' />
+         <meta name='description' content={'Oferecemos os melhores serviços em '+this.props.info.tipo+' em '+this.props.info.cidade+'. Baixe agora nosso APP e agende seu horário.'} />
          <meta name='keywords' content='Keywords' />
          <title>{this.props.info.nomeestabelecimento+' - Barbearia em '+this.props.info.cidade}</title>
          <link rel="manifest" href="/manifest.json" />

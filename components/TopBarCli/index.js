@@ -30,7 +30,7 @@ class TopBarCli extends Component {
   render(){      
  
     return(       
-      <Container bgcolor={'#000'} altura={this.props.altura}>
+      <Container bgcolor={'#111'} altura={this.props.altura}>
           <PageArea>
             <EstabelecimentoArea>
                 <EstabelecimentoTitulo>

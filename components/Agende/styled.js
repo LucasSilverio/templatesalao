@@ -30,8 +30,6 @@ export const Coluna = styled.div`
     flex-direction:column;
 `;
 
-
-
 export const PageArea = styled.div`
     width:100%;
     margin:auto;
@@ -41,6 +39,14 @@ export const PageArea = styled.div`
 
     @media (max-width:900px){
         flex-direction:column;
+    }
+
+    @media (max-width:500px){
+        height:600px;
+    }
+
+    @media (max-width:350px){
+        height:700px;
     }
 
 `;

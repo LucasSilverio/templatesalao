@@ -6,8 +6,7 @@ export const Box = styled.div`
 `;
 
 export const PageContainer = styled.div`
-    width:100%;
-    max-height:400px; 
+    width:100%; 
     overflow:hidden;
     position:relative;
     margin-top:200px;
@@ -39,12 +38,13 @@ export const Area = styled.div`
     height:auto;
     width:100%;
     border-radius:150px;
-    max-width:1000px;
+    max-width:1100px;
     margin:auto;
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
     text-align:right;
+    padding-bottom:140px;
 
     @media (max-width:900px){
         text-align:center;
@@ -53,7 +53,8 @@ export const Area = styled.div`
 
 export const BoxTitulo = styled.div`
     display:flex;
-    margin-bottom:10px;
+    margin-top:100px;
+    margin-bottom:50px;
 
     @media (max-width:900px){
         flex-direction:column;
