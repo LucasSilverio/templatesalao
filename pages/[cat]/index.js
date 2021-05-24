@@ -41,8 +41,7 @@ class Categoria extends Component {
       info:info.data,
       query
     }
-  }
-  
+  }  
  
   componentDidMount(){
     window.addEventListener('scroll', this.scrollTest);
@@ -62,8 +61,7 @@ class Categoria extends Component {
 
   scrollTest(){
     this.setState({altura_atual:window.scrollY});
-  }
-  
+  }  
 
   render(){ 
     return(
