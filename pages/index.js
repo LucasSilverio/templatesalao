@@ -26,6 +26,21 @@ class Home extends Component {
 
   componentDidMount(){
     window.addEventListener('scroll', this.scrollTest);
+    import('react-facebook-pixel')
+    .then((x) => x.default)
+    .then((ReactPixel) => {
+      ReactPixel.init('135083928579550'); 
+      ReactPixel.pageView();
+      // ReactPixel.track('ViewContent',{
+      //   content_name:'Página Home'
+      // })
+
+      Router.events.on('routeChangeComplete', () => {
+        // ReactPixel.pageView();
+        // ReactPixel.track('ViewContent',{
+        // })
+      });
+    });
   }
 
   scrollTest(){
