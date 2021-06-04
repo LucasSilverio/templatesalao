@@ -6,6 +6,26 @@ const company = 1;
 
 const osAPI = {
 
+    getAgenda:(jwt, data)=>{
+      let endpoint = 'agenda/getAgendaDoDiaGestao';
+      let body = {
+        jwt,
+        data
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
+    getParceiroComissoes:(jwt, parceiro, datainicial, datafinal)=>{
+      let endpoint = 'agenda/getParceiroComissoes';
+      let body = {
+        jwt,
+        parceiro,
+        datainicial,
+        datafinal
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
     getInfos:(slug)=>{
       let endpoint = 'config/getInfosSite';
       let body = {
@@ -13,6 +33,36 @@ const osAPI = {
       }
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },
+
+    getServicos:(jwt)=>{
+      let endpoint = 'services/listarPainel';
+      let body = {
+        jwt
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
+    getProfessionals:(jwt)=>{
+      let endpoint = 'professionals/getProfessionalsGestao';
+      let body = {
+        jwt
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
+    listarHorarios:(jwt, profissional, data, tempo, diaDaSemana)=>{
+      let endpoint = 'agenda/listarProPainel';
+      let body = {
+        jwt,
+        profissional,
+        data,
+        tempo,
+        diaDaSemana
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
+
 
     
 };

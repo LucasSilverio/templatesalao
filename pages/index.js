@@ -35,11 +35,11 @@ class Home extends Component {
       //   content_name:'Página Home'
       // })
 
-      Router.events.on('routeChangeComplete', () => {
-        // ReactPixel.pageView();
-        // ReactPixel.track('ViewContent',{
-        // })
-      });
+      // Router.events.on('routeChangeComplete', () => {
+      //   // ReactPixel.pageView();
+      //   // ReactPixel.track('ViewContent',{
+      //   // })
+      // });
     });
   }
 
