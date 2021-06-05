@@ -58,7 +58,13 @@ class TopBar extends Component {
             <Link href={'/gestao/comissoes'}>
               <a>Comissões</a>
             </Link>
-          </ul>            
+          </ul>        
+          <Line />
+          <ul className='vendasArea'>
+            <Link href={'/gestao/clientes'}>
+              <a>Clientes</a>
+            </Link>
+          </ul>        
           <Line />
             <ul className='produtosArea'>
               <Lk icon={'produtos.png'}>Menu</Lk>

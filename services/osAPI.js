@@ -6,6 +6,34 @@ const company = 1;
 
 const osAPI = {
 
+    getClientes:(jwt, offset, limit)=>{
+      let endpoint = 'users/listarPainel';
+      let body = {
+        jwt,
+        offset,
+        limit
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
+    getClienteInfo:(jwt, id)=>{
+      let endpoint = 'users/getuserinfospainel';
+      let body = {
+        jwt,
+        id,
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
+    getHistorico:(jwt, idcliente)=>{
+      let endpoint = 'agenda/historico';
+      let body = {
+        jwt,
+        idcliente,
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
     getAgenda:(jwt, data)=>{
       let endpoint = 'agenda/getAgendaDoDiaGestao';
       let body = {
