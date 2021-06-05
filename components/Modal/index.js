@@ -154,7 +154,7 @@ class Modal extends Component {
               </Link>
             </BoxLinha>
             <BoxLinha>
-              <Texto color={'#343261'}>{this.props.hora+'h às '+this.props.horafim+'h - '+this.props.barbeiro}</Texto>
+              <Texto color={'#343261'}>{this.props.servico+' - '+this.props.hora+'h às '+this.props.horafim+'h - '+this.props.barbeiro}</Texto>
             </BoxLinha>
             <BoxOpcoes>
                 <Botao onClick={e=>this.check(1)}>

@@ -197,7 +197,7 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                             
                             {j.hora > this.state.horarios[index] && j.hora < this.state.horarios[index + 1] &&
                               <HorarioPro height={((j.duracao.replace(':', '.') * 60) / 30)} bgColor={'#fff'} p={'unset'}>
-                                <BoxHorarioInter height={((parseInt(j.duracao_hora) * 60 + parseInt(j.duracao_minutos)) * 60) / 30} bgColor={l.cor} p={'absolute'} tp={(j.minuto_inicio - 60)*-1} onClick={e=>this.showDetails(j.id, j.hora, j.horafim, j.barbeiro, j.servico, j.cliente, j.idcliente, j.phone)}>
+                                <BoxHorarioInter height={((parseInt(j.duracao_hora) * 60 + parseInt(j.duracao_minutos)) * 60) / 30} bgColor={l.cor} p={'absolute'} tp={(j.minuto_inicio - 60)*-1} onClick={e=>this.showDetails(j.id, j.hora, j.horafim, j.barbeiro, j.servico, j.cliente, j.idcliente, j.phone, j.status)}>
                                   <HorarioProDesc>{j.hora+' às '+j.horafim}</HorarioProDesc>
                                   <ParagrafoNm>{j.barbeiro}</ParagrafoNm>
                                   <ParagrafoNm>{j.servico}</ParagrafoNm>
@@ -232,7 +232,7 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                       
                     </Linha>
                   ))}
-              </ColunaHorarios>
+              </ColunaHorarios> 
               <Modal 
                 visible={this.state.modalVisible}
                 handleModal={this.handleModal}
@@ -246,6 +246,7 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                 getAgenda={this.getAgenda}
                 dataselecionada={this.state.data}
                 status={this.state.status}
+                servico={this.state.servico}
               />
               <ModalNovo 
                 visible={this.state.modalNovoVisible}
