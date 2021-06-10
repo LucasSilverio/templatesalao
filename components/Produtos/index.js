@@ -7,7 +7,7 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import moment from 'moment';
 import Modal from '../../components/ModalProduto';
-import ModalNovo from '../../components/ModalNovoCliente';
+import ModalNovo from '../../components/ModalNovoProduto';
 import { 
     AlertArea,
     AreaBotoes,
@@ -269,6 +269,13 @@ closeModal(){
                 handleValor={this.handleValor}
                 getProdutos={this.getProdutos}
                 getProdutoInfo={this.getProdutoInfo}
+              />
+              <ModalNovo
+                visible={this.state.modalNovoVisible}
+                handleModal={this.handleModalNovo}
+                closeModal={this.closeModalNovo}
+                getProdutos={this.getProdutos}
+              
               />
             </Corpo>
             
