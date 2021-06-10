@@ -47,6 +47,7 @@ class Produtos extends Component {
       totalClientes:0,
       modalVisible:false,
       modalNovoVisible:false,
+      nomeProduto:'',
       nome:'',
       produto:'',
       categoria:'',
@@ -55,7 +56,7 @@ class Produtos extends Component {
       img:''
     }    
     this.closeModal = this.closeModal.bind(this);
-    this.filtrarCliente = this.filtrarCliente.bind(this);
+    this.filtrarProduto = this.filtrarProduto.bind(this);
     this.getProdutos = this.getProdutos.bind(this);
     this.getProdutoInfo = this.getProdutoInfo.bind(this);
     this.getClientHistory = this.getClientHistory.bind(this);
@@ -121,10 +122,10 @@ check = (e) =>{
   
 }
 
-filtrarCliente(e){
-  this.setState({nomeCliente:e})
+filtrarProduto(e){
+  this.setState({nomeProduto:e})
   if(e.length > 2){
-    fetch(ecommerceAPI.BASE_URL_API+'users/findClient', {
+    fetch(ecommerceAPI.BASE_URL_API+'produtos/findProduct', {
       method:'POST',
       body:JSON.stringify({
           jwt:Cookie.get('token'),
@@ -133,11 +134,11 @@ filtrarCliente(e){
     })
     .then(r=>r.json())
     .then(json=>{
-      this.setState({clientes:json.data})
+      this.setState({produtos:json.data})
     })
   }else{
     // this.setState({resultado:[]})
-    this.getClientes();
+    this.getProdutos();
   }
 }
 
@@ -239,7 +240,7 @@ closeModal(){
                   {/* {this.state.totalClientes+' clientes cadastrados.'} */}
                 </Paragrafo>
                 <BtnAction bgColor={'#63ADF2'} onClick={this.handleModalNovo}>+ Novo Cadastro</BtnAction>
-                <IptBusca type='text' value={this.state.nomeCliente} onChange={e=>this.filtrarCliente(e.target.value)} placeholder={'Buscar cliente por nome'}/>
+                <IptBusca type='text' value={this.state.nomeProduto} onChange={e=>this.filtrarProduto(e.target.value)} placeholder={'Buscar produto por nome'}/>
               </Opcoes>
               {this.state.produtos.map((i, index) => (
                 <Item onClick={e=>this.handleProduto(i.id)}>
