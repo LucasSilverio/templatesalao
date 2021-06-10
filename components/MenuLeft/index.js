@@ -52,7 +52,13 @@ class TopBar extends Component {
             <Link href={'/gestao'}>
               <a>Agenda</a>
             </Link>
-          </ul>            
+          </ul>         
+          <Line />
+          <ul className='vendasArea'>
+            <Link href={'/gestao/agenda-lotada'}>
+              <a>Agenda Lotada</a>
+            </Link>
+          </ul>           
           <Line />
           <ul className='vendasArea'>
             <Link href={'/gestao/comissoes'}>
@@ -64,22 +70,41 @@ class TopBar extends Component {
             <Link href={'/gestao/clientes'}>
               <a>Clientes</a>
             </Link>
-          </ul>        
+          </ul>    
+          <Line />
+          <ul className='vendasArea'>
+            <Link href={'/gestao/produtos'}>
+              <a>Produtos</a>
+            </Link>
+          </ul>    
           <Line />
             <ul className='produtosArea'>
-              <Lk icon={'produtos.png'}>Menu</Lk>
+              <Lk icon={'produtos.png'}>Configurações</Lk>
               <ul className='subProdutos'>
                 <LineSoft />
-                  <Link href='/gestao'>
+                  <Link href='/gestao/horarios'>
                     <Lk>
-                      <li>Agenda</li>
+                      <li>Horários de Atendimento</li>
+                    </Lk>
+                  </Link>
+                <LineSoft />
+                <LineSoft />
+                  <Link href='/gestao/servicos'>
+                    <Lk>
+                      <li>Serviços Oferecidos</li>
+                    </Lk>
+                  </Link>
+                <LineSoft />
+                <Link href='/gestao/servicos'>
+                    <Lk>
+                      <li>Profissionais</li>
                     </Lk>
                   </Link>
                 <LineSoft />
                 <Lk onClick={this.handleLogout}>
                   <li>Sair</li>
                 </Lk>
-                <LineSoft />
+                {/* <LineSoft /> */}
               </ul>
             </ul>
           <Line />

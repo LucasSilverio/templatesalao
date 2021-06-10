@@ -7,6 +7,7 @@ import moment from 'moment';
 import Modal from '../../components/Modal';
 import ModalNovo from '../../components/ModalNovo';
 import { 
+    Atualizacao,
     Container,
     Box,
     BoxCalendario,
@@ -70,7 +71,8 @@ class Sheduler extends Component {
       cliente:'', 
       idcliente:'', 
       phone:'',
-      status:''
+      status:'',
+      atualizacao:''
     }    
     this.getAgenda = this.getAgenda.bind(this);
     this.getProfessionals = this.getProfessionals.bind(this);
@@ -85,6 +87,7 @@ class Sheduler extends Component {
 componentDidMount(){
   this.getProfessionals();
   this.getAgenda(this.state.data);
+  window.setInterval(this.getAgenda, 300000, this.state.data);
 }
 
 getProfessionals(){
@@ -100,6 +103,7 @@ getAgenda(data){
   .then(r=>r.json())
   .then(json=>{
     this.setState({agendadia:json.data})
+    this.setState({atualizacao:moment().format()})
     // this.setState({profissionais:json.data});
   })
 }
@@ -168,6 +172,9 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                 </BoxCalendario>
                 <ParagrafoDestaque>Data selecionada: {moment(this.state.data).format('DD/MM/YY')}</ParagrafoDestaque>
                 <BtnAction onClick={e=>this.handleModalNovo()}>Novo Agendamento</BtnAction>
+                <Atualizacao onClick={e=>this.getAgenda(this.state.data)}>
+                  {'Atualizado às '+moment(this.state.atualizacao).format('HH:mm')}
+                </Atualizacao>
                 {/* <Erro>{this.state.errorAlert}</Erro> */}
               </CalendarioArea> 
               <ColunaHorarios>

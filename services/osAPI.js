@@ -16,11 +16,30 @@ const osAPI = {
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },
 
+    getProdutos:(jwt, offset, limit)=>{
+      let endpoint = 'produtos/getProdutos';
+      let body = {
+        jwt,
+        offset,
+        limit
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
     getClienteInfo:(jwt, id)=>{
       let endpoint = 'users/getuserinfospainel';
       let body = {
         jwt,
         id,
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
+    getProdutoInfo:(jwt, produto)=>{
+      let endpoint = 'produtos/getInfo';
+      let body = {
+        jwt,
+        produto,
       }
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },
@@ -70,10 +89,27 @@ const osAPI = {
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },
 
+    getServicosAgenda:(jwt)=>{
+      let endpoint = 'services/listarPainelAgenda';
+      let body = {
+        jwt
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
     getProfessionals:(jwt)=>{
       let endpoint = 'professionals/getProfessionalsGestao';
       let body = {
         jwt
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
+    getProInfo:(jwt, id)=>{
+      let endpoint = 'professionals/getProfessionalsGestaoInfos';
+      let body = {
+        jwt,
+        id
       }
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },

@@ -1,5 +1,24 @@
 import styled, { css } from 'styled-components';
 
+export const Atualizacao = styled.div`
+    margin-left:20px;
+    cursor:pointer;
+    width:150px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    border:1px solid rgba(10,10,10,0.2);
+    padding:5px;
+    border-radius:5px;
+
+    &:hover{
+        content:url('/update.png');
+        width:24px;
+        height:24px;
+    }
+
+`;
+
 export const Container = styled.div`
     display:flex;
     width:100%;
@@ -130,6 +149,11 @@ export const HorarioDesc = styled.p`
     font-size:16px;
     font-weight:700;
     margin:0;
+`;
+
+export const Icone = styled.img`
+    width:24px;
+    height:24px;
 `;
 
 export const ParagrafoNm = styled.p`

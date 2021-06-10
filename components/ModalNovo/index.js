@@ -108,7 +108,7 @@ class ModalNovo extends Component {
   }
 
   getServicos(){
-    osAPI.getServicos(Cookie.get('token'))
+    osAPI.getServicosAgenda(Cookie.get('token'))
     .then(r=>r.json())
     .then(json=>{
       this.setState({servicos:json.data})

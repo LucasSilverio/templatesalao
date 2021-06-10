@@ -60,6 +60,11 @@ export const BotaoC = styled.a`
     }
 `;
 
+export const BoxColumn = styled.div`
+    display:flex;
+    flex-direction:column;
+`;
+
 export const Container = styled.div`
     display:flex;
     width:100%;
@@ -123,6 +128,14 @@ export const Paragrafo = styled.p`
     font-size:14px;
     font-weight:600;
     color:#333;
+`;
+
+export const ParagrafoSm = styled.p`
+    margin:0;
+    small{
+        font-size:12px;
+        font-weight:600;
+    }
 `;
 
 export const Pg = styled.div`

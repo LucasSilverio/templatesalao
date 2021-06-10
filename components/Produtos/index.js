@@ -6,7 +6,7 @@ import Cookie from 'js-cookie';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import moment from 'moment';
-import Modal from '../../components/ModalCliente';
+import Modal from '../../components/ModalProduto';
 import ModalNovo from '../../components/ModalNovoCliente';
 import { 
     AlertArea,
@@ -14,6 +14,7 @@ import {
     Avatar,
     BtnAction,
     BotaoC,
+    BoxColumn,
     Container,
     Corpo,
     Item,
@@ -21,6 +22,7 @@ import {
     Opcoes,
     PaginacaoArea,
     Paragrafo,
+    ParagrafoSm,
     Pg,
     Subtitulo,
     Topo,
@@ -28,15 +30,15 @@ import {
 } from './styled';
 import osAPI from '../../services/osAPI';
 import ecommerceAPI from '../../services/ecommerceAPI';
-import {onlyNumbers, phone} from '../../services/formMask';
+import {onlyNumbers, phone, preco} from '../../services/formMask';
 
 
  
-class Clientes extends Component {
+class Produtos extends Component {
   constructor({props, initialQtdValue, test}){
     super(props);
     this.state={
-      clientes:[],
+      produtos:[],
       clientInfo:[],
       historico:[],
       errorAlert:'',
@@ -45,27 +47,28 @@ class Clientes extends Component {
       totalClientes:0,
       modalVisible:false,
       modalNovoVisible:false,
-      nomecliente:'',
-      emailcliente:'',
-      celularcliente:'',
-      nascimentocliente:'',
-      nomeCliente:''
+      nome:'',
+      produto:'',
+      categoria:'',
+      estoque:'',
+      valor:'',
+      img:''
     }    
     this.closeModal = this.closeModal.bind(this);
     this.filtrarCliente = this.filtrarCliente.bind(this);
-    this.getClientes = this.getClientes.bind(this);
-    this.getClientInfo = this.getClientInfo.bind(this);
+    this.getProdutos = this.getProdutos.bind(this);
+    this.getProdutoInfo = this.getProdutoInfo.bind(this);
     this.getClientHistory = this.getClientHistory.bind(this);
     this.handleModal = this.handleModal.bind(this);
     this.handleModalNovo = this.handleModalNovo.bind(this);
     this.handleName = this.handleName.bind(this);
-    this.handleEmail = this.handleEmail.bind(this);
+    this.handleValor = this.handleValor.bind(this);
     this.handleCelular = this.handleCelular.bind(this);
     this.handleNascimento = this.handleNascimento.bind(this);    
   }
 
 componentDidMount(){
-  this.getClientes(this.state.offset, 1);
+  this.getProdutos(this.state.offset, 1);
 }
 
 check = (e) =>{
@@ -138,14 +141,14 @@ filtrarCliente(e){
   }
 }
 
-getClientes(offset, action){
+getProdutos(offset, action){
   let total = 0;
-  osAPI.getClientes(Cookie.get('token'), offset, this.state.limit)
+  osAPI.getProdutos(Cookie.get('token'), offset, this.state.limit)
   .then(r=>r.json())
   .then(json=>{
-    this.setState({clientes:json.data})
-    this.setState({totalClientes:json.total})
-    total = json.total;
+    this.setState({produtos:json.data})
+    // this.setState({totalClientes:json.total})
+    // total = json.total;
   })
   
   if(action == 1){
@@ -157,15 +160,21 @@ getClientes(offset, action){
   }
 }
 
-getClientInfo(id){
-  osAPI.getClienteInfo(Cookie.get('token'), id)
+getProdutoInfo(id){
+  osAPI.getProdutoInfo(Cookie.get('token'), id)
   .then(r=>r.json())
   .then(json=>{
-    this.setState({clientInfo:json.data})
-    this.setState({nomecliente:json.data.name})
-    this.setState({emailcliente:json.data.email})
-    this.setState({celularcliente:json.data.celular})    
-    this.setState({nascimentocliente:json.data.nascimento})
+    this.setState({nome:json.data.nome})
+    this.setState({categoria:json.data.idcategoria})
+    this.setState({estoque:json.data.estoque})
+    this.setState({img:json.data.img})
+    this.setState({valor:json.data.valor})
+    this.setState({produto:id})
+    // this.setState({clientInfo:json.data})
+    // this.setState({nomecliente:json.data.name})
+    // this.setState({emailcliente:json.data.email})
+    // this.setState({celularcliente:json.data.celular})    
+    // this.setState({nascimentocliente:json.data.nascimento})
   })
 }
 
@@ -183,10 +192,10 @@ handlePage(offset, action){
   }
 }
 
-handleClient(id){
+handleProduto(id){
   this.handleModal();
-  this.getClientInfo(id)
-  this.getClientHistory(id)
+  this.getProdutoInfo(id)
+  // this.getClientHistory(id)
 }
 
 handleModal(){
@@ -198,11 +207,11 @@ handleModalNovo(){
 }
 
 handleName(e){
-  this.setState({nomecliente:e});
+  this.setState({nome:e});
 }
 
-handleEmail(e){
-  this.setState({emailcliente:e});
+handleValor(e){
+  this.setState({valor:preco(e)});
 }
 
 handleCelular(e){
@@ -218,25 +227,27 @@ closeModal(){
 }
 
 
-    render(){  
-      console.log('offset '+this.state.offset)   
+    render(){    
         return(    
           <Container>
             <Topo>
-              <Subtitulo>Gestão dos Clientes</Subtitulo>
+              <Subtitulo>Gestão de Estoque de Produtos</Subtitulo>
             </Topo>
             <Corpo>
               <Opcoes>
                 <Paragrafo>
-                  {this.state.totalClientes+' clientes cadastrados.'}
+                  {/* {this.state.totalClientes+' clientes cadastrados.'} */}
                 </Paragrafo>
                 <BtnAction bgColor={'#63ADF2'} onClick={this.handleModalNovo}>+ Novo Cadastro</BtnAction>
                 <IptBusca type='text' value={this.state.nomeCliente} onChange={e=>this.filtrarCliente(e.target.value)} placeholder={'Buscar cliente por nome'}/>
               </Opcoes>
-              {this.state.clientes.map((i, index) => (
-                <Item onClick={e=>this.handleClient(i.id)}>
-                  <Avatar src={i.avatar != null ? i.avatar : 'https://theshave.com.br/api-barbershop/images/usersprofile/man.png'} />
-                  {i.name}
+              {this.state.produtos.map((i, index) => (
+                <Item onClick={e=>this.handleProduto(i.id)}>
+                  <Avatar src={i.img != null ? i.img : 'https://theshave.com.br/api-barbershop/images/usersprofile/man.png'} />
+                  <BoxColumn>
+                    <ParagrafoSm>{i.nome}</ParagrafoSm>
+                    <ParagrafoSm><small>{'Estoque atual: '+i.estoque}</small></ParagrafoSm>
+                  </BoxColumn>
                 </Item>
               ))}
               <PaginacaoArea>
@@ -248,22 +259,16 @@ closeModal(){
                 visible={this.state.modalVisible}
                 handleModal={this.handleModal}
                 closeModal={this.closeModal}
-                infos={this.state.clientInfo}
-                getClientInfo={this.getClientInfo}
+                nome={this.state.nome}
+                categoria={this.state.categoria}
+                estoque={this.state.estoque}
+                img={this.state.img}
+                valor={this.state.valor}
+                id={this.state.produto}
                 handleNome={this.handleName}
-                handleEmail={this.handleEmail}
-                handleCelular={this.handleCelular}
-                handleNascimento={this.handleNascimento}
-                nomecliente={this.state.nomecliente}
-                emailcliente={this.state.emailcliente}
-                celularcliente={this.state.celularcliente}
-                nascimentocliente={this.state.nascimentocliente}
-                historico={this.state.historico}
-              />
-              <ModalNovo 
-                visible={this.state.modalNovoVisible}
-                handleModal={this.handleModalNovo}
-                getClientes={this.getClientes}
+                handleValor={this.handleValor}
+                getProdutos={this.getProdutos}
+                getProdutoInfo={this.getProdutoInfo}
               />
             </Corpo>
             
@@ -279,4 +284,4 @@ const mapStateToProps = (state) => {
   };    
 };
 
-export default Clientes;
+export default Produtos;

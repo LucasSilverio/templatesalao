@@ -72,6 +72,16 @@ export const decimal = (e) => {
     
 }
 
+export const horario = (e) => {
+    if(e.length < 4){
+        return e;
+    }else if(e.length == 4 && e.substr(2,2) != '::'){
+        return e.substr(0,2)+':'+e.substr(2,2)
+    }else if(e.length == 4 && e.substr(2,2) == '::'){
+        return e;
+    }
+}
+
 export const phone = (e) => {
 
     let tel = e;
