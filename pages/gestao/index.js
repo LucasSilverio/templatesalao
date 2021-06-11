@@ -4,7 +4,7 @@ import Cookie from 'js-cookie';
 import Router from 'next/router';
 
 import MenuLeft from '../../components/MenuLeft';
-import TopBar from '../../components/TopBar';
+import TopBar from '../../components/TopBarGestao';
 import { InfoAreaUnder } from '../../components/MainStyled';
 import Sheduler from '../../components/Sheduler';
 // import SuporteBox from '../../components/SuporteBox';
@@ -21,32 +21,32 @@ class Painel extends Component {
     }
   }
   
-  // static async getInitialProps({res, req}){
-  //   let json = [];
-  //   if(req){
-  //     const r = await osAPI.checkPanelLogged(req.headers.cookie);
-  //     json = await r.json()
-  //     if(!json.success){
-  //       res.writeHead(301, {
-  //         Location:'/login'
-  //       });
-  //       res.end();
-  //     }
-  //   }else{
-  //     const r = await osAPI.check(Cookie.get('token'));
-  //     json = await r.json()
-  //     if(!json.success){
-  //       Router.push('/login')
-  //       res.writeHead(301, {
-  //         Location:'/login'
-  //       });
-  //       res.end();
-  //     }
-  //   }
-  //   return{
-  //     j:json
-  //   }
-  // }
+  static async getInitialProps({res, req}){
+    let json = [];
+    if(req){
+      const r = await osAPI.checkPanelLogged(req.headers.cookie);
+      json = await r.json()
+      if(!json.success){
+        res.writeHead(301, {
+          Location:'/login'
+        });
+        res.end();
+      }
+    }else{
+      const r = await osAPI.check(Cookie.get('token'));
+      json = await r.json()
+      if(!json.success){
+        Router.push('/')
+        res.writeHead(301, {
+          Location:'/login'
+        });
+        res.end();
+      }
+    }
+    return{
+      j:json
+    }
+  }
 
   componentDidMount(){
   }
@@ -70,7 +70,7 @@ class Painel extends Component {
           <title>The Shave | App de Agendamento para Barbearias e Salões de Beleza</title>
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content={'#FFF'}/>
-         {/* <script src="//code.jivosite.com/widget/kKrv7B4GQd" async></script> */}
+         {/* <script src="//code.jivosite.com/widget/kKrv7B4GQd" async></script> */} 
        </Head>
        <TopBar />
        <MenuLeft />

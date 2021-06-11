@@ -4,7 +4,7 @@ import Cookie from 'js-cookie';
 import Router from 'next/router';
 
 import MenuLeft from '../../components/MenuLeft';
-import TopBar from '../../components/TopBar';
+import TopBar from '../../components/TopBarGestao';
 import { InfoAreaUnder } from '../../components/MainStyled';
 import AgendaLotada from '../../components/AgendaLotada';
 // import SuporteBox from '../../components/SuporteBox';
@@ -18,6 +18,33 @@ class Painel extends Component {
       logged:0,
       exibirModal:false,
       popup:false,
+    }
+  }
+
+  static async getInitialProps({res, req}){
+    let json = [];
+    if(req){
+      const r = await osAPI.checkPanelLogged(req.headers.cookie);
+      json = await r.json()
+      if(!json.success){
+        res.writeHead(301, {
+          Location:'/login'
+        });
+        res.end();
+      }
+    }else{
+      const r = await osAPI.check(Cookie.get('token'));
+      json = await r.json()
+      if(!json.success){
+        Router.push('/')
+        res.writeHead(301, {
+          Location:'/login'
+        });
+        res.end();
+      }
+    }
+    return{
+      j:json
     }
   }
 

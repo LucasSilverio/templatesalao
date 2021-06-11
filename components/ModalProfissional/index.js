@@ -31,6 +31,7 @@ import {
 } from './styled';
 import osAPI from '../../services/osAPI';
 import ecommerceAPI from '../../services/ecommerceAPI';
+import {phone, decimal, preco} from '../../services/formMask'
 
 class ModalProfissional extends Component {
   constructor({props, initialQtdValue, test}){
@@ -150,7 +151,7 @@ class ModalProfissional extends Component {
                     </BoxColuna>
                     <BoxColuna>
                       <Label>Celular</Label>
-                      <Input type='text' value={this.props.celular} onChange={e=>this.props.handleCelular(e.target.value)}/>
+                      <Input type='text' value={this.props.celular} onChange={e=>this.props.handleCelular(phone(e.target.value))}/>
                     </BoxColuna>
                   </BoxLinha>
                   <BoxLinha>
@@ -164,8 +165,8 @@ class ModalProfissional extends Component {
                       {/* <Input type='date' value={this.props.nascimentocliente} onChange={e=>this.props.handleNascimento(e.target.value)}/> */}
                     </BoxColuna>
                     <BoxColuna>
-                      <Label>Taxa Comissão</Label>
-                      <Input type='text' value={this.props.taxacomissao} onChange={e=>this.props.handleTxComissao(e.target.value)} />
+                      <Label>Taxa Comissão (%)</Label>
+                      <Input type='text' value={this.props.taxacomissao} onChange={e=>this.props.handleTxComissao(preco(e.target.value))} />
                     </BoxColuna>
                   </BoxLinha>
                   <BoxLinha>

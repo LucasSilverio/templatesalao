@@ -6,6 +6,22 @@ const company = 1;
 
 const osAPI = {
 
+    checkPanelLogged:(jwt)=>{
+      let endpoint = 'users/checkPanelLogged';
+      let body = {
+        jwt
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
+    check:(jwt)=>{
+      let endpoint = 'users/checkpanel';
+      let body = {
+        jwt
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
     getClientes:(jwt, offset, limit)=>{
       let endpoint = 'users/listarPainel';
       let body = {

@@ -30,7 +30,7 @@ class MenuCart extends Component {
                 <Logo>
                     <Link href='/'>
                         <a>
-                            <img src='/logoteste.svg' />
+                            <img src='/logo.png' />
                         </a>
                     </Link>
                 </Logo>

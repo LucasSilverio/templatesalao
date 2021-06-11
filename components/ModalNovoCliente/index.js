@@ -5,6 +5,7 @@ import Loader from 'react-loader-spinner';
 import Cookie from 'js-cookie';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import {phone} from '../../services/formMask'
 import { 
     AlertArea,
     AreaBotoes,
@@ -94,6 +95,7 @@ class ModalNovoCliente extends Component {
           nome:this.state.nome,
           email:this.state.email,
           telefone:this.state.celular,
+          datanascimento:this.state.datanascimento
       })
     })
     .then(r=>r.json())
@@ -125,7 +127,7 @@ class ModalNovoCliente extends Component {
                   </BoxColuna>
                   <BoxColuna>
                     <Label>Celular</Label>
-                    <Input type='text' value={this.state.celular} onChange={e=>this.setState({celular:e.target.value})}/>
+                    <Input type='text' value={this.state.celular} onChange={e=>this.setState({celular:phone(e.target.value)})}/>
                   </BoxColuna>
                 </BoxLinha>
                 <BoxLinha>

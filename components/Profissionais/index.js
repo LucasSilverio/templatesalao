@@ -183,7 +183,7 @@ getProInfo(id){
               <Opcoes>
                 <Paragrafo>
                 </Paragrafo>
-                <BtnAction bgColor={'#63ADF2'} onClick={this.handleModalNovo}>+ Novo Cadastro</BtnAction>
+                {/* <BtnAction bgColor={'#63ADF2'} onClick={this.handleModalNovo}>+ Novo Cadastro</BtnAction> */}
               </Opcoes>
               {this.state.profissionais.map((i, index) => (
                 <Item onClick={e=>this.handlePro(i.id)}>

@@ -101,7 +101,7 @@ class TopBar extends Component {
                     </Lk>
                   </Link>
                 <LineSoft />
-                <Link href='/gestao/servicos'>
+                <Link href='/gestao/profissionais'>
                     <Lk>
                       <li>Profissionais</li>
                     </Lk>
