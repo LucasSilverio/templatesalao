@@ -126,6 +126,14 @@ const osAPI = {
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },
 
+    passManager:(token)=>{
+      let endpoint = 'users/checkTokenPanel';
+      let body = {
+        token
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
 
 
     

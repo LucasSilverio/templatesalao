@@ -22,7 +22,7 @@ class Login extends Component {
     const json = await r.json()
     if(!json.success){
         res.writeHead(301, {
-          Location:'/login'
+          Location:'/'
         });
         res.end();
     }
@@ -36,7 +36,6 @@ class Login extends Component {
   }
 
   render(){
-      console.log(this.props.info.success)
     return(
       <Container>
         <Head>
