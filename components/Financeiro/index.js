@@ -74,6 +74,7 @@ class Financeiro extends Component {
     this.handleDataFinal = this.handleDataFinal.bind(this)
     this.handleSaida = this.handleSaida.bind(this)
     this.handleLancar = this.handleLancar.bind(this)
+    this.setObservacao = this.setObservacao.bind(this);
   }
 
 componentDidMount(){
@@ -198,6 +199,12 @@ handleLancar(){
   }
 }
 
+setObservacao(e){
+  if(e.length <= 40){
+    this.setState({observacao:e});
+  }
+}
+
     render(){     
       let totalcomissao = 0;
         return(    
@@ -209,7 +216,7 @@ handleLancar(){
               <SubtituloCorpo>Informe a data</SubtituloCorpo>
               <CalendarioArea>
                 <BoxCalendario>
-                  <Label>Data Inicial</Label>
+                  <Label>Data</Label>
                   <Calendario type='date' value={this.state.datainicial} onChange={e=>this.handleDataInicial(e.target.value)} />
                 </BoxCalendario>
                 {/* <BoxCalendario>
@@ -219,19 +226,19 @@ handleLancar(){
                 <Erro>{this.state.errorAlert}</Erro>
               </CalendarioArea>  
               <ResumoArea>
-                <Paragrafo><strong>Data - {moment(this.state.datainicial).format('DD/MM/YY')+' à '+moment(this.state.datafinal).format('DD/MM/YY')}</strong></Paragrafo>
+                <Paragrafo><strong>Data - {moment(this.state.datainicial).format('DD/MM/YY')+' à '+moment(this.state.datainicial).format('DD/MM/YY')}</strong></Paragrafo>
                 <Linha />
                 <BoxParagrafo>
-                  <ParagrafoDestaque color={'#57F2EB'}>R${(this.state.entrada - this.state.saida).toFixed(2)}</ParagrafoDestaque>
+                  <ParagrafoDestaque color={this.state.entrada - this.state.saida >= 0 ? '#57F2EB' : '#F27C7C'}>R${(this.state.entrada - this.state.saida).toFixed(2)}</ParagrafoDestaque>
                 </BoxParagrafo>
                 <BoxRow>
                   <BoxCalendario>
                     <Label>Entrada</Label>
-                    <Paragrafo>R${this.state.entrada}</Paragrafo>
+                    <Paragrafo>R${this.state.entrada >= 0 ? this.state.entrada : 0.00}</Paragrafo>
                   </BoxCalendario>
                   <BoxCalendario>
                     <Label>Saída</Label>
-                    <Paragrafo>R${this.state.saida}</Paragrafo>
+                    <Paragrafo>R${this.state.saida >= 0 ? this.state.saida : 0.00}</Paragrafo>
                   </BoxCalendario>
                 </BoxRow>
               </ResumoArea> 
@@ -248,24 +255,25 @@ handleLancar(){
                       <BotaoTexto>Transferência Bancária</BotaoTexto>
                     </Botao>
                     <Botao onClick={e=>this.handleSaida(8)} destaque={this.state.selectedSaida == 8 ? true : false}>
-                    <IconeBotao src='/fornecedores.png' />
-                    <BotaoTexto>Fornecedores</BotaoTexto>
+                      <IconeBotao src='/fornecedores.png' />
+                      <BotaoTexto>Fornecedores</BotaoTexto>
                     </Botao>
                     <Botao onClick={e=>this.handleSaida(9)} destaque={this.state.selectedSaida == 9 ? true : false}>
-                    <IconeBotao src='/despesas.png' />
-                    <BotaoTexto>Despesas</BotaoTexto>
+                      <IconeBotao src='/despesas.png' />
+                      <BotaoTexto>Despesas</BotaoTexto>
                     </Botao>
                     <Botao onClick={e=>this.handleSaida(10)} destaque={this.state.selectedSaida == 10 ? true : false}>
-                    <IconeBotao src='/funcionarios.png' />
-                    <BotaoTexto>Funcionário</BotaoTexto>
+                      <IconeBotao src='/funcionarios.png' />
+                      <BotaoTexto>Funcionário</BotaoTexto>
                     </Botao>
                     <Botao onClick={e=>this.handleSaida(11)} destaque={this.state.selectedSaida == 11 ? true : false}>
-                    <IconeBotao src='/saque.png' />
-                    <BotaoTexto>Saque</BotaoTexto>
+                      <IconeBotao src='/saque.png' />
+                      <BotaoTexto>Saque</BotaoTexto>
                     </Botao>
                   </BoxOpcoes> 
                   <BoxCalendario>
-                    <TextArea value={this.state.observacao} onChange={e=>this.setState({observacao:e.target.value})} placeholder={'Anotação'}/>
+                    <Label>{40 - parseInt(this.state.observacao.length)+' caracteres restantes'}</Label>
+                    <TextArea value={this.state.observacao} onChange={e=>this.setObservacao(e.target.value)} placeholder={'Anotação'}/>
                     <BtnAction onClick={this.check}>Lançar</BtnAction>
                   </BoxCalendario> 
                 </BoxLancamento> 
@@ -280,6 +288,7 @@ handleLancar(){
                       <th>Valor</th>
                       <th>Serviço</th>
                       <th>Produto</th>
+                      <th>Forma</th>
                       <th>Obs.</th>
                     </thead>
                     <tbody>
@@ -290,6 +299,7 @@ handleLancar(){
                             <td>{'R$'+i.valor}</td>
                             <td>{i.servico != null ? i.servico : '-'}</td>
                             <td>{i.produto != null ? i.produto : '-'}</td>
+                            <td>{i.formapg}</td>
                             <td>{i.obs}</td>
                           </tr>
                         </>

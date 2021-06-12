@@ -226,6 +226,7 @@ class ModalProduto extends Component {
       if(json.success){
         this.cleanStates()
         this.handleCompras();
+        this.props.getProdutos(0, 1)
         this.props.getProdutoInfo(this.props.id)
       }
     })
@@ -253,6 +254,7 @@ class ModalProduto extends Component {
           this.handleVendas();
           this.props.getProdutoInfo(this.props.id)
           this.setState({loading:false})
+          this.props.getProdutos(0, 1)
           alert('OPERAÇÃO REALIZADA COM SUCESSO!');
         }
       })
@@ -279,11 +281,12 @@ class ModalProduto extends Component {
         this.cleanStates()
         this.handleCompras();
         this.props.getProdutoInfo(this.props.id)
+        this.props.getProdutos(0, 1)
       }
     })
   }
 
-  // ajuste de venda ou uso interno (subtrair produtos do estoque)
+  // ajuste de venda ou uso interno (subtrair produtos do estoque) 
   ajusteVenda(){
     fetch(ecommerceAPI.BASE_URL_API+'produtos/AjusteEstoqueReduzir', {
       method:'POST',
@@ -301,6 +304,7 @@ class ModalProduto extends Component {
         this.cleanStates()
         this.handleVendas();
         this.props.getProdutoInfo(this.props.id)
+        this.props.getProdutos(0, 1)
       }
     })
   }

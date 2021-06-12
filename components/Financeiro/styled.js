@@ -82,6 +82,7 @@ export const BotaoC = styled.a`
 export const BotaoTexto = styled.p`
     font-size:13px;
     color:#333;
+    margin:0;
 `;
 
 export const BoxOpcoes = styled.div`
@@ -92,8 +93,8 @@ export const BoxOpcoes = styled.div`
 `;
 
 export const Botao = styled.div`
-    width:100px;
-    height:100px;
+    width:80px;
+    height:80px;
     border:${(props) => props.destaque ? '3px solid #57F2EB' : '1px solid rgba(5,5,5,0.2)'};
     cursor:pointer;
     display:flex;
@@ -102,6 +103,8 @@ export const Botao = styled.div`
     flex-direction:column;
     text-align:center;
     margin:5px;
+    background-color:#FFF;
+    border-radius:5px;
 
     &:hover{
         opacity:0.9;
@@ -168,8 +171,8 @@ export const Erro = styled.p`
 `;
 
 export const IconeBotao = styled.img`
-    width:40px;
-    height:40px;
+    width:20px;
+    height:20px;
     cursor:pointer;
 `;
 
@@ -289,7 +292,7 @@ export const Tabela = styled.table`
 `;
 
 export const TextArea = styled.textarea`
-    width:550px;
+    width:450px;
     height:80px;
     margin-bottom:30px;
 `;

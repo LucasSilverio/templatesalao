@@ -58,6 +58,8 @@ class ModalNovo extends Component {
       horario:'',
       errorAlert:''
     } 
+    this.cleanStates = this.cleanStates.bind(this);
+    this.close = this.close.bind(this);
     this.getServicos = this.getServicos.bind(this);
     this.handleCliente = this.handleCliente.bind(this);
     this.selectClient = this.selectClient.bind(this);
@@ -97,6 +99,20 @@ class ModalNovo extends Component {
         );
       }
     });
+  }
+
+  cleanStates(){
+    this.setState({nomeCliente:''});
+    this.setState({clientId:''});
+    this.setState({profissionalId:''})
+    this.setState({servicoId:''}) 
+    this.setState({resultado:[]})
+    this.setState({horarios:[]})
+  }
+
+  close(){
+    this.cleanStates();
+    this.props.handleModal();
   }
 
   getProfessionals(){
@@ -191,6 +207,7 @@ class ModalNovo extends Component {
     .then(r=>r.json())
     .then(json=>{
       if(json.success){
+        this.cleanStates();
         this.props.closeModal();
         this.props.getAgenda(this.props.data);
       }
@@ -201,7 +218,7 @@ class ModalNovo extends Component {
     
     return(   
         <>
-          <BackArea visible={this.props.visible} onClick={this.props.handleModal}/>
+          <BackArea visible={this.props.visible} onClick={this.close}/>
           <Container visible={this.props.visible}>
             <TopModal>
               <Paragrafo>Verificar agenda para o dia {moment(this.props.data).format('DD/MM/YY')}</Paragrafo>

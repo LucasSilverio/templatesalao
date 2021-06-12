@@ -117,6 +117,7 @@ export const Cliente = styled.div`
     flex-direction:row;
     border-radius:5px;
     cursor:pointer;
+    margin:5px;
     
     &:hover{
         opacity:0.9;
