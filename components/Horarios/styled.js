@@ -93,6 +93,10 @@ export const BoxHorarios = styled.div`
     flex-wrap:wrap;
     overflow:auto;
     max-width:1050px;
+
+    @media (max-width:1024px){
+        max-width:760px;
+    }
 `;
 
 export const Container = styled.div`

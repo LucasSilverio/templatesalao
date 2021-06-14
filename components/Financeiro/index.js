@@ -219,7 +219,7 @@ setObservacao(e){
                   <Label>Data</Label>
                   <Calendario type='date' value={this.state.datainicial} onChange={e=>this.handleDataInicial(e.target.value)} />
                 </BoxCalendario>
-                {/* <BoxCalendario>
+                {/* <BoxCalendario> 
                   <Label>Data Final</Label>
                   <Calendario type='date' value={this.state.datafinal} onChange={e=>this.handleDataFinal(e.target.value)}/>
                 </BoxCalendario> */}

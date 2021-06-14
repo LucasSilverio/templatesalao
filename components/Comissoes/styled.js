@@ -154,6 +154,11 @@ export const ResumoArea = styled.div`
     background-color:#63ADF2;
     padding:10px;
     margin-top:20px;
+
+    @media (max-width:1024px){
+        max-width:760px;
+        height:160px;
+    }
 `;
 
 export const Subtitulo = styled.h2`
@@ -180,6 +185,10 @@ export const Tabela = styled.table`
     th, td{        
         border:1px solid #999;
         border-radiu:2px;
+    }
+
+    @media (max-width:1024px){
+        max-width:760px;
     }
 `;
 

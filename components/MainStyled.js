@@ -27,7 +27,7 @@ export const InfoAreaUnder = styled.div`
     display:flex;
     flex-direction:column;
     position:absolute;
-    left:250px;
+    left:200px;
     min-height:100%;
     width:80%;
     background-color:#F0F0F0;

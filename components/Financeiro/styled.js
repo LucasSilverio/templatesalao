@@ -125,6 +125,10 @@ export const BoxLinha = styled.div`
     flex-direction:row;
     width:100%;
     max-width:1050px;
+
+    @media (max-width:1024px){
+        flex-direction:column;
+    }
 `;
 
 export const BoxResultado = styled.div`
@@ -156,6 +160,10 @@ export const Corpo = styled.div`
 export const CalendarioArea = styled.div`
     display:flex;
     flex-direction:row;
+
+    @media (max-width:1024px){
+        max-width:760px;
+    }
 `;
 
 export const Calendario = styled.input`
@@ -288,6 +296,10 @@ export const Tabela = styled.table`
         border:1px solid #999;
         border-radiu:2px;
         font-size:12px;
+    }
+
+    @media (max-width:1024px){
+        max-width:760px;
     }
 `;
 

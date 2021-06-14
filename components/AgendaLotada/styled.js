@@ -105,6 +105,10 @@ export const Corpo = styled.div`
     height:100%;
     margin-bottom:100px;
     flex-direction:column;
+
+    @media (max-width:1024px){
+        max-width:740px;
+    }
 `;
 
 export const Cliente = styled.div`
