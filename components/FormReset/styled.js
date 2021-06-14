@@ -37,7 +37,7 @@ export const BoxForm = styled.div`
     background-color:#FFF;
 
     @media (max-width:620px){
-        width:70%;
+        width:100%;
         margin:auto;
     }
 `;
@@ -46,6 +46,11 @@ export const BoxTitle = styled.p`
     font-size:28px;
     font-weight:bold;
     color:${(props) => props.bgColor};
+
+    @media (max-width:600px){
+        font-size:22px;
+        text-align:center;
+    }
 `;
 
 export const BoxTitleArea = styled.div`
