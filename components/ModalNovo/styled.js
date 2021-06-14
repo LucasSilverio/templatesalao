@@ -138,6 +138,11 @@ export const Container = styled.div`
         flex-direction:column;
     }
 
+    @media (max-width:1024px){
+        max-width:1000px;
+        margin-left:-500px;
+    }
+
     @media (max-width:550px){
         width:90%;
         margin-left:-45%;
