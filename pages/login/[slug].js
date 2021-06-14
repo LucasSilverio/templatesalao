@@ -16,24 +16,24 @@ class Login extends Component {
     } 
   } 
 
-  // static async getInitialProps({query, res, req}) {
-  //   const el = query.slug
-  //   const r = await osAPI.passManager(el);
-  //   const json = await r.json()
-  //   if(!json.success){
-  //       res.writeHead(301, {
-  //         Location:'/'
-  //       });
-  //       res.end();
-  //   }
+  static async getInitialProps({query, res, req}) {
+    const el = query.slug
+    const r = await osAPI.passManager(el);
+    const json = await r.json()
+    if(!json.success){
+        res.writeHead(301, {
+          Location:'/'
+        });
+        res.end();
+    }
     
-  //   return {
-  //     data:json.data,
-  //     query,
-  //     item:el,
-  //     info:json
-  //   }
-  // }
+    return {
+      data:json.data,
+      query,
+      item:el,
+      info:json
+    }
+  }
 
   render(){
     return(
