@@ -27,6 +27,8 @@ export const BoxForm = styled.div`
     padding:40px;
     border-radius:10px;
     background-color:#FFF;
+    margin-top:40px;
+    border:1px solid rgba(5,5,5,0.1);
 
     @media (max-width:620px){
         width:100%;
@@ -67,7 +69,7 @@ export const Container = styled.div`
     height:100%;
     flex-direction:column;
     align-items:center;
-    background-color:#F1F1F1;
+    background-color:#FFF;
 
     @media (max-width:620px){
     }

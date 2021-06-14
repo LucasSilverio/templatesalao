@@ -55,7 +55,8 @@ class Upload extends Component {
             // }
             if(res.data.success){
                 // this.props.getImages(this.props.data);
-                this.setState({alert:'Imagem atualizada com sucesso! Salve para continuar.'});
+                this.props.close();
+                this.setState({alert:'Imagem atualizada com sucesso!'});
             }            
         })
     }

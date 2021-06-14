@@ -4,7 +4,7 @@ import { withRouter } from 'next/router';
 import Router from 'next/router';
 import Cookie from 'js-cookie';
 import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css 
 import moment from 'moment';
 import Modal from '../../components/ModalServicoEditar';
 import ModalNovo from '../../components/ModalServicoNovo';
@@ -247,6 +247,7 @@ getServicos(){
 closeModal(){
   this.handleModal();
   this.cleanStates();
+  this.getServicos();
 }
 
 closeModalNovo(){

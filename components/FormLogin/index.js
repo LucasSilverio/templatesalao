@@ -76,7 +76,7 @@ class FormLogin extends Component {
         .then(r=>r.json())
         .then(json=>{
             if(json.error == '' && json.jwt != ''){
-                Cookie.set('token', json.jwt, {expires: 0.75});
+                Cookie.set('token', json.jwt, {expires: 0.9});
                 Router.replace('/gestao');
             }else{
               this.showErrorAlert(json.error);

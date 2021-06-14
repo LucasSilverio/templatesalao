@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { withRouter } from 'next/router';
 import Router from 'next/router';
 import Cookie from 'js-cookie';
+import Loader from 'react-loader-spinner';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import moment from 'moment';
@@ -45,6 +46,7 @@ class Horarios extends Component {
   constructor({props, initialQtdValue, test}){
     super(props);
     this.state={
+      loading:false,
       errorAlert:'',
       modalVisible:false,
       selectedDay:'Mon',
@@ -55,7 +57,7 @@ class Horarios extends Component {
       encerramento:'',
       profissionais:[],
       profissional:'',
-      horariosVisible:true,
+      horariosVisible:false,
       horarios:[],
       horario:''
     }    
@@ -232,6 +234,7 @@ closeModal(){
 }
 
 submit(){
+  this.setState({loading:true})
   fetch(ecommerceAPI.BASE_URL_API+'atendimento/addHoraPainel', {
     method:'POST',
     body:JSON.stringify({
@@ -248,8 +251,12 @@ submit(){
   .then(r=>r.json())
   .then(json=>{
     if(json.success){
+      alert('Adicionado sucesso!');
       this.getAtendimentos(this.state.selectedDay, this.state.profissional)
+    }else{
+      alert(json.error);
     }
+    this.setState({loading:false})
   })
 }
 
@@ -267,6 +274,7 @@ submitNewHour(e){
     .then(r=>r.json())
     .then(json=>{
       if(json.success){
+        this.setState({horario:''})
         this.getHorarios(this.state.profissional)
       }
     })
@@ -326,8 +334,20 @@ submitNewHour(e){
                     </BoxRow>
                   </ItemDia>
                   <Opcoes>
-                    <BtnAction bgColor={'#63ADF2'} onClick={this.submit}>Salvar Alterações</BtnAction>
-                    <BtnAction bgColor={'#F2A57C'} onClick={this.handleHorarios}>Próximo Passo</BtnAction>
+                    {this.state.loading &&
+                      <Loader
+                        type="TailSpin"
+                        color="#5C6BF2"
+                        height={24}
+                        width={24}
+                      />
+                    }
+                    {!this.state.loading && 
+                      <>
+                        <BtnAction bgColor={'#63ADF2'} onClick={this.submit}>Salvar Alterações</BtnAction>
+                        <BtnAction bgColor={'#F2A57C'} onClick={this.handleHorarios}>Próximo Passo</BtnAction>
+                      </>
+                    }
                   </Opcoes>
                 </Box>
               }

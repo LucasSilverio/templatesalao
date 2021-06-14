@@ -31,7 +31,7 @@ import {
 } from './styled';
 import osAPI from '../../services/osAPI';
 import ecommerceAPI from '../../services/ecommerceAPI';
-import Upload from '../../components/upload';
+import Upload from '../../components/upload'; 
 
 class ModalServicoEditar extends Component {
   constructor({props, initialQtdValue, test}){
@@ -145,7 +145,8 @@ class ModalServicoEditar extends Component {
                 </BoxLinha>
                 <BoxLinha>
                   <Upload
-                    servico={this.props.servico}                  
+                    servico={this.props.servico}    
+                    close={this.props.closeModal}              
                   />
                 </BoxLinha>
                 <BoxLinha>
