@@ -56,9 +56,8 @@ export const BtnAction = styled.div`
     font-weight:700;
     font-size:14px;
     color:#FFF;
-    background-color:${(props) => props.bgColor};
+    background-color:#6E3534;
     cursor:pointer;
-    margin:5px;
 
     &:hover{
         opacity:0.9;
@@ -124,14 +123,14 @@ export const BotaoTexto = styled.p`
 export const Container = styled.div`
     animation: 0.5s ${fadeInAnimation};
     background-color:#F1F1F1;
-    width:800px;
-    height:480px;
+    width:400px;
+    height:200px;
     position:fixed;
     top:50%;
-    margin-top:-225px;
+    margin-top:-200px;
     display:${(props) => props.visible ? 'flex' : 'none'};
     left:50%;
-    margin-left:-400px;
+    margin-left:-200px;
     z-index:20;
     border-radius:5px;
     color:#555;
@@ -161,27 +160,31 @@ export const Icone = styled.img`
     cursor:pointer;
 `;
 
-export const Preco = styled.input``;
-
 export const IconeBotao = styled.img`
     width:40px;
     height:40px;
     cursor:pointer;
 `;
 
+export const Paragrafo = styled.p`
+    font-size:18px;
+    font-weight:700;
+`;
+
+export const ParagrafoSm = styled.p`
+    font-size:16px;
+    font-weight:600;
+`;
+
+export const Selector = styled.select`
+    margin-left:10px;
+    margin-right:10px;
+`;
+
 export const Texto = styled.p`
     font-size:24px;
     font-weight:600;
     margin-right:25px;
-    color:${(props) => props.color};
-`;
-
-export const TextoSm = styled.p`
-    font-size:16px;
-    font-weight:600;
-    margin-right:25px;
-    margin-top:5px;
-    margin-bottom:5px;
     color:${(props) => props.color};
 `;
 

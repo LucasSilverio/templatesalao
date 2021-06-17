@@ -39,8 +39,8 @@ export const BoxHorarioInter = styled.div`
     display:flex;
     flex-direction:column;
     width:144px;
-    min-height:60px;
-    height:${(props) => props.height+'px'};
+    min-height:${(props) => props.height+'px'};
+    max-height:${(props) => props.height+'px'};
     background-color:${(props) => props.bgColor};
     padding:5px;
     position:${(props) => props.p};
@@ -67,7 +67,7 @@ export const BtnAction = styled.button`
     border-radius:5px;
     cursor:pointer;
     color:#FFF;
-    background-color:#63ADF2;
+    background-color:${(props) => props.bgColor};
     font-weight:700;
     display:flex;
     justify-content:center;
@@ -204,6 +204,19 @@ export const Linha = styled.div`
     border:1px solid rgba(5,5,5,0.1);
     align-items:center;
     padding:5px;
+`;
+
+export const ProId = styled.div`
+    position:absolute;
+    top:-12px;
+    left:10%;
+    font-size:11px;
+    z-index:10;
+    color:#FFF;
+    background-color:#63ADF2;
+    padding-left:15px;
+    padding-right:15px;
+    border-radius:5px;
 `;
 
 export const Subtitulo = styled.h2`

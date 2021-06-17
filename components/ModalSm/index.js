@@ -19,16 +19,16 @@ import {
     Container,
     Icone,
     IconeBotao,
-    Preco,
+    Paragrafo,
+    ParagrafoSm,
+    Selector,
     Texto,
-    TextoSm,
     TextoStatus
 } from './styled';
 import osAPI from '../../services/osAPI';
 import ecommerceAPI from '../../services/ecommerceAPI';
-import {preco} from '../../services/formMask';
 
-class Modal extends Component {
+class ModalSm extends Component {
   constructor({props, initialQtdValue, test}){
     super(props);
     this.state={
@@ -37,9 +37,11 @@ class Modal extends Component {
       slug:'',
       status:'',
       codRastreio:'',
-      sendMail:false
+      sendMail:false,
+      horariofinal:''
     } 
     
+    this.close = this.close.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDesmarcar = this.handleDesmarcar.bind(this)
     
@@ -98,19 +100,19 @@ class Modal extends Component {
     });
   }
 
-  checkDuplicar = (e) =>{
+  checkBloquear = (e) =>{
     // e.preventDefault();
     confirmAlert({
       customUI: ({ onClose }) => {
         return (
           <AlertArea>
-            <h1>Duplicar o agendamento?</h1>
-            <p>Ao clicar em sim, a agenda será duplicada em sequência.</p>
+            <h1>Deseja realmente bloquear estes horários?</h1>
+            <p>Ao clicar em sim, os horários serão bloqueados na agenda.</p>
             <AreaBotoes>
               <BotaoC onClick={onClose}>NÃO</BotaoC>
               <BotaoC
                 onClick={() => {
-                  this.handleDuplicar(e);
+                  this.handleBloquear(e);
                   onClose();
                 }}
               >
@@ -121,6 +123,11 @@ class Modal extends Component {
         );
       }
     });
+  }
+
+  close(){
+    this.setState({horariofinal:''})
+    this.props.handleModal();
   }
 
   handleSubmit(e){
@@ -148,19 +155,25 @@ class Modal extends Component {
     })
   }
 
-  handleDuplicar(){
-    fetch(ecommerceAPI.BASE_URL_API+'agenda/duplicar', {
+  handleBloquear(){
+    fetch(ecommerceAPI.BASE_URL_API+'agenda/blockHours', {
       method:'POST',
       body:JSON.stringify({
           jwt:Cookie.get('token'),
-          idagenda:this.props.id, //id da agenda
+          idbarbeiro:this.props.id,
+          dateStr:this.props.data,
+          horarioinicial:this.props.horario,
+          horariofinal:this.state.horariofinal,
+
+
+
       })
     })
     .then(r=>r.json())
     .then(json=>{
       if(json.success){
-        this.props.closeModal();
-        this.props.getAgenda(this.props.dataselecionada);
+        this.close();
+        this.props.getAgenda(this.props.data);
       }
     })
   }
@@ -171,8 +184,7 @@ class Modal extends Component {
       body:JSON.stringify({
           jwt:Cookie.get('token'),
           id:this.props.id, //id da agenda
-          lancamento:e,
-          valor:this.props.preco
+          lancamento:e
       })
     })
     .then(r=>r.json())
@@ -190,60 +202,19 @@ class Modal extends Component {
         <>
           <BackArea visible={this.props.visible} onClick={this.props.handleModal}/>
           <Container visible={this.props.visible}>
+            <Paragrafo>Bloquear Horários de {this.props.nome}</Paragrafo>
             <BoxLinha>
-             <Texto color={'#333'}>{this.props.cliente}</Texto>  
-             <Texto color={'#333'}>{this.props.phone}</Texto>  
-              <Link href={'//wa.me/55'+this.props.phone} >
-                <a target={"_blank"}>
-                    <Icone src='/whatsapp.png' />
-                </a>
-              </Link>
-            </BoxLinha>
-            <BoxLinha>
-              <Texto color={'#343261'}>{this.props.servico+' - '+this.props.hora+'h às '+this.props.horafim+'h - '+this.props.barbeiro}</Texto>
-            </BoxLinha>
-            <BoxLinha>
-              <TextoSm>Valor do Serviço: <Preco type={'text'} value={this.props.preco} onChange={e=>this.props.handlePreco(preco(e.target.value))}/></TextoSm>
+              <ParagrafoSm>{this.props.horario} às </ParagrafoSm>
+              <Selector onChange={e=>this.setState({horariofinal:e.target.value})}>
+                <option value='' selected disabled>Selecione</option>
+                {this.props.horarios.map((i, index) => (
+                  <option value={i}>{i}</option>
+                ))}
+              </Selector>
+              <ParagrafoSm>{' '+moment(this.props.data).format('DD/MM/YY')}</ParagrafoSm>
             </BoxLinha>
             <BoxOpcoes>
-                <Botao onClick={e=>this.check(1)}>
-                 <IconeBotao src='/dinheiro.png' />
-                 <BotaoTexto>Dinheiro</BotaoTexto>
-                </Botao>
-                <Botao onClick={e=>this.check(2)}>
-                 <IconeBotao src='/cheque.png' />
-                 <BotaoTexto>Cheque</BotaoTexto>
-                </Botao>
-                <Botao onClick={e=>this.check(3)}>
-                 <IconeBotao src='/cartao.png' />
-                 <BotaoTexto>Débito</BotaoTexto>
-                </Botao>
-                <Botao onClick={e=>this.check(4)}>
-                 <IconeBotao src='/cartao.png' />
-                 <BotaoTexto>Crédito</BotaoTexto>
-                </Botao>
-                <Botao onClick={e=>this.check(5)}>
-                 <IconeBotao src='/outro.png' />
-                 <BotaoTexto>Pix</BotaoTexto>
-                </Botao>
-                <Botao onClick={e=>this.check(e)}>
-                 <IconeBotao src='/pontos.png' />
-                 <BotaoTexto>Pontuação</BotaoTexto>
-                </Botao>
-            </BoxOpcoes>
-            <BoxOpcoes>
-              <TextoStatus color={this.props.status == 1 ? '#333' : '#716FF2'}>{this.props.status == 1 ? 'Status atual: Confirmado' : 'Status atual: Concluído'}</TextoStatus>
-            </BoxOpcoes>
-            <BoxOpcoes>
-              {this.props.status == 1 &&
-                <>
-                  <BtnAction onClick={e=>this.checkDesmarcar()} bgColor={'#6E3534'}>Desmarcar</BtnAction>
-                  <BtnAction onClick={e=>this.checkDuplicar()} bgColor={'#63ADF2'}>Duplicar</BtnAction>
-                </>
-              }
-              {this.props.status == 2 &&
-                <BtnDisabled>Desmarcar</BtnDisabled>
-              }
+              <BtnAction onClick={e=>this.checkBloquear()}>Bloquear Horários</BtnAction>
             </BoxOpcoes>
           </Container>
         </>
@@ -258,4 +229,4 @@ const mapStateToProps = (state) => {
   };    
 };
 
-export default Modal;
+export default ModalSm;
