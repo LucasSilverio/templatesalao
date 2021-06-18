@@ -137,6 +137,11 @@ export const BoxResultado = styled.div`
     display:flex;
     flex-direction:column;
     margin-top:20px;
+
+    @media (max-width:1024px){
+        min-height:400px;
+        overflow:auto;
+    }
 `;
 
 export const Container = styled.div`
