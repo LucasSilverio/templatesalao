@@ -210,13 +210,14 @@ export const ProId = styled.div`
     position:absolute;
     top:-12px;
     left:10%;
-    font-size:11px;
+    font-size:12px;
     z-index:10;
     color:#FFF;
     background-color:#63ADF2;
     padding-left:15px;
     padding-right:15px;
     border-radius:5px;
+    font-weight:700;
 `;
 
 export const Subtitulo = styled.h2`
