@@ -107,7 +107,7 @@ class Sheduler extends Component {
 componentDidMount(){
   this.getProfessionals();
   this.getAgenda(this.state.data);
-  window.setInterval(this.getAgenda, 60000, this.state.data);
+  window.setInterval(this.getAgenda, 120000, this.state.data); // 2 minutos
 }
 
 clickHorario(profissional, horario, idprofissinal){
