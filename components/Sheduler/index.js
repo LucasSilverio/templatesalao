@@ -234,8 +234,8 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                           <>
                             {i == j.hora && j.servicoid != 100 &&
                               <HorarioPro height={((j.duracao.replace(':', '.') * 60) / 30)} bgColor={'#fff'} p={'unset'} > {/* FÓRMULA: ((DURAÇÃO * ALTURA MÍNIMA) / INTERVALO EM MINUTOS) */}
-                                <BoxHorarioInter height={((parseInt(j.duracao_hora) * 60 + parseInt(j.duracao_minutos)) * 60) / 30} bgColor={l.cor} p={'absolute'} tp={j.minuto_inicio} onClick={e=>this.showDetails(j.id, j.hora, j.horafim, j.barbeiro, j.servico, j.cliente, j.idcliente, j.phone, j.status, j.preco)}>
-                                  <HorarioProDesc>{j.hora+' às '+j.horafim}</HorarioProDesc>
+                                <BoxHorarioInter height={((parseInt(j.duracao_hora) * 60 + parseInt(j.duracao_minutos)) * 60) / 30} bgColor={l.cor} p={'absolute'} tp={j.minuto_inicio >= 30 ? (j.minuto_inicio - 30)*2 : j.minuto_inicio} onClick={e=>this.showDetails(j.id, j.hora, j.horafim, j.barbeiro, j.servico, j.cliente, j.idcliente, j.phone, j.status, j.preco)}>
+                                  <HorarioProDesc>{j.hora+' àsx '+j.horafim}</HorarioProDesc>
                                   <ParagrafoNm>{j.servico}</ParagrafoNm>
                                   <ParagrafoNm>{j.cliente}</ParagrafoNm>
                                   <ProId>{j.barbeiro}</ProId>
