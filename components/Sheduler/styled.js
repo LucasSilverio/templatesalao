@@ -213,7 +213,7 @@ export const ProId = styled.div`
     font-size:12px;
     z-index:10;
     color:#FFF;
-    background-color:#63ADF2;
+    background-color:#000;
     padding-left:15px;
     padding-right:15px;
     border-radius:5px;
