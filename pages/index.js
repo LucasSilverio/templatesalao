@@ -30,7 +30,7 @@ class Home extends Component {
     .then((x) => x.default)
     .then((ReactPixel) => {
       ReactPixel.init('306492637840498'); 
-      // ReactPixel.pageView();
+      ReactPixel.pageView();
       ReactPixel.track('ViewContent',{
         content_name:'Página Home'
       })
