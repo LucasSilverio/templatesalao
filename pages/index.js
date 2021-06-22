@@ -29,17 +29,17 @@ class Home extends Component {
     import('react-facebook-pixel')
     .then((x) => x.default)
     .then((ReactPixel) => {
-      ReactPixel.init('135083928579550'); 
-      ReactPixel.pageView();
-      // ReactPixel.track('ViewContent',{
-      //   content_name:'Página Home'
-      // })
+      ReactPixel.init('306492637840498'); 
+      // ReactPixel.pageView();
+      ReactPixel.track('ViewContent',{
+        content_name:'Página Home'
+      })
 
-      // Router.events.on('routeChangeComplete', () => {
-      //   // ReactPixel.pageView();
-      //   // ReactPixel.track('ViewContent',{
-      //   // })
-      // });
+      Router.events.on('routeChangeComplete', () => {
+        // ReactPixel.pageView();
+        // ReactPixel.track('ViewContent',{
+        // })
+      });
     });
   }
 

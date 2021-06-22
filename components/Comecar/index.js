@@ -44,7 +44,7 @@ class Comecar extends Component {
                 <SubTitle dark={true}>Vamos começar?</SubTitle>
                 <SubTitleSm>Entre em contato com um consultor gratuitamente e tire todas as suas dúvidas. </SubTitleSm>
                 <BoxInfo>
-                  <SubTitleDestak>Planos a partir de <small>R$</small><strong>49,90</strong> </SubTitleDestak>
+                  <SubTitleDestak>Fale com um consultor e tenha acesso e suporte por 14 dias.</SubTitleDestak>
                 </BoxInfo>
                 <SubContainer>
                     <Column>

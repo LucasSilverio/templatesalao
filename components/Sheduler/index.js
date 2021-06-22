@@ -6,7 +6,7 @@ import Cookie from 'js-cookie';
 import moment from 'moment';
 import Modal from '../../components/Modal';
 import ModalNovo from '../../components/ModalNovo';
-import ModalSm from '../../components/ModalSm';
+import ModalSm from '../../components/ModalSm'; 
 import ModalBlock  from '../../components/ModalBlock';
 import { 
     Atualizacao,
