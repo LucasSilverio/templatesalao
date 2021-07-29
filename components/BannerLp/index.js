@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Carousel } from 'react-responsive-carousel';
 import { BannerArea, Box, Container, Coluna, Image, PageContainer, Lk, Logo, MenuItems, Subtitle, Title, Opcoes } from './styled';
 
-class Banner extends Component {
+class BannerLp extends Component {
 
   constructor(props){
     super(props);
@@ -18,14 +18,14 @@ class Banner extends Component {
           <Container> 
             <Coluna center={true}>
               <Title>
-                O melhor aplicativo para a gestão de negócios de beleza e estética
+                {this.props.textoPrincipal}
               </Title>
               <Subtitle>
-                Aplicativo para gestão de centros de estética, manicures, salões de beleza e barbearias.
+              {this.props.textoSecundario}
               </Subtitle>
             </Coluna>
             <Coluna center={false}>
-              <Image src={'/bannerSalao.svg'} />
+              <Image src={'/'+this.props.bg} />
             </Coluna>
           </Container>
           <Box>
@@ -35,7 +35,8 @@ class Banner extends Component {
                     Experimente grátis por 30 dias
                 </Lk>
               </a>
-            </Link>    
+            </Link>  
+            <small><i>*Não é necessário cartão de crédito </i></small>
           </Box>
         </PageContainer>
       </>
@@ -43,4 +44,4 @@ class Banner extends Component {
   }
 }
 
-export default Banner;
+export default BannerLp;

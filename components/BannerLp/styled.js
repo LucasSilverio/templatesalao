@@ -27,6 +27,7 @@ export const Box = styled.div`
     max-width:1100px;
     margin:auto;
     display:flex;
+    flex-direction:column;
 `;
 
 export const Coluna = styled.div`
@@ -57,6 +58,8 @@ export const Container = styled.div`
 export const Image = styled.img`
     width:650px;
     height:auto;
+    border-top-right-radius:300px;
+    border-bottom-left-radius:300px;
 
     @media (max-width:600px){
         margin-top:-60px;
@@ -79,6 +82,11 @@ export const Lk = styled.a`
 
     &:hover{
         opacity:0.8;
+    }
+
+    @media (max-width:600px){
+        width:98%;
+        margin:auto;
     }
 `;
 

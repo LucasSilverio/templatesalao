@@ -16,7 +16,7 @@ import {
     Title
 } from './styled';
 
-class Example extends Component {
+class ExampleLp extends Component {
 
   constructor(props){
     super(props);
@@ -37,9 +37,9 @@ class Example extends Component {
               <ItemArea>
                 <ItemIcon></ItemIcon>
                 <ItemText>
-                  <ItemTitle>Feito para empresas e para quem trabalha sozinha(o)</ItemTitle>
-                  <ItemDesc>O The Shave App foi feito para você ter o controle do seu negócio na palma da sua mão. Conte com as melhores ferramentas para você administrar melhor o seu negócio.</ItemDesc>
-                  <ItemDesc>Controle sua agenda, envie lembretes e notificações, controle financeiro e fluxo de caixa.</ItemDesc>
+                  <ItemTitle>Tenha o controle total do seu negócio na palma da mão</ItemTitle>
+                  <ItemDesc>Com nosso aplicativo, você ganha mais agilidade no dia a dia. Deixe o sistema cuidar da agenda para você.</ItemDesc>
+                  <ItemDesc>Saiba quanto você está lucrando com um controle financeiro simples de entender, envie lembretes e notificações para seu clientes e ofereça um link exclusivo de auto agendamento para seus clientes.</ItemDesc>
                 </ItemText>
               </ItemArea>
               <ItemArea>
@@ -60,4 +60,4 @@ class Example extends Component {
   }
 }
 
-export default Example;
+export default ExampleLp;

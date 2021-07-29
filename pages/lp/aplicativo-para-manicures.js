@@ -3,17 +3,15 @@ import Cookie from 'js-cookie';
 import Head from 'next/head';
 import Router from 'next/router';
 
-import AppArea from '../components/AppArea';
-import Banner from '../components/Banner';
-import Comentarios from '../components/Comentarios';
-import Contato from '../components/Contato';
-import Comecar from '../components/Comecar';
-import Destaques from '../components/Destaques';
-import TopBar from '../components/TopBar';
-import Recursos from '../components/Recursos';
-import Example from '../components/Example';
-import Divisao from '../components/Divisao';
-import Bottom from '../components/Bottom';
+import Banner from '../../components/BannerLp'; 
+import Comecar from '../../components/Comecar';
+import TopBar from '../../components/TopBar';
+import Recursos from '../../components/Recursos';
+import Example from '../../components/ExampleLp';
+import Divisao from '../../components/Divisao';
+import Bottom from '../../components/Bottom';
+import Vantagens from '../../components/Vantagens';
+import PrecoLp from '../../components/PrecoLp';
 
 class Home extends Component {
 
@@ -58,25 +56,30 @@ class Home extends Component {
           <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
           <meta name='description' content='Description' />
           <meta name='keywords' content='Keywords' />
-          <title>The Shave | App de Agendamento para Barbearias e Salões de Beleza</title>
-          {/* <link rel="manifest" href="/manifest.json" /> */}
+          <title>Aplicativo de Gestão para Manicures</title>
           <meta name="theme-color" content="#716FF2"/>
        </Head>
        <TopBar 
         bgcolor={'#343261'}
         altura={this.state.altura_atual}
        />
-       <Banner />
-       <Divisao />
-       <Recursos />
+       <Banner
+        bg={'manicure.jpg'}
+        textoPrincipal={'Gerencie seu salão com um sistema completo no seu celular ou computador!'}
+        textoSecundario={'Vamos te ajudar a crescer, automatizando os processos burocráticos de um salão, assim sobra mais tempo para você ganhar mais dinheiro!'}
+       />
        <Divisao />
        <Example />
        <Divisao />
-       <Comecar />
+       <Recursos />
+       <Vantagens />
+       <PrecoLp />
+       {/* <Recursos />
+       <Divisao />
+       <Example />
+       <Divisao />
+       <Comecar /> */}
        <Bottom />
-       {/* <Destaques /> */}
-       {/* <Comentarios /> */}
-       {/* <AppArea /> */}
       </>
     )
   }

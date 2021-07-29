@@ -47,7 +47,7 @@ class Recursos extends Component {
               <ItemArea>
                 <ItemIcon></ItemIcon>
                 <ItemText>
-                  <ItemTitle>Sitema Agenda Lotada</ItemTitle>
+                  <ItemTitle>Controle de Frequência</ItemTitle>
                   <ItemDesc>Exclusivo sistema para aumentar seu faturamento em até 30% somente com seus atuais clientes.</ItemDesc>
                 </ItemText>
               </ItemArea>
@@ -79,8 +79,8 @@ class Recursos extends Component {
               <ItemArea>
                 <ItemIcon></ItemIcon>
                 <ItemText>
-                  <ItemTitle>WebSite Personalizado</ItemTitle>
-                  <ItemDesc>Website personalizado para seu estabelecimento ser encontrado no Google sempre que alguem estiver procurando pelos seus serviços.</ItemDesc>
+                  <ItemTitle>Link de Agendamento Exclusivo</ItemTitle>
+                  <ItemDesc>Link personalizado para seus clientes verem os horários disponíveis e até realizar o auto agendamento. Com ele seu estabelecimento também pode ser encontrado no Google sempre que alguem estiver procurando pelos seus serviços.</ItemDesc>
                 </ItemText>
               </ItemArea>
             </Row>
