@@ -29,7 +29,7 @@ class TopBar extends Component {
   render(){     
 
     return(       
-      <Container bgcolor={'#FFF'} altura={this.props.altura}>
+      <Container bgcolor={'#FFF'} altura={this.props.altura}> 
           <PageArea>
             <EstabelecimentoArea>
                 <EstabelecimentoTitulo>

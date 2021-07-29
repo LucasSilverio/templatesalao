@@ -60,7 +60,7 @@ export const Lk = styled.a`
 
     &:hover{
         opacity:0.8;
-    }
+    }    
 `;
 
 export const Logo = styled.img`
@@ -77,6 +77,7 @@ export const OpcoesArea = styled.div`
 
     @media (max-width:600px){
         height:40px;
+        margin-top:20px;
     }
 
     

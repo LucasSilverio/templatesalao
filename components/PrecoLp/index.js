@@ -125,6 +125,7 @@ class PrecoLp extends Component {
         infinite={true}
         >  
             <ContainerMob>
+            <SubTitle dark={false}>Teste por 30 dias grátis. Não precisa de cartão de crédito.</SubTitle>
               <Slider className='slider-area'>
                 <ServicosArea>
                   <Zoom>

@@ -165,7 +165,6 @@ export const Descricao = styled.p`
 
 export const PageContainer = styled.div`
     width:100%;
-    display:flex;
     background-color:#716FF2;
     margin-top:60px;
 
@@ -250,7 +249,6 @@ export const SubTitle = styled.h2`
         color:#F2A57C;
     }
 `;
-
 
 export const Slider = styled.div`
     height:400px;
