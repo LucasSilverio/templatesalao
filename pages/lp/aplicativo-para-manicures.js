@@ -5,7 +5,7 @@ import Router from 'next/router';
 
 import Banner from '../../components/BannerLp'; 
 import Comecar from '../../components/Comecar';
-import TopBar from '../../components/TopBar';
+import TopBar from '../../components/TopBar'; 
 import Recursos from '../../components/Recursos';
 import Example from '../../components/ExampleLp';
 import Divisao from '../../components/Divisao';
@@ -74,11 +74,6 @@ class Home extends Component {
        <Recursos />
        <Vantagens />
        <PrecoLp />
-       {/* <Recursos />
-       <Divisao />
-       <Example />
-       <Divisao />
-       <Comecar /> */}
        <Bottom />
       </>
     )

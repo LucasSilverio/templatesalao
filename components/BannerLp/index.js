@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import { Carousel } from 'react-responsive-carousel';
+import { Carousel } from 'react-responsive-carousel'; 
+import ModalLead from '../../components/ModalLead';
 import { BannerArea, Box, Container, Coluna, Image, PageContainer, Lk, Logo, MenuItems, Subtitle, Title, Opcoes } from './styled';
 
 class BannerLp extends Component {
@@ -8,8 +9,14 @@ class BannerLp extends Component {
   constructor(props){
     super(props);
     this.state={
+      modalLeadVisible:false
     }
+    this.handleModal = this.handleModal.bind(this)
   }  
+
+  handleModal(){
+    this.setState({modalLeadVisible:!this.state.modalLeadVisible})
+  }
 
   render(){
     return(
@@ -29,15 +36,15 @@ class BannerLp extends Component {
             </Coluna>
           </Container>
           <Box>
-            <Link href={'//wa.me/5534996960659'}>
-              <a target={"_blank"}>
-                <Lk>
+                <Lk onClick={this.handleModal}>
                     Experimente grátis por 30 dias
-                </Lk>
-              </a>
-            </Link>  
+                </Lk>  
             <small><i>*Não é necessário cartão de crédito </i></small>
           </Box>
+        <ModalLead
+          visible={this.state.modalLeadVisible}
+          handleModal={this.handleModal}
+        />
         </PageContainer>
       </>
     )

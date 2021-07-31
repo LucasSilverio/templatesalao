@@ -5,17 +5,24 @@ import { BtnAction, BtnActionMob, BoxRow, Column, ContainerMob, Container, Descr
 import Cookie from 'js-cookie';
 import Zoom from 'react-reveal/Zoom';
 import { Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';   
+import ModalLead from '../../components/ModalLead';
 
 class PrecoLp extends Component {
 
   constructor(props){
     super(props);
     this.state={
-      banners:[]
+      banners:[],
+      modalLeadVisible:false
     }
+    this.handleModal = this.handleModal.bind(this)
   } 
 
   componentDidMount(){
+  }
+
+  handleModal(){
+    this.setState({modalLeadVisible:!this.state.modalLeadVisible})
   }
 
   sBottom(e){
@@ -50,7 +57,7 @@ class PrecoLp extends Component {
                   <Descricao>Controle de frequência do cliente</Descricao>                
                   <Descricao>Implantação grátis</Descricao>
                   <Descricao>Suporte via Whatsapp</Descricao>
-                  <BtnAction onClick={e=>this.sBottom(550)}>QUERO TESTAR POR 30 DIAS SEM CUSTO</BtnAction>
+                  <BtnAction onClick={this.handleModal}>QUERO TESTAR POR 30 DIAS SEM CUSTO</BtnAction>
                   
                 </Column>
               </Zoom>
@@ -78,7 +85,7 @@ class PrecoLp extends Component {
                   <Descricao>Implantação grátis</Descricao>
                   <Descricao>Suporte via Whatsapp</Descricao>
                   <Descricao>Link WebApp para agendamento online</Descricao>
-                  <BtnAction onClick={e=>this.sBottom(550)}>QUERO TESTAR POR 30 DIAS SEM CUSTO</BtnAction>
+                  <BtnAction onClick={this.handleModal}>QUERO TESTAR POR 30 DIAS SEM CUSTO</BtnAction>
                   
                 </Column>
               </Zoom>
@@ -107,7 +114,7 @@ class PrecoLp extends Component {
                   <Descricao>Suporte via Whatsapp</Descricao>
                   <Descricao>Link WebApp para agendamento online</Descricao>
                   <Descricao>Aplicativo Personalizado na Play Store e App Store</Descricao>
-                  <BtnAction onClick={e=>this.sBottom(550)}>QUERO TESTAR POR 30 DIAS SEM CUSTO</BtnAction>
+                  <BtnAction onClick={this.handleModal}>QUERO TESTAR POR 30 DIAS SEM CUSTO</BtnAction>
                   
                 </Column>
               </Zoom>
@@ -213,6 +220,10 @@ class PrecoLp extends Component {
               </Slider>
             </ContainerMob>                    
         </CarouselProvider>
+       <ModalLead
+        visible={this.state.modalLeadVisible}
+        handleModal={this.handleModal}
+       />
       </PageContainer>
     )
   }
