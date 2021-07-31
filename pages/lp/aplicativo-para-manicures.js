@@ -48,7 +48,11 @@ class Home extends Component {
     .then((ReactPixel) => {
       ReactPixel.init('306492637840498'); 
       // ReactPixel.pageView();
-      ReactPixel.track('Lead')
+      ReactPixel.track('StartTrial',{
+        value:'0.00',
+        currency:'BRL',
+        predicted_ltv:'0.00'
+      })
 
       Router.events.on('routeChangeComplete', () => {
       });
@@ -87,7 +91,9 @@ class Home extends Component {
        <Divisao />
        <Recursos />
        <Vantagens />
-       <PrecoLp />
+       <PrecoLp
+         action_lead={this.action_lead}
+       />
        <Bottom />
       </>
     )

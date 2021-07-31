@@ -42,6 +42,23 @@ class Home extends Component {
     });
   }
 
+  action_lead(){
+    import('react-facebook-pixel')
+    .then((x) => x.default)
+    .then((ReactPixel) => {
+      ReactPixel.init('306492637840498'); 
+      // ReactPixel.pageView();
+      ReactPixel.track('StartTrial',{
+        value:'0.00',
+        currency:'BRL',
+        predicted_ltv:'0.00'
+      })
+
+      Router.events.on('routeChangeComplete', () => {
+      });
+    });
+  }
+
   scrollTest(){
     this.setState({altura_atual:window.scrollY});
   }
@@ -67,13 +84,16 @@ class Home extends Component {
         bg={'salao.jpg'}
         textoPrincipal={'O aplicativo ideal para Salão de Beleza. Gerencie sua agenda e suas finanças através do nosso aplicativo no seu celular.'}
         textoSecundario={'Vamos te ajudar a crescer, automatizando os processos burocráticos da sua barbearia, assim sobra mais tempo para você ganhar mais dinheiro!'}
+        action_lead={this.action_lead}
        />
        <Divisao />
        <Example />
        <Divisao />
        <Recursos />
        <Vantagens />
-       <PrecoLp />
+       <PrecoLp
+         action_lead={this.action_lead}
+       />
        <Bottom />
       </>
     )
