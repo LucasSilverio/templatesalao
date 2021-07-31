@@ -59,23 +59,6 @@ class ModalLead extends Component {
   componentDidMount(){
   }
 
-  action_lead(){
-    import('react-facebook-pixel')
-    .then((x) => x.default)
-    .then((ReactPixel) => {
-      ReactPixel.init('306492637840498'); 
-      // ReactPixel.pageView();
-      ReactPixel.track('StartTrial',{
-        value:'0.00',
-        currency:'BRL',
-        predicted_ltv:'0.00'
-      })
-
-      Router.events.on('routeChangeComplete', () => {
-      });
-    });
-  }
-
   check = (e) =>{
     // e.preventDefault();
     confirmAlert({
@@ -126,7 +109,7 @@ class ModalLead extends Component {
       this.setState({loading:false})
       if(json.success){
         this.setState({formSend:true})
-        this.action_lead();
+        this.props.action_lead();
       }
     })
   }

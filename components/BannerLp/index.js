@@ -44,6 +44,7 @@ class BannerLp extends Component {
         <ModalLead
           visible={this.state.modalLeadVisible}
           handleModal={this.handleModal}
+          action_lead={this.props.action_lead}
         />
         </PageContainer>
       </>
