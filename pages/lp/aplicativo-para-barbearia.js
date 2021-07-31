@@ -31,7 +31,7 @@ class Home extends Component {
       ReactPixel.init('306492637840498'); 
       ReactPixel.pageView();
       ReactPixel.track('ViewContent',{
-        content_name:'Manicure'
+        content_name:'Barbearia'
       })
 
       Router.events.on('routeChangeComplete', () => {
@@ -54,9 +54,9 @@ class Home extends Component {
           <meta charset='utf-8' />
           <meta http-equiv='X-UA-Compatible' content='IE=edge' />
           <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
-          <meta name='description' content='Aplicativo completo para manicures. Controle sua agenda e as finanças do seu negócio através do seu celular. Cadastre-se gratuitamente!' />
+          <meta name='description' content='Aplicativo completo para gestão da sua barbearia. Controle sua agenda e ofereça um aplicativo próprio de auto agendamento paraa seus clientes. Cadastre-se gratuitamente!' />
           <meta name='keywords' content='Keywords' />
-          <title>Aplicativo de Gestão e Agendamento para Manicures | TheShave</title>
+          <title>Aplicativo de Gestão e Agendamento para Barbearias | TheShave</title>
           <meta name="theme-color" content="#716FF2"/>
        </Head>
        <TopBar 
@@ -64,9 +64,9 @@ class Home extends Component {
         altura={this.state.altura_atual}
        />
        <Banner
-        bg={'manicure.jpg'}
-        textoPrincipal={'O aplicativo ideal para Mssssanicures. Gerencie sua agenda e suas finanças através do nosso aplicativo no seu celular.'}
-        textoSecundario={'Vamos te ajudar a crescer, automatizando os processos burocráticos do seu negócio, assim sobra mais tempo para você ganhar mais dinheiro!'}
+        bg={'barbearia.jpg'}
+        textoPrincipal={'O aplicativo ideal para Barbearias. Gerencie sua agenda e suas finanças através do nosso aplicativo no seu celular.'}
+        textoSecundario={'Vamos te ajudar a crescer, automatizando os processos burocráticos da sua barbearia, assim sobra mais tempo para você ganhar mais dinheiro!'}
        />
        <Divisao />
        <Example />
