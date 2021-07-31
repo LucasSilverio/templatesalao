@@ -36,9 +36,9 @@ class BannerLp extends Component {
             </Coluna>
           </Container>
           <Box>
-                <Lk onClick={this.handleModal}>
-                    Experimente grátis por 30 dias
-                </Lk>  
+            <Lk onClick={this.handleModal}>
+                Experimente grátis por 30 dias
+            </Lk>  
             <small><i>*Não é necessário cartão de crédito </i></small>
           </Box>
         <ModalLead
