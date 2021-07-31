@@ -40,6 +40,10 @@ export const Container = styled.div`
     @media (max-width:999px){
         padding:20px;
     }
+
+    .react-reveal {
+        max-width:100%!important;
+    }
 `;
 
 export const Column = styled.div`
@@ -49,8 +53,8 @@ export const Column = styled.div`
     flex-direction:column;
     margin:5px;
 
-    @media (max-width:340px){
-        max-width:90%;
+    @media (max-width:360px){
+        max-width:90%!important;
         margin:auto;
     }
 
@@ -78,7 +82,7 @@ export const Item = styled.div`
     font-size:24px;
     font-weight:700;
 
-    @media (max-width:340px){
+    @media (max-width:370px){
         max-width:90%;
         margin:auto;
     }
@@ -94,6 +98,10 @@ export const ItemDesc = styled.div`
     color:#FFF;
     font-size:28px;
     font-weight:700;
+
+    @media (max-width:600px){
+        max-width:98%;
+    }
 `;
 
 export const ItemTop = styled.div`

@@ -28,6 +28,10 @@ export const Box = styled.div`
     margin:auto;
     display:flex;
     flex-direction:column;
+
+    @media (max-width:600px){
+        padding:10px;
+    }
 `;
 
 export const Coluna = styled.div`
@@ -97,4 +101,6 @@ export const Title = styled.h1`
 export const Subtitle = styled.h3`
     color:#555;
     font-weight:500;
+    margin-top:5px;
+    margin-bottom:40px;
 `;

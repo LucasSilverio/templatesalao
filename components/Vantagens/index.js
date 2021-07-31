@@ -21,8 +21,7 @@ class Vantagens extends Component {
       <PageContainer>
         <Container>
           <Title>Diferenciais que a TheShave oferece</Title>
-          <Traco />
-          
+          <Traco />          
           <ServicosArea>
             <Zoom>
               <Column>
@@ -70,7 +69,7 @@ class Vantagens extends Component {
               </Column>
               <Column>
                 <ItemDesc>
-                  <ItemTop color='#F25757'>Outras empresas</ItemTop>
+                  <ItemTop color='#F25757'>Outras empresas</ItemTop> 
                   <BoxItem>
                     <ItemColumnIcon>
                       <Icone src='/negative.svg' />
@@ -169,7 +168,7 @@ class Vantagens extends Component {
               </Column>
             </Zoom>
           </ServicosArea>
-          {/* <BtnAction onClick={this.sBottom}>Receba o contato de um consultor pelo Whatsapp</BtnAction> */}
+          
         </Container>
       </PageContainer>
     )

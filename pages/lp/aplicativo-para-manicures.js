@@ -65,7 +65,7 @@ class Home extends Component {
        />
        <Banner
         bg={'manicure.jpg'}
-        textoPrincipal={'Gerencie seu salão com um sistema completo no seu celular ou computador!'}
+        textoPrincipal={'O aplicativo ideal para manicures. Gerencie sua agenda e suas finanças através do nosso aplicativo no seu celular.'}
         textoSecundario={'Vamos te ajudar a crescer, automatizando os processos burocráticos de um salão, assim sobra mais tempo para você ganhar mais dinheiro!'}
        />
        <Divisao />
