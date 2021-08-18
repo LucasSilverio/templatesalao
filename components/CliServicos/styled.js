@@ -3,12 +3,12 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
     display:flex;
     z-index:10;
-    margin-top:60px;
     width:100%;
     height:auto;
     position:relative;
     max-width:820px;
     background-color:#FFF;
+    min-height:350px;
 
     @media (max-width:1320px){
         max-width:760px;
@@ -96,7 +96,6 @@ export const Logo = styled.img`
 
 export const PageArea = styled.div`
     width:100%;
-    margin:auto;
     max-width:1140px;
     display:flex;
     flex-direction:row;

@@ -100,6 +100,7 @@ export const Container = styled.div`
     @media (max-width:550px){
         width:90%;
         margin-left:-45%;
+        margin-top:-200px;
     }
 
 
