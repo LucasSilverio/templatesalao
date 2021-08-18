@@ -54,6 +54,7 @@ class CliServicos extends Component {
     this.setState({precoservico:preco})
     this.setState({temposervico:tempo})
     this.handleModalAgenda();
+    this.props.handleTopVisible();
   }
 
   handleModalAgenda(){

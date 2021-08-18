@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
     // animation: 0.5s ${fadeInAnimation};
-    display:flex;
+    display:${(props) => props.visible ? 'flex' : 'none'};
     width:100%;
     margin-top:${(props) => props.altura < 100 ? '0' : '0'};
     top:0;

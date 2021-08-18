@@ -27,11 +27,13 @@ class Categoria extends Component {
       titulo:'',
       subtitulo:'',
       altura_atual:0,
-      userContact:false
+      userContact:false,
+      topVisible:true
     }
     this.handleModal = this.handleModal.bind(this);
     this.handleContact = this.handleContact.bind(this);   
     this.scrollTest = this.scrollTest.bind(this)
+    this.handleTopVisible = this.handleTopVisible.bind(this)
   } 
 
   static async getInitialProps({query, res, req}) {
@@ -72,6 +74,10 @@ class Categoria extends Component {
     this.setState({exibirModal:!this.state.exibirModal});
   }
 
+  handleTopVisible(){
+    this.setState({topVisible:!this.state.topVisible})
+  }
+
   scrollTest(){
     this.setState({altura_atual:window.scrollY});
   }  
@@ -92,6 +98,7 @@ class Categoria extends Component {
        </Head>
        <TopBar
         infos={this.props.info} 
+        visible={this.state.topVisible}
        />
        <Box
         infos={this.props.info}
@@ -109,6 +116,7 @@ class Categoria extends Component {
         servicos={this.props.servicos}
         profissionais={this.props.profissionais}
         slug={this.props.query.cat}
+        handleTopVisible={this.handleTopVisible}
        />
        <InfosFuncionamento 
         infos={this.props.info}
