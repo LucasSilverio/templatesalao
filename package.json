@@ -17,6 +17,7 @@
     "qs": "^6.9.4",
     "react": "16.13.1",
     "react-animations": "^1.0.0",
+    "react-calendar": "^3.4.0",
     "react-confirm-alert": "^2.7.0",
     "react-dom": "16.13.1",
     "react-facebook-pixel": "^1.0.4",

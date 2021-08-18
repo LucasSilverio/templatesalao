@@ -6,12 +6,15 @@ import Router from 'next/router';
 
 import Agende from '../../components/Agende';
 import Bg from '../../components/Bg';
+import Box from '../../components/CliBox';
 import Bottom from '../../components/BottomCli';
-import Maps from '../../components/Maps';
-import Logo from '../../components/LogoCli';
-import TopBar from '../../components/TopBarCli';
+import Maps from '../../components/Maps'; 
+import Logo from '../../components/LogoCli'; 
+import TopBar from '../../components/TopBarCli'; 
+import Servicos from '../../components/CliServicos'; 
+import InfosFuncionamento from '../../components/InfosFuncionamento';
 
-import osAPI from '../../services/osAPI';
+import osAPI from '../../services/osAPI'; 
 
 
 class Categoria extends Component {
@@ -39,7 +42,17 @@ class Categoria extends Component {
  
     return {
       info:info.data,
-      query
+      servicos:info.servicos,
+      profissionais:info.profissionais,
+      el,
+      query,
+      segunda:info.segunda,
+      terca:info.terca,
+      quarta:info.quarta,
+      quinta:info.quinta,
+      sexta:info.sexta,
+      sabado:info.sabado,
+      domingo:info.domingo
     }
   }  
  
@@ -64,6 +77,7 @@ class Categoria extends Component {
   }  
 
   render(){ 
+    // console.log(this.state.altura_atual)
     return(
       <>
         <Head>
@@ -79,14 +93,34 @@ class Categoria extends Component {
        <TopBar
         infos={this.props.info} 
        />
-       <Bg />
-       <Logo
-        infos={this.props.info}  /> 
-       <Agende
-        infos={this.props.info}  />
-       <Maps
-        mob={false}
-        infos={this.props.info}  />
+       <Box
+        infos={this.props.info}
+        servicos={this.props.servicos}
+        segunda={this.props.segunda}
+        terca={this.props.terca}
+        quarta={this.props.quarta}
+        quinta={this.props.quinta}
+        sexta={this.props.sexta}
+        sabado={this.props.sabado}
+        domingo={this.props.domingo}
+       /> 
+       <Servicos
+        infos={this.props.info}
+        servicos={this.props.servicos}
+        profissionais={this.props.profissionais}
+        slug={this.props.query.cat}
+       />
+       <InfosFuncionamento 
+        infos={this.props.info}
+        servicos={this.props.servicos}
+        segunda={this.props.segunda}
+        terca={this.props.terca}
+        quarta={this.props.quarta}
+        quinta={this.props.quinta}
+        sexta={this.props.sexta}
+        sabado={this.props.sabado}
+        domingo={this.props.domingo}
+       />
        <Bottom
         infos={this.props.info}  />
       </>

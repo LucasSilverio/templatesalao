@@ -105,6 +105,19 @@ const osAPI = {
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },
 
+    getHorariosSite:(data, profissional, servico, tempo, diaSemana, slug)=>{
+      let endpoint = 'agenda/listarSite';
+      let body = {
+        data,
+        profissional,
+        servico,
+        tempo,
+        diaSemana,
+        slug
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
     getServicosAgenda:(jwt)=>{
       let endpoint = 'services/listarPainelAgenda';
       let body = {

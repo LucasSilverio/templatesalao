@@ -33,20 +33,14 @@ class BottomCli extends Component {
   render(){     
 
     return(        
-      <Container bgcolor={'#FFF'} altura={this.props.altura}>
+      <Container bgcolor={'#333'} altura={this.props.altura}> 
           <PageArea>
-            <BoxIcon>
-              <Link href={this.props.infos.instagram}>
-                <a target={'blank'}><Icone src='/instagramicon.svg' /></a>
-              </Link>
-              <Link href={this.props.infos.slug+'/endereco'}>
-                <a>
-                  <Icone src='/locationicon.svg' />
-                </a>
-              </Link>
-            </BoxIcon>
-            <Titulo>©{this.props.infos.nomeestabelecimento}</Titulo>
-            <TituloP>Barbearia em {this.props.infos.cidade+' '+this.props.infos.estado}</TituloP>
+            <Link href='/'>
+              <Lk>
+                <Logo src={'/logo.png'} />
+                Crie sua agenda
+              </Lk>
+            </Link>
           </PageArea>
       </Container>
     )

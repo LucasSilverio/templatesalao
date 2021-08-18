@@ -6,8 +6,8 @@ export const Container = styled.div`
     width:100%;
     margin-top:${(props) => props.altura < 100 ? '0' : '0'};
     bottom:0;
-    position:fixed;
-    z-index:20;
+    position:relative;
+    z-index:8;
     height:80px;
     background-color:${(props) => props.bgcolor};
     box-shadow:${(props) => props.altura < 100 ? '0 0 0 0 rgba(5,5,5,.5)' : '-2px 2px 10px 0 rgba(207,212,214,.5)'};
@@ -54,13 +54,15 @@ export const IconeCart = styled.img`
 
 export const Lk = styled.a`
     cursor:pointer;
-    margin:0px 10px 0px 10px;
-    color:#444;
-    background-color:#F2A57C;
     padding:10px;
     cursor:pointer;
     border-radius:5px;
     color:#FFF;
+    display:flex;
+    flex-direction:column;
+    font-size:11px;
+    align-items:center;
+    justify-content:center;
 
     &:hover{
         opacity:0.8;
@@ -68,7 +70,7 @@ export const Lk = styled.a`
 `;
 
 export const Logo = styled.img`
-    width:200px;
+    width:120px;
     height:auto;
 `;
 
