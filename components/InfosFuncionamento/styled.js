@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
     display:none;
-    margin-top:60px;
+    margin-top:30px;
     width:100%;
     height:auto;
     position:relative;
@@ -13,7 +13,7 @@ export const Container = styled.div`
     }
 
     @media (max-width:900px){
-        margin-top:60px;
+        margin-top:30px;
         padding:20px;
     }
 
@@ -30,7 +30,8 @@ export const ColunaFixa = styled.div`
 
     strong {
         font-weight:600;
-        margin-top:10px;
+        margin-top:30px;
+        margin-bottom:15px;
     }
 
     @media (max-width:400px){
@@ -76,6 +77,7 @@ export const PageArea = styled.div`
     max-width:1140px;
     display:flex;
     flex-direction:column;
+    margin-bottom:30px;
 
 `;
 
@@ -94,6 +96,10 @@ export const Telefone = styled.a`
     &:hover{
         opacity:0.8;
     }
+
+    @media (max-width:420px){
+        width:100%;
+    }
 `;
 
 export const TelefoneArea = styled.div`
@@ -101,4 +107,5 @@ export const TelefoneArea = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
+    margin-bottom:15px;
 `;
