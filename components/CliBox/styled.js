@@ -19,6 +19,10 @@ export const Container = styled.div`
     @media (max-width:700px){
         padding:10px;
     }
+
+    @media (max-width:380px){
+        padding:0;
+    }
 `;
 
 export const Brand = styled.img`
@@ -38,8 +42,7 @@ export const Box = styled.div`
     }
 
     @media (max-width:380px){
-        flex-direction:column;
-        align-items:center;
+        padding:0;
     }
 `;
 
@@ -52,6 +55,7 @@ export const Coluna = styled.div`
     flex:1;
     flex-direction:column;
     padding:10px;
+    border-bottom:1px solid rgba(5,5,5,0.2);
 `;
 
 export const ColunaFixa = styled.div`
@@ -109,7 +113,6 @@ export const InfosArea = styled.div`
     padding:10px;
 
     @media (max-width:380px){
-        text-align:center;
     }
 `;
 
@@ -148,10 +151,19 @@ export const Titulo = styled.h2`
     @media (max-width:700px){
         font-size:36px;
     }
+
+    @media (max-width:380px){
+        font-size:22px;
+    }
 `;
 
-export const SubTitulo = styled.p`
+export const SubTitulo = styled.h2`
     color:#333;
     font-size:18px;
     margin:0;
+    font-weight:500;
+
+    @media (max-width:380px){
+        font-size:16px;
+    }
 `;

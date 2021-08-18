@@ -4,7 +4,7 @@ import Cookie from 'js-cookie';
 import Loader from 'react-loader-spinner';
 import { withRouter } from 'next/router';
 import Router from 'next/router';
-import ModalAgenda from '../ModalAgenda'; 
+import ModalAgenda from '../ModalAgenda';  
 import moment from 'moment';
 import { 
     Box,
@@ -66,7 +66,7 @@ class CliServicos extends Component {
           <PageArea>
             <Coluna>
               <Box>
-                <Titulo>Serviços</Titulo>
+                <Titulo>Serviços Oferecidos</Titulo>
                 {this.props.servicos.map((i, index) => (
                   <BoxService>
                     <ServiceInfo>

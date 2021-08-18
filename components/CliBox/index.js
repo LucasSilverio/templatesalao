@@ -32,7 +32,7 @@ class CliBox extends Component {
   }
 
   componentDidMount(){
-    console.log(this.props.segunda)
+    console.log(this.props.infos)
   }
 
   render(){     
@@ -47,7 +47,7 @@ class CliBox extends Component {
                   </LogoArea>
                   <InfosArea>
                     <Titulo>{this.props.infos.nomeestabelecimento}</Titulo>
-                    <SubTitulo>{this.props.infos.tipo}</SubTitulo>
+                    <SubTitulo>{this.props.infos.tipo+' em '+this.props.infos.cidade+'/'+this.props.infos.estado}</SubTitulo>
                   </InfosArea>
               </Box>
             </Coluna>

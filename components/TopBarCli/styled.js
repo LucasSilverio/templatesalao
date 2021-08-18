@@ -13,9 +13,8 @@ export const Container = styled.div`
     box-shadow:${(props) => props.altura < 100 ? '0 0 0 0 rgba(5,5,5,.5)' : '-2px 2px 10px 0 rgba(207,212,214,.5)'};
     color:#FFF;
 
-    @media (max-width:600px){
-        // height:130px;
-        // flex-direction:column;
+    @media (max-width:380px){
+        box-shadow:-2px 3px 20px 2px rgba(99,173,242,0.5);
     }
 `;
 

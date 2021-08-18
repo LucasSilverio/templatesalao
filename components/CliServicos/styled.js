@@ -46,6 +46,10 @@ export const BoxService = styled.div`
     border-bottom:1px solid rgba(5,5,5,0.1);
     display:flex;
     justify-content:space-between;
+
+    @media (max-width:380px){
+        min-height:55px;
+    }
 `;
 
 export const Coluna = styled.div`
@@ -115,6 +119,7 @@ export const Preco = styled.p`
 export const Servico = styled.p`
     margin:2px;
     font-weight:600;
+    color:#333;
 `;
 
 export const ServiceInfo = styled.div`
@@ -134,6 +139,11 @@ export const ServicePreco = styled.div`
         opacity:0.9;
         transform:scale(1.01);
     }
+
+    @media (max-width:380px){
+        width:100px;
+        min-width:unset;
+    }
     
 `;
 
@@ -144,7 +154,16 @@ export const Titulo = styled.h2`
     margin:0;
 
     @media (max-width:700px){
-        font-size:36px;
+        font-size:22px;
+        font-weight:600;
+    }
+
+    @media (max-width:380px){
+        font-size:18px;
+        font-weight:600;
+        margin-left:8px;
+        margin-bottom:15px;
+        margin-top:15px;
     }
 `;
 
