@@ -86,6 +86,7 @@ export const Dia = styled.div`
     padding-top:3px;
     padding-bottom:3px;
     font-size:14px;
+    min-height:40px;
 `;
 
 export const Horarios = styled.div``;
