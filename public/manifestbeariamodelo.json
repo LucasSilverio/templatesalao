@@ -1,11 +1,11 @@
 {
-  "name": "Barbearia Real",
-  "short_name": "Real",
+  "name": "Barbearia Modelo",
+  "short_name": "Modelo",
   "theme_color": "#997788",
   "background_color": "#fbfbfb",
   "display": "minimal-ui",
-  "Scope": "/barbeariareal",
-  "start_url": "/barbeariareal",
+  "Scope": "/barbeariamodelo",
+  "start_url": "/barbeariamodelo",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

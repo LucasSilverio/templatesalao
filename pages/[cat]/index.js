@@ -87,7 +87,7 @@ class Categoria extends Component {
          <meta name='description' content={'Oferecemos os melhores serviços em '+this.props.info.tipo+' em '+this.props.info.cidade+'. Baixe agora nosso APP e agende seu horário.'} />
          <meta name='keywords' content='Keywords' />
          <title>{this.props.info.nomeestabelecimento+' - Barbearia em '+this.props.info.cidade}</title>
-         <link rel="manifest" href="/manifestbarbeariareal.json" />
+         <link rel="manifest" href={"/manifest"+this.props.query.cat+".json"} />
          <meta name="theme-color" content={'#63ADF2'}/>
        </Head>
        <TopBar
