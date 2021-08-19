@@ -18,7 +18,6 @@ import {
     IconeLg,
     IconeArea,
     IconeCart,
-    Lk,
     Logo,
     LogoArea,
     OpcaoMenu,
