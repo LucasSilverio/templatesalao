@@ -59,11 +59,12 @@ class CliServicos extends Component {
 
   handleModalAgenda(){
     this.setState({modalAgendaVisible:!this.state.modalAgendaVisible})
+    this.props.handleTopVisible();
   }
 
   render(){     
     return(       
-      <Container bgcolor={'#FFF'} altura={this.props.altura}> 
+      <Container bgcolor={'#FFF'} altura={this.props.altura}>  
           <PageArea>
             <Coluna>
               <Box>

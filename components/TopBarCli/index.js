@@ -5,6 +5,7 @@ import Loader from 'react-loader-spinner';
 import { withRouter } from 'next/router';
 import Router from 'next/router';
 import { Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import ModalLogin from '../ModalLogin';
 import { 
     Container,
     BtnAction,
@@ -14,6 +15,8 @@ import {
     EstabelecimentoArea,
     EstabelecimentoTitulo,
     Icone,
+    IconeLg,
+    IconeArea,
     IconeCart,
     Lk,
     Logo,
@@ -30,11 +33,13 @@ class TopBarCli extends Component {
   constructor({props, initialQtdValue, test}){
     super(props);
     this.state={
-      menuVisible:false
+      menuVisible:false,
+      modalLoginVisible:false
     }
 
     this.handleScroll = this.handleScroll.bind(this)
     this.handleMenu = this.handleMenu.bind(this)
+    this.handleModal = this.handleModal.bind(this)
   }
 
   componentDidMount(){
@@ -46,6 +51,10 @@ class TopBarCli extends Component {
 
   handleMenu(){
     this.setState({menuVisible:!this.state.menuVisible})
+  }
+
+  handleModal(){
+    this.setState({modalLoginVisible:!this.state.modalLoginVisible})
   }
 
   render(){      
@@ -66,25 +75,32 @@ class TopBarCli extends Component {
                 <Icone src='/user.svg' />
               </BtnOpcoes>
               <MenuArea visible={this.state.menuVisible}>
-                <TopMenu onClick={this.handleMenu}>Fechar</TopMenu>
-                {/* <LogoArea><Logo src='/logo.png' /></LogoArea> */}
-                <OpcaoMenu>Meus Horários</OpcaoMenu>
-                <BottonMenu>Sair</BottonMenu>
+                {Cookie.get('token') != undefined &&
+                  <>
+                    <TopMenu onClick={this.handleMenu}>
+                      <strong>Lucas Silvério</strong>
+                      (34) 99696-0659
+                    </TopMenu>
+                    {/* <OpcaoMenu>Meus Horários</OpcaoMenu> */}
+                    <BottonMenu>Sair</BottonMenu>
+                  </>
+                }
+                {Cookie.get('token') == undefined &&
+                  <>
+                    <IconeArea>
+                      <IconeLg src='user.svg' />
+                    </IconeArea>
+                    <BottonMenu onClick={this.handleModal}>Entrar / Criar Conta</BottonMenu>
+                  </>
+                }
               </MenuArea>
-              {/* {Cookie.get('token') == undefined &&
-                <BtnAction>
-                  <Icone src='/profile.svg' />
-                  {'Entrar / Cadastrar-se'}
-                </BtnAction>
-              } 
-              {Cookie.get('token') != undefined &&
-                <BtnAction>
-                  <Icone src='/profile.svg' />
-                  {'Conta'}
-                </BtnAction>
-              }          */}
             </OpcoesArea>
           </PageArea>
+          <ModalLogin
+            visible={this.state.modalLoginVisible}
+            handleModal={this.handleModal}
+            slug={this.props.slug}
+          />
       </Container>
     )
   } 

@@ -99,6 +99,7 @@ class Categoria extends Component {
        <TopBar
         infos={this.props.info} 
         visible={this.state.topVisible}
+        slug={this.props.query.cat}
        />
        <Box
         infos={this.props.info}

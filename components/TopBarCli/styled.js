@@ -75,16 +75,18 @@ export const BottonMenu = styled.div`
     bottom:0;
     width:100%;
     height:40px;
-    background-color:#333;
+    background-color:#F8F8F8;
     display:flex;
     align-items:center;
     justify-content:center;
     cursor:pointer;
     font-size:13px;
+    color:#333;
+    font-weight:700;
+    border-top:1px solid rgba(5,5,5,0.1);
 
     &:hover{
         opacity:0.8;
-        background-color:#460000;
     }
 `;
 
@@ -109,6 +111,25 @@ export const Icone = styled.img`
     width:28px;
     height:28px;
     margin:0px 10px 0px 10px;
+`;
+
+export const IconeLg = styled.img`
+    width:36px;
+    height:36px;
+    margin:0px 10px 0px 10px;
+`;
+
+export const IconeArea = styled.div`
+    width:100%;
+    height:140px;
+    background-color:#F8F8F8;
+    display:flex;
+    padding:20px;
+    font-size:13px;
+    color:#333;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 `;
 
 export const IconeCart = styled.img`
@@ -156,16 +177,20 @@ export const OpcoesArea = styled.div`
 `;
 
 export const MenuArea = styled.div`
-    width:250px;
-    height:120px;
-    background-color:#333;
+    width:220px;
+    height:160px;
+    background-color:#F8F8F8;
     position:absolute;
-    right:0;
-    top:0;
-    border-radius:5px;
+    right:40px;
+    top:60px;
+    border-radius:20px;
     display:${(props) => props.visible ? 'flex' : 'none'};
     flex-direction:column;
     border-bottom-left:5px;
+
+    box-shadow: 1px -1px 10px -1px rgba(0,0,0,0.46);
+    -webkit-box-shadow: 1px -1px 10px -1px rgba(0,0,0,0.46);
+    -moz-box-shadow: 1px -1px 10px -1px rgba(0,0,0,0.46);
 `;
 
 export const OpcaoMenu = styled.div`
@@ -176,7 +201,7 @@ export const OpcaoMenu = styled.div`
     cursor:pointer;
     padding-left:5px;
     font-size:13px;
-    background-color:#444;
+    background-color:#F8F8F8;
     &:hover{
         font-size:14px;
         font-weight:600;
@@ -209,18 +234,20 @@ export const Titulo = styled.h2`
 
 export const TopMenu = styled.div`
     width:100%;
-    height:40px;
-    background-color:#333;
+    height:70px;
+    background-color:#F8F8F8;
     display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    padding-right:10px;
+    padding:20px;
     cursor:pointer;
     border-bottom:1px solid rgba(5,5,5,0.1);
     font-size:13px;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+    color:#333;
+    flex-direction:column;
 
     &:hover{
-        background-color:#222;
+        // background-color:#222;
     }
 
 `;

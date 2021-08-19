@@ -21,6 +21,7 @@ export const Container = styled.div`
     @media (max-width:1100px){
         max-width:100%;
         margin-top:30px;
+        min-height:unset;
     }
 
     @media (max-width:900px){
