@@ -312,9 +312,11 @@ class ModalLogin extends Component {
         this.setState({resetSenha:false})
         this.setState({resetSenhaOk:false})
         this.setState({sucessoVisible:false})
-        this.setState({loginVisible:false})
+        // this.setState({loginVisible:false})
         this.setState({signUpVisible:false})
         this.setState({confirmCodeVisible:false})
+        this.setState({email:''})
+        this.setState({pass:''})
         this.props.handleModal();
         Cookie.set('token', json.jwt, {expires:700})
       }

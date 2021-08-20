@@ -4,7 +4,7 @@ export const Container = styled.div`
     // animation: 0.5s ${fadeInAnimation};
     display:flex;
     width:100%;
-    margin-top:${(props) => props.altura < 100 ? '0' : '0'};
+    margin-top:40px;
     bottom:0;
     position:relative;
     z-index:8;
@@ -12,6 +12,10 @@ export const Container = styled.div`
     background-color:${(props) => props.bgcolor};
     box-shadow:${(props) => props.altura < 100 ? '0 0 0 0 rgba(5,5,5,.5)' : '-2px 2px 10px 0 rgba(207,212,214,.5)'};
     color:#FFF;
+
+    @media (max-width:1100px){
+        margin-top:${(props) => props.altura < 100 ? '0' : '0'};
+    }
 
     @media (max-width:600px){
         flex-direction:column;

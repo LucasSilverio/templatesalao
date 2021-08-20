@@ -27,13 +27,17 @@ import {
     PageArea,
     TopMenu
 } from './styled';
+import osAPI from '../../services/osAPI';
+import { LoaderArea } from '../ModalLogin/styled';
 
 class TopBarCli extends Component {
   constructor({props, initialQtdValue, test}){
     super(props);
     this.state={
       menuVisible:false,
-      modalLoginVisible:false
+      modalLoginVisible:false,
+      infos:[],
+      loading:false
     }
 
     this.handleScroll = this.handleScroll.bind(this)
@@ -51,9 +55,20 @@ class TopBarCli extends Component {
 
   handleMenu(){
     this.setState({menuVisible:!this.state.menuVisible})
+    if(Cookie.get('token') != undefined && this.state.infos.length == 0){
+      this.setState({loading:true})
+      osAPI.getUserInfo(Cookie.get('token'))
+      .then(r=>r.json())
+      .then(json=>{
+        this.setState({infos:json.data})
+        this.setState({loading:false})
+      })
+      
+    }
   }
 
   handleModal(){
+    this.setState({menuVisible:false})
     this.setState({modalLoginVisible:!this.state.modalLoginVisible})
   }
 
@@ -84,11 +99,22 @@ class TopBarCli extends Component {
               <MenuArea visible={this.state.menuVisible}>
                 {Cookie.get('token') != undefined &&
                   <>
-                    <TopMenu onClick={this.handleMenu}>
-                      <strong>Lucas Silvério</strong>
-                      (34) 99696-0659
-                    </TopMenu>
-                    {/* <OpcaoMenu>Meus Horários</OpcaoMenu> */}
+                    {!this.state.loading &&
+                      <TopMenu onClick={this.handleMenu}>
+                        <strong>{this.state.infos.name}</strong>
+                        {this.state.infos.celular}
+                      </TopMenu>
+                    }
+                    {this.state.loading &&
+                      <LoaderArea>
+                        <Loader 
+                          type="TailSpin"
+                          color="#5C6BF2"
+                          height={48}
+                          width={48}
+                        />
+                      </LoaderArea>
+                    }
                     <BottonMenu onClick={this.handleLogOut}>Sair</BottonMenu>
                   </>
                 }
@@ -106,7 +132,7 @@ class TopBarCli extends Component {
           <ModalLogin
             visible={this.state.modalLoginVisible}
             handleModal={this.handleModal}
-            slug={this.props.slug}
+            slug={this.props.slug} 
           />
       </Container>
     )
