@@ -39,6 +39,7 @@ class TopBarCli extends Component {
     this.handleScroll = this.handleScroll.bind(this)
     this.handleMenu = this.handleMenu.bind(this)
     this.handleModal = this.handleModal.bind(this)
+    this.handleLogOut = this.handleLogOut.bind(this)
   }
 
   componentDidMount(){
@@ -55,6 +56,13 @@ class TopBarCli extends Component {
   handleModal(){
     this.setState({modalLoginVisible:!this.state.modalLoginVisible})
   }
+
+  handleLogOut(){
+    Cookie.remove('token');
+    this.handleMenu();
+  }
+
+
 
   render(){      
   
@@ -81,7 +89,7 @@ class TopBarCli extends Component {
                       (34) 99696-0659
                     </TopMenu>
                     {/* <OpcaoMenu>Meus Horários</OpcaoMenu> */}
-                    <BottonMenu>Sair</BottonMenu>
+                    <BottonMenu onClick={this.handleLogOut}>Sair</BottonMenu>
                   </>
                 }
                 {Cookie.get('token') == undefined &&

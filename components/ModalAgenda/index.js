@@ -126,7 +126,9 @@ class ModalAgenda extends Component {
 
   handleProfissional(id){
     this.setState({profissional:id})
-    this.listarHorarios(this.state.dataEscolhida, this.state.diaSemana, id);
+    if(this.state.dataEscolhida != ''){
+      this.listarHorarios(this.state.dataEscolhida, this.state.diaSemana, id);
+    }
   }
 
   handleConfirm(){
@@ -152,6 +154,8 @@ class ModalAgenda extends Component {
           this.setState({dataEscolhida:''})
           this.setState({horarioSelecionado:''})
           this.props.handleModal();
+        }else{
+          alert(json.error);
         }
         
       })
