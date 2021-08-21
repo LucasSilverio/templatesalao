@@ -73,7 +73,7 @@ class CliServicos extends Component {
                   <BoxService>
                     <ServiceInfo>
                       <Servico>{i.nome}</Servico>
-                      <SubTitulo color='#333' fontsz='14px'>{i.descricao}</SubTitulo>
+                      <SubTitulo color='#555' fontsz='14px'>{i.descricao}</SubTitulo>
                     </ServiceInfo>
                     <ServicePreco onClick={e=>this.selectService(i.id, i.nome, i.preco, i.tempo)}>
                       <SubTitulo color='#FFF' fontsz='13px'>{'R$'+i.preco}</SubTitulo>

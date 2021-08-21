@@ -101,6 +101,21 @@ class ModalLogin extends Component {
   componentDidMount(){
   }
 
+  alerta = (e) =>{
+    confirmAlert({
+      customUI: ({ onClose }) => {
+        return (
+          <AlertArea>
+            <h1>{e}</h1>
+            <AreaBotoes>
+              <BotaoC onClick={onClose}>OK</BotaoC>
+            </AreaBotoes>
+          </AlertArea>
+        );
+      }
+    });
+  }
+
   check = (e) =>{
     // e.preventDefault();
     confirmAlert({
@@ -228,6 +243,7 @@ class ModalLogin extends Component {
     .then(json=>{
       if(json.success){
         Cookie.set('token', json.jwt, {expires:700});
+        this.alerta("Cadastro confirmado com sucesso!");
         this.props.handleModal();
       }
     })
