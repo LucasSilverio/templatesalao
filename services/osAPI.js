@@ -77,6 +77,15 @@ const osAPI = {
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },
 
+    getHistoricoSite:(jwt, slug)=>{
+      let endpoint = 'agenda/historicoUserSite';
+      let body = {
+        jwt,
+        slug
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
     getAgenda:(jwt, data)=>{
       let endpoint = 'agenda/getAgendaDoDiaGestao';
       let body = {

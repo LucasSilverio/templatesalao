@@ -138,6 +138,11 @@ export const IconeCart = styled.img`
     margin:0px 10px 0px 10px;
 `;
 
+export const IconeOpcao = styled.img`
+    height:16px;
+    width:auto;
+`;
+
 export const Lk = styled.a`
     cursor:pointer;
     margin:0px 10px 0px 10px;
@@ -193,6 +198,13 @@ export const MenuArea = styled.div`
     -moz-box-shadow: 1px -1px 10px -1px rgba(0,0,0,0.46);
 `;
 
+export const OpcaoArea = styled.div`
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    padding-left:20px;
+`;
+
 export const OpcaoMenu = styled.div`
     width:100%;
     height:40px;
@@ -202,6 +214,8 @@ export const OpcaoMenu = styled.div`
     padding-left:5px;
     font-size:13px;
     background-color:#F8F8F8;
+    color:#333;
+    
     &:hover{
         font-size:14px;
         font-weight:600;

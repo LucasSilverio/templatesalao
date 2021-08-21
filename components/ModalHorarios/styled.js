@@ -20,12 +20,6 @@ export const AlertArea = styled.div`
     }
 `;
 
-export const Avatar = styled.img`
-    width:60px;
-    height:60px;
-    border-radius:30px;
-`;
-
 export const BackArea = styled.div`
     animation: 0.5s ${fadeInAnimation};
     position:fixed;
@@ -57,13 +51,14 @@ export const BotaoC = styled.a`
     }
 `;
 
-export const CalendarioArea = styled.div`
+export const BoxArea = styled.div`
     width:100%;
     height:auto;
     display:flex;
     align-items:center;
     justify-content:center;
     margin-bottom:30px;
+    flex-direction:column;
 `;
 
 export const Container = styled.div`
@@ -97,6 +92,51 @@ export const Container = styled.div`
     }
 
 
+`;
+
+export const Coluna = styled.div`
+    display:flex;
+    flex:${(props) => props.flex};
+    flex-direction:column;
+    justify-content:center;
+    padding-left:10px;
+    border-radius:5px;
+    strong {
+        color:${(props) => props.color};
+    }
+
+    &:hover{
+        opacity:0.8;
+    }
+`;
+
+export const Cancel = styled.button`
+    height:30px;
+    background-color:#c16262;
+    color:#FFF;
+    border:none;
+    border-radius:5px;
+    font-size:12px;
+    max-width:90px;
+    cursor:${(props) => props.loading ? 'wait' : 'pointer'};
+`;
+
+export const Item = styled.div`
+    width:100%;
+    display:flex;
+    height:50px;
+    border:1px solid rgba(5,5,5,0.1);
+    margin-bottom:5px;
+    background-color:${(props) => props.bgColor};
+    cursor:${(props) => props.loading ? 'wait' : 'pointer'};
+
+`;
+
+export const Linha = styled.div`
+    width:100%;
+    height:1px;
+    background-color:rgba(5,5,5,0.1);
+    margin-top:10px;
 `;
 
 export const LoaderArea = styled.div`
@@ -210,26 +250,14 @@ export const BtnAction = styled.button`
     }
 `;
 
-export const BtnEspera = styled.button`
-    width:150px;
-    height:40px;
-    margin:auto;
-    cursor:pointer;
-    background-color:#C8FACD;
-    border:1px solid rgba(5,5,5,0.2);
-    border-radius:5px;
-    color:#005249;
-    font-weight:600;
-
-    &:hover{
-        opacity:0.9;
-        transform:scale(1.01);
-    }
-`;
-
 export const Titulo = styled.p`
-    text-align:center;
     font-size:18px;
+    margin:0;
+    font-weight:700;
+    small{
+        font-size:14px;
+        font-weight:600;
+    }
 `;
 
 export const ServiceInfo = styled.div`

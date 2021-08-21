@@ -22,6 +22,7 @@ import {
     ResumoArea,
     BottomArea,
     BtnAction,
+    BtnEspera,
     SubTitulo,
     ServiceInfo,
     ServicePreco,
@@ -100,6 +101,51 @@ class ModalAgenda extends Component {
         );
       }
     });
+  }
+
+  checkEspera = () =>{
+    // e.preventDefault();
+    confirmAlert({
+      customUI: ({ onClose }) => {
+        return (
+          <AlertArea>
+            <h1>Deseja entrar na lista de espera?</h1>
+            <p>Você será informado caso alguém desmarque um horário na data selecionada.</p>
+            <AreaBotoes>
+              <BotaoC onClick={onClose}>NÃO</BotaoC>
+              <BotaoC
+                onClick={() => {
+                  this.listaEspera();
+                  onClose();
+                }}
+              >
+                SIM!
+              </BotaoC>
+            </AreaBotoes>
+          </AlertArea>
+        );
+      }
+    });
+  }
+
+  listaEspera(){
+    fetch(ecommerceAPI.BASE_URL_API+'agenda/addesperaSite', {
+      method:'POST',
+      body:JSON.stringify({
+          jwt:Cookie.get('token'),
+          data:this.state.dataEscolhida,
+          slug:this.props.slug
+      })
+    })
+    .then(r=>r.json())
+    .then(json=>{
+      this.setState({loading:false})
+      if(json.success){
+        this.alerta('Você foi incluído com sucesso na lista de espera! Caso abra uma vaga para o dia selecionado, enviaremos uma mensagem para você! Obrigado.');
+      }else{
+        alert(json.error)
+      }
+    })
   }
 
   listarHorarios(data, diasemana, profissional){
@@ -271,6 +317,7 @@ class ModalAgenda extends Component {
                     </Horario>
                   ))}
               </HorariosArea>
+              <BtnEspera onClick={this.checkEspera}>Lista de Espera</BtnEspera>
               <ResumoArea>
                 <ServiceInfo>
                   <Servico>{this.props.nomeservico}</Servico>
@@ -283,7 +330,7 @@ class ModalAgenda extends Component {
               </ResumoArea>
               <BottomArea onClick={this.checkConfirm}>
                 {!this.state.loading &&
-                  <BtnAction>CONFIRMAR</BtnAction>
+                  <BtnAction>CONFIRMAR AGENDAMENTO</BtnAction>
                 }
                 {this.state.loading &&
                   <LoaderArea>

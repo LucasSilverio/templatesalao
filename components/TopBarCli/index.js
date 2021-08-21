@@ -6,6 +6,7 @@ import { withRouter } from 'next/router';
 import Router from 'next/router';
 import { Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import ModalLogin from '../ModalLogin';
+import ModalHorarios from '../ModalHorarios';
 import { 
     Container,
     BtnAction,
@@ -17,10 +18,12 @@ import {
     Icone,
     IconeLg,
     IconeArea,
+    IconeOpcao,
     IconeCart,
     Logo,
     LogoArea,
     OpcaoMenu,
+    OpcaoArea,
     Titulo,
     OpcoesArea,
     MenuArea,
@@ -36,14 +39,18 @@ class TopBarCli extends Component {
     this.state={
       menuVisible:false,
       modalLoginVisible:false,
+      modalHorariosVisible:false,
       infos:[],
-      loading:false
+      loading:false,
+      historico:[]
     }
 
     this.handleScroll = this.handleScroll.bind(this)
     this.handleMenu = this.handleMenu.bind(this)
     this.handleModal = this.handleModal.bind(this)
     this.handleLogOut = this.handleLogOut.bind(this)
+    this.handleModalHorarios = this.handleModalHorarios.bind(this)
+    this.getHistorico = this.getHistorico.bind(this)
   }
 
   componentDidMount(){
@@ -72,15 +79,30 @@ class TopBarCli extends Component {
     this.setState({modalLoginVisible:!this.state.modalLoginVisible})
   }
 
+  handleModalHorarios(){
+    this.setState({modalHorariosVisible:!this.state.modalHorariosVisible})
+    this.setState({menuVisible:false})
+    this.getHistorico();
+  }
+
   handleLogOut(){
     Cookie.remove('token');
     this.handleMenu();
   }
 
+  getHistorico(){
+    osAPI.getHistoricoSite(Cookie.get('token'), this.props.slug)
+    .then(r=>r.json())
+    .then(json=>{
+      this.setState({historico:json.data})
+      
+    })
+  }
+
 
 
   render(){      
-  
+    
     return(       
       <Container bgcolor={'#FFF'} altura={this.props.altura} visible={this.props.visible}>
           <PageArea>
@@ -100,10 +122,16 @@ class TopBarCli extends Component {
                 {Cookie.get('token') != undefined &&
                   <>
                     {!this.state.loading &&
-                      <TopMenu onClick={this.handleMenu}>
-                        <strong>{this.state.infos.name}</strong>
-                        {this.state.infos.celular}
-                      </TopMenu>
+                      <>
+                        <TopMenu onClick={this.handleMenu}>
+                          <strong>{this.state.infos.name}</strong>
+                          {this.state.infos.celular}
+                        </TopMenu>
+                        <OpcaoArea onClick={this.handleModalHorarios}>
+                          <IconeOpcao src='/clock.png' />
+                          <OpcaoMenu>Meus Horários</OpcaoMenu>
+                        </OpcaoArea>
+                      </>
                     }
                     {this.state.loading &&
                       <LoaderArea>
@@ -133,6 +161,15 @@ class TopBarCli extends Component {
             visible={this.state.modalLoginVisible}
             handleModal={this.handleModal}
             slug={this.props.slug} 
+          />
+          <ModalHorarios
+            visible={this.state.modalHorariosVisible}
+            handleModal={this.handleModalHorarios}
+            historico={this.state.historico}
+            getHistorico={this.getHistorico}
+            slug={this.props.slug} 
+            nome={this.state.infos.name}
+            telefone={this.state.infos.celular}
           />
       </Container>
     )
