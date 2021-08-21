@@ -211,8 +211,8 @@ export const BtnAction = styled.button`
 `;
 
 export const BtnEspera = styled.button`
-    width:150px;
-    height:40px;
+    width:160px;
+    height:44px;
     margin:auto;
     cursor:pointer;
     background-color:#C8FACD;
@@ -220,6 +220,7 @@ export const BtnEspera = styled.button`
     border-radius:5px;
     color:#005249;
     font-weight:600;
+    font-size:11px;
 
     &:hover{
         opacity:0.9;
@@ -228,8 +229,10 @@ export const BtnEspera = styled.button`
 
     @media (max-width:500px){
         width:100%;
+        max-width:160px;
         margin-bottom:40px;
-        min-height:40px;
+        min-height:36px;
+        font-size:11px;
     }
 `;
 

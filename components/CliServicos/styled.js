@@ -47,7 +47,8 @@ export const BoxService = styled.div`
     border-bottom:1px solid rgba(5,5,5,0.1);
     display:flex;
     justify-content:space-between;
-
+    min-height:80px;
+    align-items:center;
     @media (max-width:600px){
         min-height:70px;
     }
@@ -138,6 +139,7 @@ export const ServicePreco = styled.div`
     background-color:#63ADF2;
     border-radius:5px;
     cursor:pointer;
+    min-height:50px;
 
     &:hover{
         opacity:0.9;
