@@ -48,8 +48,12 @@ export const BoxService = styled.div`
     display:flex;
     justify-content:space-between;
 
+    @media (max-width:600px){
+        min-height:70px;
+    }
+
     @media (max-width:380px){
-        min-height:55px;
+        min-height:65px;
     }
 `;
 
@@ -171,5 +175,6 @@ export const SubTitulo = styled.p`
     font-size:${(props) => props.fontsz};
     margin:0;
     color:${(props) => props.color};
-    font-weight:600;
+    font-weight:500;
+    text-transform:capitalize;
 `;

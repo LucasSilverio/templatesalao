@@ -317,7 +317,7 @@ class ModalAgenda extends Component {
                     </Horario>
                   ))}
               </HorariosArea>
-              <BtnEspera onClick={this.checkEspera}>Lista de Espera</BtnEspera>
+              <BtnEspera onClick={this.checkEspera}>Entrar na Lista de Espera</BtnEspera>
               <ResumoArea>
                 <ServiceInfo>
                   <Servico>{this.props.nomeservico}</Servico>

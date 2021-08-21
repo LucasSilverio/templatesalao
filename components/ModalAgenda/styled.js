@@ -225,6 +225,12 @@ export const BtnEspera = styled.button`
         opacity:0.9;
         transform:scale(1.01);
     }
+
+    @media (max-width:500px){
+        width:100%;
+        margin-bottom:40px;
+        min-height:40px;
+    }
 `;
 
 export const Titulo = styled.p`
