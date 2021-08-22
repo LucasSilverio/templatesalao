@@ -334,6 +334,7 @@ class ModalLogin extends Component {
         this.setState({email:''})
         this.setState({pass:''})
         this.props.handleModal();
+        this.alerta("Bem vindo. Login efetuado com suceso!");
         Cookie.set('token', json.jwt, {expires:700})
       }
       this.setState({loading:false})
