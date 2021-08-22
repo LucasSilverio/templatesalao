@@ -136,7 +136,7 @@ export const ServicePreco = styled.div`
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    background-color:#63ADF2;
+    background-color:#396186;
     border-radius:5px;
     cursor:pointer;
     min-height:50px;

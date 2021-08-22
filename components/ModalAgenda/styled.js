@@ -147,7 +147,7 @@ export const Horario = styled.div`
     align-items:center;
     justify-content:center;
     border-radius:20px;
-    background-color:${(props) => props.destaque ? '#63ADF2' : '#F8F8F8'};
+    background-color:${(props) => props.destaque ? '#396186' : '#F8F8F8'};
     border:${(props) => props.destaque ? '#00f' : '1px solid rgba(5,5,5,0.1)'};
     margin:5px;
     color:${(props) => props.destaque ? '#FFF' : '#333'};
@@ -196,7 +196,7 @@ export const BottomArea = styled.div`
 export const BtnAction = styled.button`
     width:100%;
     height:40px;
-    background-color:#63ADF2;
+    background-color:#396186;
     border:none;
     border-radius:5px;
     color:#FFF;

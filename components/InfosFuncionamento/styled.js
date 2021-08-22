@@ -85,7 +85,7 @@ export const Telefone = styled.a`
     height:40px;
     width:100px;
     margin:auto;
-    background-color:#63ADF2;
+    background-color:#396186;
     border-radius:5px;
     display:flex;
     justify-content:center;

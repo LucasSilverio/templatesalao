@@ -30,7 +30,7 @@ export const BtnAction = styled.button`
 `;
 
 export const BtnAction2 = styled.button`
-    background-color:#63ADF2;
+    background-color:#396186;
     border:none;
     cursor:pointer;
     width:150px;
