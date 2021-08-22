@@ -317,7 +317,9 @@ class ModalAgenda extends Component {
                     </Horario>
                   ))}
               </HorariosArea>
-              <BtnEspera onClick={this.checkEspera}>Não encontrou horário? Entrar na Lista de Espera.</BtnEspera>
+              {Cookie.get('token') != undefined && 
+                <BtnEspera onClick={this.checkEspera}>Não encontrou horário? Entrar na Lista de Espera.</BtnEspera>
+              }
               <ResumoArea>
                 <ServiceInfo>
                   <Servico>{this.props.nomeservico}</Servico>
