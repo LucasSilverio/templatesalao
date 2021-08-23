@@ -61,6 +61,7 @@ export const BoxRow = styled.div`
     display:flex;
     max-width:1100px;
     justify-content:center;
+    width:100%;
 `;
 
 export const Container = styled.div`
@@ -158,7 +159,7 @@ export const Descricao = styled.p`
     margin:7px;
 
     &:before{
-        content:url('/check.svg');
+        content:url(${(props) => props.icone || '/check.svg'});
     }
     
 `;
@@ -234,7 +235,7 @@ export const ServicosArea = styled.div`
     width:100%;
     justify-content:center;
     flex-wrap:wrap;
-    max-width:33%;
+    max-width:50%;
 `;
 
 export const SubTitle = styled.h2`

@@ -72,8 +72,8 @@ class Recursos extends Component {
               <ItemArea>
                 <ItemIcon></ItemIcon>
                 <ItemText>
-                  <ItemTitle>Aplicativo Personalizado</ItemTitle>
-                  <ItemDesc>Aplicativo com o nome do seu estabelecimento, logomarca e cores, na PlayStore e AppStore.</ItemDesc>
+                  <ItemTitle>Aplicativo Web Personalizado</ItemTitle>
+                  <ItemDesc>Aplicativo Web com o nome do seu estabelecimento e logo para fidelizar seu cliente.</ItemDesc>
                 </ItemText>
               </ItemArea>
               <ItemArea>

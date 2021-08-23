@@ -45,7 +45,6 @@ export const PageContainer = styled.div`
     margin-bottom:100px;
     max-width:1200px;
     margin:auto;
-
     .carousel .control-next.control-arrow::before{
         border-left: 8px solid #E887B2;
     }

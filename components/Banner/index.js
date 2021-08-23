@@ -32,7 +32,7 @@ class Banner extends Component {
             <Link href={'//wa.me/5534996960659'}>
               <a target={"_blank"}>
                 <Lk>
-                    Experimente grátis por 30 dias
+                    Experimente grátis por 14 dias
                 </Lk>
               </a>
             </Link>    
