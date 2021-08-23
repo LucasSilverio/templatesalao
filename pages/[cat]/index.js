@@ -95,6 +95,7 @@ class Categoria extends Component {
          <title>{this.props.info.nomeestabelecimento+' - Barbearia em '+this.props.info.cidade}</title>
          <link rel="manifest" href={"/manifest"+this.props.query.cat+".json"} />
          <meta name="theme-color" content={'#396186'}/>
+         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
        </Head>
        <TopBar
         infos={this.props.info} 
