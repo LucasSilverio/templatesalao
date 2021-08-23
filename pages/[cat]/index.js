@@ -94,7 +94,7 @@ class Categoria extends Component {
          <meta name='keywords' content='Keywords' />
          <title>{this.props.info.nomeestabelecimento+' - Barbearia em '+this.props.info.cidade}</title>
          <link rel="manifest" href={"/manifest"+this.props.query.cat+".json"} />
-         <meta name="theme-color" content={'#63ADF2'}/>
+         <meta name="theme-color" content={'#396186'}/>
        </Head>
        <TopBar
         infos={this.props.info} 
