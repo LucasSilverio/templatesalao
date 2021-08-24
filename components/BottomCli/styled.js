@@ -13,6 +13,32 @@ export const Container = styled.div`
     box-shadow:${(props) => props.altura < 100 ? '0 0 0 0 rgba(5,5,5,.5)' : '-2px 2px 10px 0 rgba(207,212,214,.5)'};
     color:#FFF;
 
+    .box-view {
+        display:flex;
+        flex-direction:column;
+        width:250px;
+        height:80px;
+        background-color:#6E6EC1;;
+        position:fixed;
+        bottom:60px;
+        border-top-right-radius:20px;
+        border-bottom-right-radius:20px;
+        left:0;
+        font-weight:600;
+        font-size:14px;
+        text-align:center;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .add-button {
+        padding:5px;
+        background-color:#F8F8F8;
+        font-weight:500;
+        border:none;
+        border-radius:5px;
+    }
+
     @media (max-width:1100px){
         margin-top:${(props) => props.altura < 100 ? '0' : '0'};
     }
@@ -28,11 +54,17 @@ export const AdicionarTelaInicial = styled.div`
     flex-direction:column;
     width:250px;
     height:80px;
-    background-color:#00F;
+    background-color:#6E6EC1;;
     position:fixed;
-    bottom:0;
-    left:50%;
-    margin-left:-125px;
+    bottom:60px;
+    border-top-right-radius:20px;
+    border-bottom-right-radius:20px;
+    left:0;
+    font-weight:600;
+    font-size:14px;
+    text-align:center;
+    align-items:center;
+    justify-content:center;
 
 
 `;
