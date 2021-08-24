@@ -68,7 +68,7 @@ class Categoria extends Component {
         OneSignal.init({
             appId: "d78b30f9-ad4f-451a-b24d-9328744c59ad",
             notifyButton: {
-                enable: true,
+                enable: false,
             },
 
             allowLocalhostAsSecureOrigin: true,
