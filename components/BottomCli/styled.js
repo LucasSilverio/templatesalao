@@ -117,17 +117,24 @@ export const OpcoesArea = styled.div`
     
 `;
 
-export const Opcoes = styled.div`
-    display:flex;
-    flex-direction:row;
-    width:100%;
-    height:100%;
-    align-items:center;
-    justify-content:center;
+export const Opcoes = styled.div`    
 
-    // .add-button{
-    //     display:block;
-    // }
+    .add-button{
+        position:fixed;
+        left:0;
+        bottom:0;
+        background-color:#396186;
+        color:#FFF;
+        border:1px solid rgba(5,5,5,0.2);
+        border-radius:5px;
+        padding:5px;
+        height:50px;
+        cursor:pointer;
+
+        &:hover{
+            opacity:0.8;
+        }
+    }
 
 `;
 

@@ -52,7 +52,7 @@ class BottomCli extends Component {
     let deferredPrompt;
     const addBtn = document.querySelector('.add-button');
     const boxView = document.querySelector('.box-view');
-    addBtn.style.display = 'none';
+    // addBtn.style.display = 'none';
     // boxView.style.display = 'none';
     window.addEventListener('beforeinstallprompt', (e) => {
       // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -119,11 +119,13 @@ class BottomCli extends Component {
             <div class='onesignal-customlink-container'></div>
           </Notificacao>
           <AdicionarTelaInicial>
-            Adicione o App à sua tela incial
-            <Opcoes >
-              <button class="add-button" onClick={this.installApp}>Adicionar</button>
-            </Opcoes>
+            {/* <Opcoes >
+              <button class="add-button" onClick={this.installApp}>Adicione Nosso App à Sua Tela Inicial</button>
+            </Opcoes> */}
           </AdicionarTelaInicial>
+          <Opcoes >
+              <button class="add-button" onClick={this.installApp}>Adicione Nosso App à Sua Tela Inicial</button>
+            </Opcoes>
       </Container>
     )
   } 
