@@ -6,16 +6,9 @@ import { withRouter } from 'next/router';
 import Router from 'next/router';
 import { 
     Container,
-    BoxIcon,
-    EstabelecimentoArea,
-    EstabelecimentoTitulo,
-    Icone,
-    IconeCart,
     Lk,
     Logo,
-    Titulo,
-    TituloP,
-    OpcoesArea,
+    Notificacao,
     PageArea
 } from './styled';
 import { Icon } from '../Bottom/styled';
@@ -41,7 +34,11 @@ class BottomCli extends Component {
                 Crie sua agenda
               </Lk>
             </Link>
+            
           </PageArea>
+          <Notificacao>
+            <div class='onesignal-customlink-container'></div>
+          </Notificacao>
       </Container>
     )
   } 

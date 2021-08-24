@@ -69,7 +69,7 @@ class Categoria extends Component {
         OneSignal.init({
             appId: "d78b30f9-ad4f-451a-b24d-9328744c59ad",
             notifyButton: {
-                enable: true,
+                enable: false,
             },
 
             allowLocalhostAsSecureOrigin: true,
@@ -79,13 +79,13 @@ class Categoria extends Component {
                 style: "button", /* Has value of 'button' or 'link' */
                 size: "medium", /* One of 'small', 'medium', or 'large' */
                 color: {
-                  button: '#E12D30', /* Color of the button background if style = "button" */
+                  button: '#396186', /* Color of the button background if style = "button" */
                   text: '#FFFFFF', /* Color of the prompt's text */
                 },
                 text: {
-                  subscribe: "Subscribe to push notifications", /* Prompt's text when not subscribed */
-                  unsubscribe: "Unsubscribe from push notifications", /* Prompt's text when subscribed */
-                  explanation: "Get updates from all sorts of things that matter to you", /* Optional text appearing before the prompt button */
+                  subscribe: "Receba notificações", /* Prompt's text when not subscribed */
+                  unsubscribe: "Desativar notificações", /* Prompt's text when subscribed */
+                  explanation: "Receba os lembretes dos seus agendamentos.", /* Optional text appearing before the prompt button */
                 },
                 unsubscribeEnabled: true, /* Controls whether the prompt is visible after subscription */
               }
@@ -172,7 +172,7 @@ class Categoria extends Component {
         sabado={this.props.sabado}
         domingo={this.props.domingo}
        />
-        <div class='onesignal-customlink-container'></div>
+        
        <Bottom
         infos={this.props.info}  />
       </>

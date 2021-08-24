@@ -23,39 +23,6 @@ export const Container = styled.div`
     }
 `;
 
-export const BoxIcon = styled.div`
-    display:flex;
-`;
-
-export const EstabelecimentoArea = styled.div`
-    display:flex;
-    flex:2;
-    height:60px;
-    padding-left:10px;
-    line-height:60px;
-    @media (max-width:600px){
-        justify-content:center;
-        line-height:20px;
-        margin-bottom:5px;
-    }
-`;
-
-export const EstabelecimentoTitulo = styled.p`
-    margin:0;
-`;
-
-export const Icone = styled.img`
-    width:24px;
-    height:24px;
-    margin:0px 10px 0px 10px;
-`;
-
-export const IconeCart = styled.img`
-    width:24px;
-    height:24px;
-    margin:0px 10px 0px 10px;
-`;
-
 export const Lk = styled.a`
     cursor:pointer;
     padding:10px;
@@ -76,6 +43,14 @@ export const Lk = styled.a`
 export const Logo = styled.img`
     width:120px;
     height:auto;
+`;
+
+export const Notificacao = styled.div`
+    height:auto;
+    width:auto;
+    position:absolute;
+    bottom:0;
+    right:0;
 `;
 
 export const OpcoesArea = styled.div`
@@ -106,20 +81,4 @@ export const PageArea = styled.div`
         align-items:center;
         margin:unset;
     }
-`;
-
-export const Titulo = styled.h2`
-    color:#333;
-    margin:0;
-    font-weight:500;
-    font-size:16px;
-    opacity:0.8;
-`;
-
-export const TituloP = styled.h1`
-    color:#333;
-    margin:0;
-    font-weight:500;
-    font-size:16px;
-    opacity:0.8;
 `;
