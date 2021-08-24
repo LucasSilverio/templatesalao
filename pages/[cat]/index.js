@@ -63,6 +63,21 @@ class Categoria extends Component {
  
   componentDidMount(){
     window.addEventListener('scroll', this.scrollTest);
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+        OneSignal.init({
+            appId: "d78b30f9-ad4f-451a-b24d-9328744c59ad",
+            notifyButton: {
+                enable: true,
+            },
+
+            allowLocalhostAsSecureOrigin: true,
+        });
+    });
+
+    return () => {
+        window.OneSignal = undefined;
+    };
   }
 
   handleModal(){
