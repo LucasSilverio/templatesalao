@@ -135,7 +135,7 @@ class CliBox extends Component {
                       </Item>
                     ))}
                   </Items>
-                  {this.props.domingo.length == 0 &&
+                  {this.props.sabado.length == 0 &&
                     <Items>
                       -
                     </Items>

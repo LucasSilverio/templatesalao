@@ -13,6 +13,7 @@ import Logo from '../../components/LogoCli';
 import TopBar from '../../components/TopBarCli'; 
 import Servicos from '../../components/CliServicos'; 
 import InfosFuncionamento from '../../components/InfosFuncionamento';
+import DestaquesImagens from '../../components/DestaquesImagens';
 
 import osAPI from '../../services/osAPI'; 
 
@@ -28,13 +29,13 @@ class Categoria extends Component {
       subtitulo:'',
       altura_atual:0,
       userContact:false,
-      topVisible:true
+      topVisible:true,
     }
     this.handleModal = this.handleModal.bind(this);
     this.handleContact = this.handleContact.bind(this);   
     this.scrollTest = this.scrollTest.bind(this)
     this.handleTopVisible = this.handleTopVisible.bind(this)
-  } 
+  }  
 
   static async getInitialProps({query, res, req}) {
     let el = query.cat
@@ -46,6 +47,8 @@ class Categoria extends Component {
       info:info.data,
       servicos:info.servicos,
       profissionais:info.profissionais,
+      imagens:info.imagens,
+      teste:info,
       el,
       query,
       segunda:info.segunda,
@@ -84,6 +87,7 @@ class Categoria extends Component {
 
   render(){ 
     // console.log(this.state.altura_atual) 
+    // console.log(this.props.teste)
     return(
       <>
         <Head>
@@ -120,6 +124,9 @@ class Categoria extends Component {
         slug={this.props.query.cat}
         handleTopVisible={this.handleTopVisible}
        />
+       <DestaquesImagens 
+        imagens={this.props.imagens}
+       />
        <InfosFuncionamento 
         infos={this.props.info}
         servicos={this.props.servicos}
@@ -131,6 +138,7 @@ class Categoria extends Component {
         sabado={this.props.sabado}
         domingo={this.props.domingo}
        />
+
        <Bottom
         infos={this.props.info}  />
       </>
