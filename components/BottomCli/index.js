@@ -49,6 +49,9 @@ class BottomCli extends Component {
   }
 
   componentDidMount(){
+    let deferredPrompt;
+    const addBtn = document.querySelector('.add-button');
+    addBtn.style.display = 'none';
     window.addEventListener('beforeinstallprompt', (e) => {
       // Prevent Chrome 67 and earlier from automatically showing the prompt
       e.preventDefault();
@@ -58,6 +61,7 @@ class BottomCli extends Component {
       addBtn.style.display = 'block';
     
       addBtn.addEventListener('click', () => {
+        alert('Clicou')
         // hide our user interface that shows our A2HS button
         addBtn.style.display = 'none';
         // Show the prompt
@@ -73,6 +77,25 @@ class BottomCli extends Component {
         });
       });
     });
+  }
+
+  installApp() {
+    alert('Instalar app');
+    // // Show the prompt
+    // deferredPrompt.prompt();
+    // setupButton.disabled = true;
+    // // Wait for the user to respond to the prompt
+    // deferredPrompt.userChoice
+    //     .then((choiceResult) => {
+    //         if (choiceResult.outcome === 'accepted') {
+    //             console.log('PWA setup accepted');
+    //             // hide our user interface that shows our A2HS button
+    //             setupButton.style.display = 'none';
+    //         } else {
+    //             console.log('PWA setup rejected');
+    //         }
+    //         deferredPrompt = null;
+    //     });
   }
 
   render(){     
@@ -94,7 +117,7 @@ class BottomCli extends Component {
           <AdicionarTelaInicial>
             {/* Adicione nosso App à sua tela AdicionarTelaInicial */}
             <Opcoes>
-              <button class="add-button">Add to home screen</button>
+              <button class="add-button" onClick={this.installApp}>Add to home screen</button>
             </Opcoes>
           </AdicionarTelaInicial>
       </Container>
