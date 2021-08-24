@@ -122,6 +122,7 @@ class Categoria extends Component {
   render(){ 
     // console.log(this.state.altura_atual) 
     // console.log(this.props.teste)
+    console.log(this.props.query.cat);
     return(
       <>
         <Head>
