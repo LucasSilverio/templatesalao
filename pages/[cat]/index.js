@@ -83,9 +83,9 @@ class Categoria extends Component {
                   text: '#FFFFFF', /* Color of the prompt's text */
                 },
                 text: {
-                  subscribe: "Receba notificações", /* Prompt's text when not subscribed */
-                  unsubscribe: "Desativar notificações", /* Prompt's text when subscribed */
-                  explanation: "Receba os lembretes dos seus agendamentos.", /* Optional text appearing before the prompt button */
+                  subscribe: "Receber lembretes", /* Prompt's text when not subscribed */
+                  unsubscribe: "Desativar lembretes", /* Prompt's text when subscribed */
+                  explanation: "", /* Optional text appearing before the prompt button */
                 },
                 unsubscribeEnabled: true, /* Controls whether the prompt is visible after subscription */
               }

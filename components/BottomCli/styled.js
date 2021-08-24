@@ -49,8 +49,12 @@ export const Notificacao = styled.div`
     height:auto;
     width:auto;
     position:absolute;
-    bottom:0;
+    bottom:40px;
     right:0;
+
+    @media (max-width:1100px){
+        bottom:20px;
+    }
 `;
 
 export const OpcoesArea = styled.div`
