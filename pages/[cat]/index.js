@@ -172,7 +172,7 @@ class Categoria extends Component {
         sabado={this.props.sabado}
         domingo={this.props.domingo}
        />
-
+        <div class='onesignal-customlink-container'></div>
        <Bottom
         infos={this.props.info}  />
       </>
