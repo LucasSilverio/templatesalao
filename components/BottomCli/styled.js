@@ -23,6 +23,20 @@ export const Container = styled.div`
     }
 `;
 
+export const AdicionarTelaInicial = styled.div`
+    display:flex;
+    flex-direction:column;
+    width:250px;
+    height:80px;
+    background-color:#00F;
+    position:fixed;
+    bottom:0;
+    left:50%;
+    margin-left:-125px;
+
+
+`;
+
 export const Lk = styled.a`
     cursor:pointer;
     padding:10px;
@@ -69,6 +83,20 @@ export const OpcoesArea = styled.div`
     }
 
     
+`;
+
+export const Opcoes = styled.div`
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    height:100%;
+    align-items:center;
+    justify-content:center;
+
+    // .add-button{
+    //     display:block;
+    // }
+
 `;
 
 export const PageArea = styled.div`
