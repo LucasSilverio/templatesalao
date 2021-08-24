@@ -53,7 +53,7 @@ class BottomCli extends Component {
     const addBtn = document.querySelector('.add-button');
     const boxView = document.querySelector('.box-view');
     addBtn.style.display = 'none';
-    boxView.style.display = 'none';
+    // boxView.style.display = 'none';
     window.addEventListener('beforeinstallprompt', (e) => {
       // Prevent Chrome 67 and earlier from automatically showing the prompt
       e.preventDefault();
@@ -61,13 +61,13 @@ class BottomCli extends Component {
       deferredPrompt = e;
       // Update UI to notify the user they can add to home screen
       addBtn.style.display = 'block';
-      boxView.style.display = 'block';
+      // boxView.style.display = 'block';
     
       addBtn.addEventListener('click', () => {
         alert('Clicou')
         // hide our user interface that shows our A2HS button
         addBtn.style.display = 'none';
-        boxView.style.display = 'none';
+        // boxView.style.display = 'none';
         // Show the prompt
         deferredPrompt.prompt();
         // Wait for the user to respond to the prompt
@@ -84,7 +84,7 @@ class BottomCli extends Component {
   }
 
   installApp() {
-    alert('Instalar app');
+    // alert('Instalar app');
     // // Show the prompt
     // deferredPrompt.prompt();
     // setupButton.disabled = true;
@@ -118,7 +118,7 @@ class BottomCli extends Component {
           <Notificacao>
             <div class='onesignal-customlink-container'></div>
           </Notificacao>
-          <AdicionarTelaInicial class="box-view">
+          <AdicionarTelaInicial>
             Adicione o App à sua tela incial
             <Opcoes >
               <button class="add-button" onClick={this.installApp}>Adicionar</button>
