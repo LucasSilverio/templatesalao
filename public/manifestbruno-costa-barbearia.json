@@ -1,0 +1,52 @@
+{
+  "name": "Barbearia Bruno Costa",
+  "short_name": "Barbearia Bruno",
+  "theme_color": "#396186",
+  "background_color": "#396186",
+  "display": "minimal-ui",
+  "Scope": "/bruno-costa-barbearia",
+  "start_url": "/bruno-costa-barbearia",
+  "icons": [
+    {
+      "src": "images/icons/brunocosta_72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/brunocosta_96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/brunocosta_128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/brunocosta_144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/brunocosta_152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/brunocosta_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/brunocosta_384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/brunocosta_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}
