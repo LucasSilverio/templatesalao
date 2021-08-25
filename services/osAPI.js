@@ -151,6 +151,14 @@ const osAPI = {
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },
 
+    getLink:(jwt)=>{
+      let endpoint = 'config/getLink';
+      let body = {
+        jwt
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
     getProInfo:(jwt, id)=>{
       let endpoint = 'professionals/getProfessionalsGestaoInfos';
       let body = {

@@ -17,11 +17,13 @@ class Painel extends Component {
       logged:0,
       exibirModal:false,
       popup:false,
+      link:''
     }
   }
 
   static async getInitialProps({res, req}){
     let json = [];
+    
     if(req){
       const r = await osAPI.checkPanelLogged(req.headers.cookie);
       json = await r.json()
@@ -48,6 +50,11 @@ class Painel extends Component {
   }
 
   componentDidMount(){
+    osAPI.getLink(Cookie.get('token'))
+    .then(r=>r.json())
+    .then(json=>{
+      this.setState({link:json.data.linkproprio})
+    })
   }
 
   checkPopup(){
@@ -74,7 +81,9 @@ class Painel extends Component {
        <TopBar />
        <MenuLeft />
        <InfoAreaUnder>
-         <WhatsApp />
+         <WhatsApp
+          link={this.state.link}
+         />
        </InfoAreaUnder>   
       </>
     )
