@@ -421,7 +421,7 @@ class ModalLogin extends Component {
                     <Label>Sobrenome</Label>
                     <Input type='text' value={this.state.sobrenome} onChange={e=>this.setState({sobrenome:e.target.value})}/>
                     <Label>Seu celular (Whatsapp) - <small>Enviaremos um código de verificação gratuitamente para validar</small></Label>
-                    <Input type='email' placeholder={'(99)999999999'} onChange={e=>this.setState({celular:e.target.value})}/>
+                    <Input type='email' placeholder={'(99)999999999'} value={this.state.celular} onChange={e=>this.setState({celular:phone(e.target.value)})}/>
                     <Label>Sua Senha</Label>
                     <Input type='password' onChange={e=>this.setState({pass:e.target.value})}/>
                     <Alerta>{this.state.alert}</Alerta>
