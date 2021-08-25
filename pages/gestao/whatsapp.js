@@ -3,11 +3,10 @@ import Head from 'next/head'
 import Cookie from 'js-cookie';
 import Router from 'next/router';
 
-import MenuLeft from '../../components/MenuLeft'; 
+import MenuLeft from '../../components/MenuLeft';
 import TopBar from '../../components/TopBarGestao';
 import { InfoAreaUnder } from '../../components/MainStyled';
-import Sheduler from '../../components/Sheduler';
-// import SuporteBox from '../../components/SuporteBox';
+import WhatsApp from '../../components/WhatsApp';
 import osAPI from '../../services/osAPI';
  
 class Painel extends Component {
@@ -20,7 +19,7 @@ class Painel extends Component {
       popup:false,
     }
   }
-  
+
   static async getInitialProps({res, req}){
     let json = [];
     if(req){
@@ -67,15 +66,15 @@ class Painel extends Component {
           <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
           <meta name='description' content={'Escritório de contabilidade em Frutal-Mg.'}/>
           <meta name='keywords' content='Keywords' />
-          <title>The Shave | App de Agendamento para Barbearias e Salões de Beleza</title>
+          <title>Contonline - Painel</title>
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content={'#FFF'}/>
-         {/* <script src="//code.jivosite.com/widget/kKrv7B4GQd" async></script> */} 
+         {/* <script src="//code.jivosite.com/widget/kKrv7B4GQd" async></script> */}
        </Head>
        <TopBar />
        <MenuLeft />
        <InfoAreaUnder>
-         <Sheduler />
+         <WhatsApp />
        </InfoAreaUnder>   
       </>
     )
