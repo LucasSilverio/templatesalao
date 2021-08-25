@@ -64,7 +64,6 @@ class BottomCli extends Component {
       // boxView.style.display = 'block';
       console.log('xxx')
       addBtn.addEventListener('click', () => {
-        alert('Clicou')
         // hide our user interface that shows our A2HS button
         addBtn.style.display = 'none';
         // boxView.style.display = 'none';
