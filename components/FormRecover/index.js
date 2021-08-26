@@ -56,7 +56,7 @@ class FormLogin extends Component {
         })
         .then(r=>r.json())
         .then(json=>{
-          this.setState({msgResult:'Foi enviado o link de redefinição para o e-mail informado. Acesse e crie sua nova senha de acesso!'});
+          this.setState({msgResult:'Foi enviado o link de redefinição para o telefone cadastrado. Acesse e crie sua nova senha de acesso!'});
           this.setState({loading:false})
         })
       }else{
