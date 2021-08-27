@@ -46,12 +46,10 @@ class Home extends Component {
     import('react-facebook-pixel')
     .then((x) => x.default)
     .then((ReactPixel) => {
-      ReactPixel.init('306492637840498'); 
+      ReactPixel.init('135083928579550'); 
       // ReactPixel.pageView();
-      ReactPixel.track('StartTrial',{
-        value:'0.00',
-        currency:'BRL',
-        predicted_ltv:'0.00'
+      ReactPixel.track('ViewContent',{
+        content_name:'Manicure'
       })
 
       Router.events.on('routeChangeComplete', () => {
