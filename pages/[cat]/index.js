@@ -64,6 +64,23 @@ class Categoria extends Component {
  
   componentDidMount(){
     window.addEventListener('scroll', this.scrollTest);
+    import('react-facebook-pixel')
+    .then((x) => x.default)
+    .then((ReactPixel) => {
+      ReactPixel.init('135083928579550'); 
+      ReactPixel.pageView();
+      ReactPixel.track('ViewContent',{
+        content_name:'Landing Page'
+      })
+
+      Router.events.on('routeChangeComplete', () => {
+        // ReactPixel.pageView();
+        // ReactPixel.track('ViewContent',{
+        // })
+      });
+    });
+
+
     window.OneSignal = window.OneSignal || [];
     OneSignal.push(function () {
         OneSignal.init({
@@ -136,7 +153,7 @@ class Categoria extends Component {
          <meta name="theme-color" content={'#396186'}/>
          <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
        </Head>
-       <TopBar
+       <TopBar 
         infos={this.props.info} 
         visible={this.state.topVisible}
         slug={this.props.query.cat}
