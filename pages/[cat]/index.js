@@ -69,14 +69,9 @@ class Categoria extends Component {
     .then((ReactPixel) => {
       ReactPixel.init('135083928579550'); 
       ReactPixel.pageView();
-      ReactPixel.track('ViewContent',{
-        content_name:'Landing Page'
-      })
 
       Router.events.on('routeChangeComplete', () => {
-        // ReactPixel.pageView();
-        // ReactPixel.track('ViewContent',{
-        // })
+        ReactPixel.pageView();
       });
     });
 
