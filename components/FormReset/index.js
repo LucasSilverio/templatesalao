@@ -48,7 +48,7 @@ class FormReset extends Component {
         if(this.state.pass !== '' && this.state.pass == this.state.passConfirm){
           const r = zxcvbn(this.state.pass);
           if(r.score >= 2){
-            fetch(ecommerceAPI.BASE_URL_API+'users/setPassPanel', {
+            fetch(ecommerceAPI.BASE_URL_API+'users/setPassPanelPro', {
                 method:'POST',
                 body:JSON.stringify({
                     token:this.props.token,
