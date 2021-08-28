@@ -197,27 +197,32 @@ class ModalLogin extends Component {
 
   handleCriarConta(){
     this.setState({loading:true})
-    fetch(ecommerceAPI.BASE_URL_API+'users/newUser', {
-      method:'POST',
-      body:JSON.stringify({
-          nome:this.state.nome,
-          email:this.state.email,
-          senha:this.state.pass,
-          celular:this.state.celular,
-          slug:this.props.slug
+    if(this.state.email != '' && this.state.nome != '' && this.state.celular != '' && this.state.senha != ''){
+      fetch(ecommerceAPI.BASE_URL_API+'users/newUser', {
+        method:'POST',
+        body:JSON.stringify({
+            nome:this.state.nome,
+            email:this.state.email,
+            senha:this.state.pass,
+            celular:this.state.celular,
+            slug:this.props.slug
+        })
       })
-    })
-    .then(r=>r.json())
-    .then(json=>{
-      if(json.success){
-        Cookie.set('token', json.jwt, {expires:0.05});
-        this.handleConfirmCode();
+      .then(r=>r.json())
+      .then(json=>{
+        if(json.success){
+          Cookie.set('token', json.jwt, {expires:0.05});
+          this.handleConfirmCode();
+          this.setState({loading:false})
+        }else{
+          this.setState({alert:json.alert});
+        }
         this.setState({loading:false})
-      }else{
-        this.setState({alert:json.alert});
-      }
+      })
+    }else{
+      alert("Os campos com (*) são de preenchimento obrigatório!");
       this.setState({loading:false})
-    })
+    }
   }
 
   handleSenha(){
@@ -414,15 +419,15 @@ class ModalLogin extends Component {
                 <SignUp>
                   <Titulo>CRIAR UMA CONTA</Titulo>
                   <ResumoArea>
-                    <Label>Seu E-mail</Label>
+                    <Label>* Seu E-mail</Label>
                     <Input type='email' placeholder={'Será o seu login'} value={this.state.email} onChange={e=>this.setState({email:e.target.value})}/>
-                    <Label>Nome</Label>
+                    <Label>* Nome</Label>
                     <Input type='text' value={this.state.nome} onChange={e=>this.setState({nome:e.target.value})}/>
                     <Label>Sobrenome</Label>
                     <Input type='text' value={this.state.sobrenome} onChange={e=>this.setState({sobrenome:e.target.value})}/>
-                    <Label>Seu celular (Whatsapp) - <small>Enviaremos um código de verificação gratuitamente para validar</small></Label>
+                    <Label>* Seu celular (Whatsapp) - <small>Enviaremos um código de verificação gratuitamente para validar</small></Label>
                     <Input type='email' placeholder={'(99)999999999'} value={this.state.celular} onChange={e=>this.setState({celular:phone(e.target.value)})}/>
-                    <Label>Sua Senha</Label>
+                    <Label>* Sua Senha</Label>
                     <Input type='password' onChange={e=>this.setState({pass:e.target.value})}/>
                     <Alerta>{this.state.alert}</Alerta>
                   </ResumoArea>
