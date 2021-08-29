@@ -52,7 +52,7 @@ class BottomCli extends Component {
     let deferredPrompt;
     const addBtn = document.querySelector('.add-button');
     const boxView = document.querySelector('.box-view');
-    // addBtn.style.display = 'none';
+    addBtn.style.display = 'none';
     // boxView.style.display = 'none';
     window.addEventListener('beforeinstallprompt', (e) => {
       // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -64,6 +64,7 @@ class BottomCli extends Component {
       // boxView.style.display = 'block';
       console.log('xxx')
       addBtn.addEventListener('click', () => {
+        console.log('clicou')
         // hide our user interface that shows our A2HS button
         addBtn.style.display = 'none';
         // boxView.style.display = 'none';
