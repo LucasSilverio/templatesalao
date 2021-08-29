@@ -117,7 +117,12 @@ export const OpcoesArea = styled.div`
     
 `;
 
-export const Opcoes = styled.div`    
+export const Opcoes = styled.div`   
+
+
+    button {
+        display:block;
+    }
 
     .add-button{
         position:fixed;

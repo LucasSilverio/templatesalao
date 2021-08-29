@@ -124,7 +124,7 @@ class BottomCli extends Component {
           </AdicionarTelaInicial>
           <Opcoes >
               <button class="add-button" onClick={this.installApp}>Adicione Nosso App à Sua Tela Inicial</button>
-            </Opcoes>
+          </Opcoes>
       </Container>
     )
   } 
