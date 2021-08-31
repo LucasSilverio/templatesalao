@@ -11,6 +11,7 @@ import Example from '../../components/ExampleLp';
 import Divisao from '../../components/Divisao';
 import Bottom from '../../components/Bottom';
 import Vantagens from '../../components/Vantagens';
+import Garantias from '../../components/Garantias';
 import PrecoLp from '../../components/PrecoLp';
 
 class Home extends Component {
@@ -91,6 +92,7 @@ class Home extends Component {
        <Divisao />
        <Recursos />
        <Vantagens />
+       <Garantias />
        <PrecoLp
          action_lead={this.action_lead}
        />

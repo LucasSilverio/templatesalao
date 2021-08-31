@@ -14,20 +14,24 @@ import {
     PageArea,
     Suporte
 } from './styled';
-// import osAPI from '../../services/osAPI';
-// import ecommerceAPI from '../../services/ecommerceAPI';
+import osAPI from '../../services/osAPI';
 
 class TopBar extends Component {
   constructor({props, initialQtdValue, test}){
     super(props);
     this.state={
-      slug:''
+      slug:'',
+      link:''
     }
     this.getInfos = this.getInfos.bind(this);
   }
 
-  componentDidMount(){  
-    // this.getInfos();
+  componentDidMount(){
+    osAPI.getLink(Cookie.get('token'))
+    .then(r=>r.json())
+    .then(json=>{
+      this.setState({link:json.data.linkproprio})
+    })
   }
 
   getInfos(){
@@ -37,6 +41,8 @@ class TopBar extends Component {
     //   this.setState({slug:json.data.slug})
     // })
   }
+
+  
 
   handleLogout(){
     Cookie.remove('token');
@@ -106,10 +112,12 @@ class TopBar extends Component {
                       <li>Profissionais</li>
                     </Lk>
                 </Link>
-                <Link href='/gestao/whatsapp'>
-                    <Lk>
-                      <li>Integrar WhatsApp</li>
-                    </Lk>
+                <Link  href={this.state.link}>
+                    <a target={"_blank"}>
+                      <Lk >
+                        <li>Integrar WhatsApp</li> 
+                      </Lk>
+                    </a>
                 </Link>
                 <LineSoft />
                 <Lk onClick={this.handleLogout}>

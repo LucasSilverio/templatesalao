@@ -32,7 +32,8 @@ componentDidMount(){
             <SubtituloUsm>* Após o escaneamento, informar nossa equipe através do chat ou telefone para que possamos aprovar a alteração.</SubtituloUsm>
           </Topo>
           <Corpo>
-            <Iframe width="800" height="800" src={this.props.link} ></Iframe>
+            {/* <Iframe width="800" height="800" src={this.props.link} ></Iframe> */}
+            <Iframe width="800" height="800" src={"https://translate.google.com/translate?sl=ja&tl=en&u=http://ec2-18-229-32-206.sa-east-1.compute.amazonaws.com:3002"} />
 
           </Corpo>            
         </Container>

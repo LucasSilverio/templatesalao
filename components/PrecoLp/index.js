@@ -33,7 +33,7 @@ class PrecoLp extends Component {
     return(
       <PageContainer>
         <Container>
-          <SubTitle dark={false}>Teste por 14 dias grátis. Não precisa de cartão de crédito.</SubTitle>
+          <SubTitle dark={false}>Teste por 10 dias grátis. Não precisa de cartão de crédito.</SubTitle>
           <BoxRow>
             <ServicosArea>
               <Zoom>
@@ -58,7 +58,7 @@ class PrecoLp extends Component {
                   <Descricao>Implantação grátis</Descricao>
                   <Descricao>Suporte via Whatsapp</Descricao>
                   <Descricao icone='/block.svg'>Link exclusivo de auto agendamento</Descricao>
-                  <BtnAction onClick={this.handleModal}>QUERO TESTAR POR 14 dias SEM CUSTO</BtnAction>
+                  <BtnAction onClick={this.handleModal}>QUERO TESTAR POR 10 dias SEM CUSTO</BtnAction>
                   
                 </Column>
               </Zoom>
@@ -86,7 +86,7 @@ class PrecoLp extends Component {
                   <Descricao>Implantação grátis</Descricao>
                   <Descricao>Suporte via Whatsapp</Descricao>
                   <Descricao>Link exclusivo de auto agendamento</Descricao>
-                  <BtnAction onClick={this.handleModal}>QUERO TESTAR POR 14 DIAS SEM CUSTO</BtnAction>
+                  <BtnAction onClick={this.handleModal}>QUERO TESTAR POR 10 DIAS SEM CUSTO</BtnAction>
                   
                 </Column>
               </Zoom>
@@ -115,7 +115,7 @@ class PrecoLp extends Component {
                   <Descricao>Suporte via Whatsapp</Descricao>
                   <Descricao>Link WebApp para agendamento online</Descricao>
                   <Descricao>Aplicativo Personalizado na Play Store e App Store</Descricao>
-                  <BtnAction onClick={this.handleModal}>QUERO TESTAR POR 14 dias SEM CUSTO</BtnAction>
+                  <BtnAction onClick={this.handleModal}>QUERO TESTAR POR 10 dias SEM CUSTO</BtnAction>
                   
                 </Column>
               </Zoom>
@@ -133,7 +133,7 @@ class PrecoLp extends Component {
         infinite={true}
         >  
             <ContainerMob>
-            <SubTitle dark={false}>Teste por 14 dias grátis. Não precisa de cartão de crédito.</SubTitle>
+            <SubTitle dark={false}>Teste por 10 dias grátis. Não precisa de cartão de crédito.</SubTitle>
               <Slider className='slider-area'>
                 <ServicosArea>
                   <Zoom>
@@ -158,7 +158,7 @@ class PrecoLp extends Component {
                       <Descricao>Implantação grátis</Descricao>
                       <Descricao>Suporte via Whatsapp</Descricao>
                       <Descricao icone='/block.svg'>Link exclusivo de auto agendamento</Descricao>
-                      <BtnAction onClick={e=>this.sBottom(550)}>QUERO TESTAR POR 14 dias SEM CUSTO</BtnAction>
+                      <BtnAction onClick={e=>this.sBottom(550)}>QUERO TESTAR POR 10 dias SEM CUSTO</BtnAction>
                       
                     </Column>
                   </Zoom>
@@ -187,7 +187,7 @@ class PrecoLp extends Component {
                       <Descricao>Suporte via Whatsapp</Descricao>
                       <Descricao>Link WebApp para agendamento online</Descricao>
                       <Descricao >Link exclusivo de auto agendamento</Descricao>
-                      <BtnAction onClick={e=>this.sBottom(550)}>QUERO TESTAR POR 14 dias SEM CUSTO</BtnAction>
+                      <BtnAction onClick={e=>this.sBottom(550)}>QUERO TESTAR POR 10 dias SEM CUSTO</BtnAction>
                       
                     </Column>
                   </Zoom>
@@ -216,7 +216,7 @@ class PrecoLp extends Component {
                       <Descricao>Suporte via Whatsapp</Descricao>
                       <Descricao>Link WebApp para agendamento online</Descricao>
                       <Descricao>Aplicativo Personalizado na Play Store e App Store</Descricao>
-                      <BtnAction onClick={e=>this.sBottom(550)}>QUERO TESTAR POR 14 dias SEM CUSTO</BtnAction>                  
+                      <BtnAction onClick={e=>this.sBottom(550)}>QUERO TESTAR POR 10 dias SEM CUSTO</BtnAction>                  
                     </Column>
                   </Zoom>
                 </ServicosArea> */}
