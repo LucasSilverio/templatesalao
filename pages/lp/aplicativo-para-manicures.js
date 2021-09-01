@@ -12,6 +12,7 @@ import Divisao from '../../components/Divisao';
 import Bottom from '../../components/Bottom';
 import Vantagens from '../../components/Vantagens';
 import PrecoLp from '../../components/PrecoLp';
+import Garantias from '../../components/Garantias';
 
 class Home extends Component {
 
@@ -89,6 +90,7 @@ class Home extends Component {
        <Divisao />
        <Recursos />
        <Vantagens />
+       <Garantias />
        <PrecoLp
          action_lead={this.action_lead}
        />

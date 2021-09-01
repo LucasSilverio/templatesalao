@@ -20,8 +20,22 @@ export const Container = styled.div`
 `;
 
 export const BgDesk = styled.img`
-
     cursor:pointer;
+    display:block;
+
+    @media (max-width:800px){
+        display:none;
+    }
+`;
+
+export const BgMb = styled.img`
+    cursor:pointer;
+    display:none;
+
+    @media (max-width:800px){
+        display:block;
+    }
+
 `;
 
 export const PageContainer = styled.div`
@@ -29,6 +43,7 @@ export const PageContainer = styled.div`
     display:flex;
     margin-bottom:40px;
     background-color:#FFF;
+    margin-top:20px;
 
 `;
 
