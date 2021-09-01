@@ -188,6 +188,15 @@ const osAPI = {
       return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
     },
 
+    getFeed:(tipo, cidade)=>{
+      let endpoint = 'feed/get';
+      let body = {
+        tipo,
+        cidade
+      }
+      return fetch(`${BASEAPI+endpoint}?${qs.stringify(body)}`);
+    },
+
 
 
     
