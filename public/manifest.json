@@ -4,8 +4,8 @@
   "theme_color": "#997788",
   "background_color": "#fbfbfb",
   "display": "minimal-ui",
-  "Scope": "/",
-  "start_url": "/",
+  "Scope": "/gestao",
+  "start_url": "/gestao",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
