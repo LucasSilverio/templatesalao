@@ -268,7 +268,7 @@ setObservacao(e){
                     </Botao>
                     <Botao onClick={e=>this.handleSaida(11)} destaque={this.state.selectedSaida == 11 ? true : false}>
                       <IconeBotao src='/saque.png' />
-                      <BotaoTexto>Saque</BotaoTexto>
+                      <BotaoTexto>Sangria</BotaoTexto>
                     </Botao>
                   </BoxOpcoes> 
                   <BoxCalendario>

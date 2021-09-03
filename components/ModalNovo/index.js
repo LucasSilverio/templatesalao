@@ -24,6 +24,7 @@ import {
     ItemServico,
     ItemHorario,
     Label,
+    LoaderArea,
     Paragrafo,
     ResultItem,
     Result,
@@ -193,6 +194,7 @@ class ModalNovo extends Component {
   }
   
   submit(){
+    this.setState({loading:true})
     fetch(ecommerceAPI.BASE_URL_API+'agenda/agendarPro', {
       method:'POST',
       body:JSON.stringify({
@@ -211,6 +213,7 @@ class ModalNovo extends Component {
         this.props.closeModal();
         this.props.getAgenda(this.props.data);
       }
+      this.setState({loading:false})
     })
   }
 
@@ -220,68 +223,82 @@ class ModalNovo extends Component {
         <>
           <BackArea visible={this.props.visible} onClick={this.close}/>
           <Container visible={this.props.visible}>
-            <TopModal>
-              <Paragrafo>Verificar agenda para o dia {moment(this.props.data).format('DD/MM/YY')}</Paragrafo>
-            </TopModal>
-            <BodyModal>
-              <BoxCliente>
-                <Box>
-                  <Label>Informe o cliente</Label>
-                  <IptBusca type='text' value={this.state.nomeCliente} onChange={e=>this.handleCliente(e.target.value)}/>
-                  <AreaResult>
-                    {this.state.resultado.map((i, index) => (
-                      <ResultItem onClick={e=>this.selectClient(i.id, i.name, i.avatar)}>
-                        <Avatar src={i.avatar} />
-                        {i.name+' - '+i.celular}
-                      </ResultItem>
-                    ))}
-                  </AreaResult>
-                </Box>
-                <Box>
-                  {this.state.errorAlert != '' &&
-                    <AlertMsg>{this.state.errorAlert}</AlertMsg>
-                  }
-                </Box>
-              </BoxCliente>
-              <BoxCliente>
-                <Box>
-                  <Label>Selecione o Profissional</Label>
-                  <Result>
-                      {this.state.profissionais.map((i, index) => (
-                        <Item onClick={e=>this.selectProfissional(i.id, i.name)} destaque={this.state.profissionalId == i.id ? true : false}>
-                          <AvatarPro src={i.avatar} />
-                          {i.name}
-                        </Item>
-                      ))}
-                  </Result>
-                </Box>
-              </BoxCliente>
-              <BoxCliente>
-                <Box>
-                  <Label>Selecione o serviço</Label>
-                  <Result>
-                      {this.state.servicos.map((i, index) => (
-                        <ItemServico onClick={e=>this.selectServico(i.id, i.nome, i.tempo)} destaque={this.state.servicoId == i.id ? true : false}>
-                          <AvatarServico src={i.img} />
-                          {i.nome}
-                        </ItemServico>
-                      ))}
-                  </Result>
-                </Box>
-              </BoxCliente>
-              <BoxCliente>
-                <Box>
-                  <Label>Selecione o horário</Label>
-                  <Result>
-                      {this.state.horarios.map((i, index) => (
-                        <ItemHorario onClick={e=>this.selectHorario(i.horario)}>
-                          {i.horario}
-                        </ItemHorario>
-                      ))}
-                  </Result>
-                </Box>
-              </BoxCliente>
-            </BodyModal>
+            {!this.state.loading &&
+              <>
+                <TopModal>
+                  <Paragrafo>Verificar agenda para o dia {moment(this.props.data).format('DD/MM/YY')}</Paragrafo>
+                </TopModal>
+                <BodyModal>
+                  <BoxCliente>
+                    <Box>
+                      <Label>Informe o cliente</Label>
+                      <IptBusca type='text' value={this.state.nomeCliente} onChange={e=>this.handleCliente(e.target.value)} placeholder='Pesquise aqui o nome do(a) cliente'/>
+                      <AreaResult>
+                        {this.state.resultado.map((i, index) => (
+                          <ResultItem onClick={e=>this.selectClient(i.id, i.name, i.avatar)}>
+                            <Avatar src={i.avatar} />
+                            {i.name+' - '+i.celular}
+                          </ResultItem>
+                        ))}
+                      </AreaResult>
+                    </Box>
+                    <Box>
+                      {this.state.errorAlert != '' &&
+                        <AlertMsg>{this.state.errorAlert}</AlertMsg>
+                      }
+                    </Box>
+                  </BoxCliente>
+                  <BoxCliente>
+                    <Box>
+                      <Label>Selecione o Profissional</Label>
+                      <Result>
+                          {this.state.profissionais.map((i, index) => (
+                            <Item onClick={e=>this.selectProfissional(i.id, i.name)} destaque={this.state.profissionalId == i.id ? true : false}>
+                              <AvatarPro src={i.avatar} />
+                              {i.name}
+                            </Item>
+                          ))}
+                      </Result>
+                    </Box>
+                  </BoxCliente>
+                  <BoxCliente>
+                    <Box>
+                      <Label>Selecione o serviço</Label>
+                      <Result>
+                          {this.state.servicos.map((i, index) => (
+                            <ItemServico onClick={e=>this.selectServico(i.id, i.nome, i.tempo)} destaque={this.state.servicoId == i.id ? true : false}>
+                              <AvatarServico src={i.img} />
+                              {i.nome}
+                            </ItemServico>
+                          ))}
+                      </Result>
+                    </Box>
+                  </BoxCliente>
+                  <BoxCliente>
+                    <Box>
+                      <Label>Selecione o horário</Label>
+                      <Result>
+                          {this.state.horarios.map((i, index) => (
+                            <ItemHorario onClick={e=>this.selectHorario(i.horario)}>
+                              {i.horario}
+                            </ItemHorario>
+                          ))}
+                      </Result>
+                    </Box>
+                  </BoxCliente>
+                </BodyModal>
+              </>
+            }
+            {this.state.loading &&
+              <LoaderArea>
+                  <Loader
+                      type="TailSpin"
+                      color="#5C6BF2"
+                      height={80}
+                      width={80}
+                  />
+              </LoaderArea>
+            }
           </Container>
         </>
     )

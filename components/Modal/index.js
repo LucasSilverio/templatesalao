@@ -20,6 +20,7 @@ import {
     Icone,
     IconeBotao,
     Preco,
+    LoaderArea,
     Texto,
     TextoSm,
     TextoStatus
@@ -132,6 +133,7 @@ class Modal extends Component {
   } 
 
   handleDesmarcar(){
+    this.setState({loading:true})
     fetch(ecommerceAPI.BASE_URL_API+'agenda/cancelar', {
       method:'POST',
       body:JSON.stringify({
@@ -145,6 +147,7 @@ class Modal extends Component {
         this.props.closeModal();
         this.props.getAgenda(this.props.dataselecionada);
       }
+      this.setState({loading:false})
     })
   }
 
@@ -166,6 +169,7 @@ class Modal extends Component {
   }
 
   submit(e){
+    this.setState({loading:true})
     fetch(ecommerceAPI.BASE_URL_API+'agenda/concluir', {
       method:'POST',
       body:JSON.stringify({
@@ -181,70 +185,86 @@ class Modal extends Component {
         this.props.closeModal();
         this.props.getAgenda(this.props.dataselecionada);
       }
+      this.setState({loading:false})
     })
   }
   
   render(){     
     
     return(   
-        <>
+        <> 
           <BackArea visible={this.props.visible} onClick={this.props.handleModal}/>
           <Container visible={this.props.visible}>
-            <BoxLinha>
-             <Texto color={'#333'}>{this.props.cliente}</Texto>  
-             <Texto color={'#333'}>{this.props.phone}</Texto>  
-              <Link href={'//wa.me/55'+this.props.phone} >
-                <a target={"_blank"}>
-                    <Icone src='/whatsapp.png' />
-                </a>
-              </Link>
-            </BoxLinha>
-            <BoxLinha>
-              <Texto color={'#343261'}>{this.props.servico+' - '+this.props.hora+'h às '+this.props.horafim+'h - '+this.props.barbeiro}</Texto>
-            </BoxLinha>
-            <BoxLinha>
-              <TextoSm>Valor do Serviço: <Preco type={'text'} value={this.props.preco} onChange={e=>this.props.handlePreco(preco(e.target.value))}/></TextoSm>
-            </BoxLinha>
-            <BoxOpcoes>
-                <Botao onClick={e=>this.check(1)}>
-                 <IconeBotao src='/dinheiro.png' />
-                 <BotaoTexto>Dinheiro</BotaoTexto>
-                </Botao>
-                <Botao onClick={e=>this.check(2)}>
-                 <IconeBotao src='/cheque.png' />
-                 <BotaoTexto>Cheque</BotaoTexto>
-                </Botao>
-                <Botao onClick={e=>this.check(3)}>
-                 <IconeBotao src='/cartao.png' />
-                 <BotaoTexto>Débito</BotaoTexto>
-                </Botao>
-                <Botao onClick={e=>this.check(4)}>
-                 <IconeBotao src='/cartao.png' />
-                 <BotaoTexto>Crédito</BotaoTexto>
-                </Botao>
-                <Botao onClick={e=>this.check(5)}>
-                 <IconeBotao src='/outro.png' />
-                 <BotaoTexto>Pix</BotaoTexto>
-                </Botao>
-                <Botao onClick={e=>this.check(e)}>
-                 <IconeBotao src='/pontos.png' />
-                 <BotaoTexto>Pontuação</BotaoTexto>
-                </Botao>
-            </BoxOpcoes>
-            <BoxOpcoes>
-              <TextoStatus color={this.props.status == 1 ? '#333' : '#716FF2'}>{this.props.status == 1 ? 'Status atual: Confirmado' : 'Status atual: Concluído'}</TextoStatus>
-            </BoxOpcoes>
-            <BoxOpcoes>
-              {this.props.status == 1 &&
-                <>
-                  <BtnAction onClick={e=>this.checkDesmarcar()} bgColor={'#6E3534'}>Desmarcar</BtnAction>
-                  <BtnAction onClick={e=>this.checkDuplicar()} bgColor={'#63ADF2'}>Duplicar</BtnAction>
-                </>
-              }
-              {this.props.status == 2 &&
-                <BtnDisabled>Desmarcar</BtnDisabled>
-              }
-            </BoxOpcoes>
+            {!this.state.loading &&
+              <>
+                <BoxLinha>
+                <Texto color={'#333'}>{'Cliente: '+this.props.cliente}</Texto>  
+                <Texto color={'#333'}>{'Tel: '+this.props.phone}</Texto>  
+                  <Link href={'//wa.me/55'+this.props.phone} >
+                    <a target={"_blank"}>
+                        <Icone src='/whatsapp.png' />
+                    </a>
+                  </Link>
+                </BoxLinha>
+                <BoxLinha>
+                  <TextoSm color={'#555'}>{'Serviço: '+this.props.servico+' - Horário: '+this.props.hora+'h às '+this.props.horafim+'h - Profissional: '+this.props.barbeiro}</TextoSm>
+                </BoxLinha>
+                <BoxLinha>
+                  <TextoSm>Valor do Cobrado(R$): <Preco type={'text'} value={this.props.preco} onChange={e=>this.props.handlePreco(preco(e.target.value))}/></TextoSm>
+                </BoxLinha>
+                <BoxOpcoes>
+                    <Botao onClick={e=>this.check(1)}>
+                    <IconeBotao src='/dinheiro.png' />
+                    <BotaoTexto>Dinheiro</BotaoTexto>
+                    </Botao>
+                    <Botao onClick={e=>this.check(2)}>
+                    <IconeBotao src='/cheque.png' />
+                    <BotaoTexto>Cheque</BotaoTexto>
+                    </Botao>
+                    <Botao onClick={e=>this.check(3)}>
+                    <IconeBotao src='/cartao.png' />
+                    <BotaoTexto>Débito</BotaoTexto>
+                    </Botao>
+                    <Botao onClick={e=>this.check(4)}>
+                    <IconeBotao src='/cartao.png' />
+                    <BotaoTexto>Crédito</BotaoTexto>
+                    </Botao>
+                    <Botao onClick={e=>this.check(5)}>
+                    <IconeBotao src='/outro.png' />
+                    <BotaoTexto>Pix</BotaoTexto>
+                    </Botao>
+                    <Botao onClick={e=>this.check(e)}>
+                    <IconeBotao src='/pontos.png' />
+                    <BotaoTexto>Pontuação</BotaoTexto>
+                    </Botao>
+                </BoxOpcoes>
+                <BoxOpcoes>
+                  <TextoStatus color={this.props.status == 1 ? '#333' : '#716FF2'}>{this.props.status == 1 ? 'Status atual: Confirmado' : 'Status atual: Concluído'}</TextoStatus>
+                </BoxOpcoes>
+                <BoxOpcoes>
+                  {this.props.status == 1 &&
+                    <>
+                      <BtnAction onClick={e=>this.checkDesmarcar()} bgColor={'#573535'}>Desmarcar</BtnAction>
+                      <BtnAction onClick={e=>this.checkDuplicar()} bgColor={'#2B5277'}>Duplicar</BtnAction>
+                    </>
+                  }
+                  {this.props.status == 2 &&
+                    <BtnDisabled>Desmarcar</BtnDisabled>
+                  }
+                </BoxOpcoes>
+              </>
+            }
+            {this.state.loading &&
+              <LoaderArea>
+                  <Loader
+                      type="TailSpin"
+                      color="#5C6BF2"
+                      height={80}
+                      width={80}
+                  />
+              </LoaderArea>
+            }
+            
           </Container>
         </>
     )

@@ -232,7 +232,7 @@ closeModal(){
         return(    
           <Container>
             <Topo>
-              <Subtitulo>Gestão de Estoque de Produtos</Subtitulo>
+              <Subtitulo>Gestão de Vendas</Subtitulo>
             </Topo>
             <Corpo>
               <Opcoes>

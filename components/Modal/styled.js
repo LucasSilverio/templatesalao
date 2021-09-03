@@ -26,7 +26,7 @@ export const BackArea = styled.div`
     display:${(props) => props.visible ? 'flex' : 'none'};
     width:20000px;
     height:100%;
-    background-color:rgba(5,5,5,0.5);
+    background-color:rgba(5,5,5,0.9);
     z-index:10;
     top:0;
     left:-300px;
@@ -121,9 +121,16 @@ export const BotaoTexto = styled.p`
     color:#333;
 `;
 
+export const LoaderArea = styled.div`
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+`;
+
 export const Container = styled.div`
     animation: 0.5s ${fadeInAnimation};
-    background-color:#F1F1F1;
+    background-color:#FFF;
     width:800px;
     height:480px;
     position:fixed;
@@ -161,7 +168,11 @@ export const Icone = styled.img`
     cursor:pointer;
 `;
 
-export const Preco = styled.input``;
+export const Preco = styled.input`
+    border-radius:5px;
+    border:1px solid rgba(5,5,5,0.3);
+    padding-left:5px;
+`;
 
 export const IconeBotao = styled.img`
     width:40px;

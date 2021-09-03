@@ -86,7 +86,7 @@ class TopBar extends Component {
           <Line />
           <ul className='vendasArea'>
             <Link href={'/gestao/produtos'}>
-              <a>Produtos</a>
+              <a>Vendas</a>
             </Link>
           </ul>    
           <Line />

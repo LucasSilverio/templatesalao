@@ -56,7 +56,7 @@ class Painel extends Component {
 
   handleModal(){
 
-  }
+  } 
 
   render(){
     return(

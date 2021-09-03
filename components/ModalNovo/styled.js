@@ -69,7 +69,7 @@ export const BackArea = styled.div`
     display:${(props) => props.visible ? 'flex' : 'none'};
     width:20000px;
     height:100%;
-    background-color:rgba(5,5,5,0.5);
+    background-color:rgba(5,5,5,0.9);
     z-index:10;
     top:0;
     left:-300px;
@@ -115,7 +115,7 @@ export const Box = styled.div`
 
 export const Container = styled.div`
     animation: 0.5s ${fadeInAnimation};
-    background-color:#F1F1F1;
+    background-color:#FFF;
     width:1100px;
     height:500px;
     position:fixed;
@@ -152,7 +152,10 @@ export const Container = styled.div`
 `;
 
 export const IptBusca = styled.input`
-    height:30px;
+    height:40px;
+    border-radius:5px;
+    border:1px solid rgba(5,5,5,0.4);
+    padding-left:5px;
 `;
 
 export const Item = styled.div`
@@ -164,9 +167,9 @@ export const Item = styled.div`
     flex-direction:column;
     align-items:center;
     margin:5px;
-    background-color:#63ADF2;
+    background-color:#444248;
     padding:3px;
-    border:${(props) => props.destaque ? '5px solid #57F2EB' : 'none'};
+    border:${(props) => props.destaque ? '5px solid #709BFF' : 'none'};
 
     &:hover {
         transform:scale(1.01);
@@ -183,11 +186,11 @@ export const ItemHorario = styled.div`
     align-items:center;
     justify-content:center;
     margin:5px;
-    background-color:#63ADF2;
+    background-color:#2B5277;
     text-align:center;
     font-weight:700;
     padding:3px;
-    border:${(props) => props.destaque ? '5px solid #57F2EB' : 'none'};
+    border:${(props) => props.destaque ? '5px solid #709BFF' : 'none'};
 
     &:hover {
         opacity:0.9;
@@ -195,20 +198,27 @@ export const ItemHorario = styled.div`
     }
 `;
 
+export const LoaderArea = styled.div`
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+`;
+
 export const ItemServico = styled.div`
-    width:80px;
-    height:110px;
+    width:100px;
+    height:100px;
     border-radius:5px;
     color:#FFF;
     display:flex;
     flex-direction:column;
     align-items:center;
     margin:5px;
-    background-color:#63ADF2;
+    background-color:#373E4F;
     text-align:center;
     font-weight:700;
     padding:3px;
-    border:${(props) => props.destaque ? '5px solid #57F2EB' : 'none'};
+    border:${(props) => props.destaque ? '5px solid #709BFF' : 'none'};
 
     &:hover {
         transform:scale(1.01);

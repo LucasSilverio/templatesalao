@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { withRouter } from 'next/router';
 import Router from 'next/router';
 import Cookie from 'js-cookie';
-import moment from 'moment';
+import moment from 'moment'; 
 import Modal from '../../components/Modal';
 import ModalNovo from '../../components/ModalNovo';
 import ModalSm from '../../components/ModalSm'; 
@@ -212,14 +212,14 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                   <Calendario type='date' onChange={e=>this.handleData(e.target.value)} />
                 </BoxCalendario>
                 <ParagrafoDestaque>Data selecionada: {moment(this.state.data).format('DD/MM/YY')}</ParagrafoDestaque>
-                <BtnAction onClick={e=>this.handleModalNovo()} bgColor={'#63ADF2'}>Novo Agendamento</BtnAction>
+                <BtnAction onClick={e=>this.handleModalNovo()} bgColor={'#2B5277'}>Novo Agendamento</BtnAction>
                 <Atualizacao onClick={e=>this.getAgenda(this.state.data)}>
                   {'Atualizado às '+moment(this.state.atualizacao).format('HH:mm')}
                 </Atualizacao>
                 {/* <Erro>{this.state.errorAlert}</Erro> */}
               </CalendarioArea> 
               <CalendarioArea>
-                <BtnAction bgColor={'#F27C7C'} onClick={this.handleModalBlock}>Bloquear Horário</BtnAction>
+                <BtnAction bgColor={'#573535'} onClick={this.handleModalBlock}>Bloquear Horário</BtnAction>
               </CalendarioArea>
               <ColunaHorarios>
                   {this.state.horarios.map((i, index) => ( 

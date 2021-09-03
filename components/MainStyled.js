@@ -29,8 +29,8 @@ export const InfoAreaUnder = styled.div`
     position:absolute;
     left:200px;
     min-height:100%;
-    width:80%;
-    background-color:#F0F0F0;
+    width:85%;
+    background-color:#FFF;
     padding:20px;
 
     @media (max-width:799px){
