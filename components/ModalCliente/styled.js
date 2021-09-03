@@ -33,7 +33,7 @@ export const BackArea = styled.div`
     display:${(props) => props.visible ? 'flex' : 'none'};
     width:20000px;
     height:100%;
-    background-color:rgba(5,5,5,0.5);
+    background-color:rgba(5,5,5,0.9);
     z-index:10;
     top:0;
     left:-300px;
@@ -71,6 +71,8 @@ export const BoxLinha = styled.div`
 export const BoxColuna = styled.div`
     display:flex;
     flex-direction:column;
+    flex:1;
+    margin-right:5px;
 `;
 
 export const BoxEdit = styled.div`
@@ -119,7 +121,7 @@ export const Box = styled.div`
 
 export const Container = styled.div`
     animation: 0.5s ${fadeInAnimation};
-    background-color:#F1F1F1;
+    background-color:#FFF;
     width:800px;
     height:450px;
     position:fixed;
@@ -156,9 +158,17 @@ export const Icone = styled.img`
 `;
 
 export const Input = styled.input`
-    width:300px;
+    width:100%;
     height:30px;
     margin-right:5px;
+    margin-bottom:10px;
+`;
+
+export const InputLg = styled.input`
+    width:100%;
+    height:30px;
+    margin-right:5px;
+    margin-bottom:10px;
 `;
 
 export const Item = styled.div`

@@ -43,8 +43,8 @@ export const BoxRow = styled.div`
 
 export const BtnAction = styled.div`
     width:200px;
-    height:30px;
-    background-color:#F2A57C;
+    height:40px;
+    background-color:#2B5277;
     border-radius:5px;
     color:#FFF;
     display:flex;
@@ -198,7 +198,7 @@ export const Input = styled.input`
 `;
 
 export const Label = styled.label`
-    color:#444;
+    color:${(props) => props.color || '#444'};
     font-size:12px;
 `;
 
@@ -265,9 +265,10 @@ export const ResumoArea = styled.div`
     height:140px;
     display:flex;
     flex-direction:column;
-    background-color:#63ADF2;
+    background-color:#2B5277;
     padding:10px;
     margin-top:20px;
+    border-radius:10px;
 `;
 
 export const ResultadoBox = styled.div`

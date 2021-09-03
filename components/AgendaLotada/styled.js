@@ -54,19 +54,18 @@ export const ClienteInfos = styled.div`
 `;
 
 export const BtnAction = styled.button`
-    width:150px;
+    width:200px;
     height:40px;
     border-radius:5px;
     cursor:pointer;
     color:#FFF;
-    background-color:#63ADF2;
+    background-color:#2B5277;
     font-weight:700;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
     font-size:14px;
-    margin-left:40px;
     border:none;
 
     &:hover{
@@ -113,7 +112,7 @@ export const Corpo = styled.div`
 
 export const Cliente = styled.div`
     width:180px;
-    height:70px;
+    height:45px;
     background-color:#716FF2;
     align-items:center;
     display:flex;

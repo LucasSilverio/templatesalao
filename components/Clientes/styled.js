@@ -28,7 +28,7 @@ export const Avatar = styled.img`
 
 export const BtnAction = styled.button`
     width:120px;
-    height:20px;
+    height:30px;
     background-color:${(props) => props.bgColor};
     border:none;
     color:#FFF;
@@ -98,6 +98,9 @@ export const IptBusca = styled.input`
     height:30px;
     width:240px;
     margin-left:20px;
+    border-radius:5px;
+    border:1px solid rgba(5,5,5,0.2);,
+    padding-left:5px;
 `;
 
 export const Opcoes = styled.div`
@@ -132,7 +135,7 @@ export const Pg = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color:#63ADF2;
+    background-color:#2B5277;
     color:#FFF;
     border:1px solid #FFF;
     cursor:pointer;

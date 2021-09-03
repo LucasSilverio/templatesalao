@@ -233,12 +233,12 @@ setObservacao(e){
                 </BoxParagrafo>
                 <BoxRow>
                   <BoxCalendario>
-                    <Label>Entrada</Label>
+                    <Label color='#FFF'>Entrada</Label>
                     <Paragrafo>R${this.state.entrada >= 0 ? this.state.entrada : 0.00}</Paragrafo>
                   </BoxCalendario>
                   <BoxCalendario>
-                    <Label>Saída</Label>
-                    <Paragrafo>R${this.state.saida >= 0 ? this.state.saida : 0.00}</Paragrafo>
+                    <Label color='#FFF'>Saída</Label>
+                    <Paragrafo>R${this.state.saida >= 0 && this.state.saida != '' && this.state.saida != undefined? this.state.saida : '0.00'}</Paragrafo>
                   </BoxCalendario>
                 </BoxRow>
               </ResumoArea> 

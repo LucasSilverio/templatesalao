@@ -130,7 +130,7 @@ class ModalServicoNovo extends Component {
     
     return(   
         <>
-          <BackArea visible={this.props.visible} onClick={this.close}/>
+          <BackArea visible={this.props.visible} onClick={this.close}/> 
           <Container visible={this.props.visible}>
             <BoxEdit>
               <Avatar src={this.props.img != null ? this.props.img : 'https://theshave.com.br/api-barbershop/images/usersprofile/man.png'} />
@@ -172,7 +172,7 @@ class ModalServicoNovo extends Component {
                 </BoxLinha>
               </BoxTop>
               <BoxOpcoes>
-                <BtnAction onClick={e=>this.close()} bgColor={'#6E3534'}>Cancelar</BtnAction>
+                <BtnAction onClick={e=>this.close()} bgColor={'#573535'}>Cancelar</BtnAction>
                 {this.props.loading &&
                   <Loader
                       type="TailSpin"
@@ -182,7 +182,7 @@ class ModalServicoNovo extends Component {
                   />
                 }
                 {!this.props.loading &&
-                  <BtnAction bgColor={'#63ADF2'} onClick={e=>this.submit()}>Salvar</BtnAction>
+                  <BtnAction bgColor={'#2B5277'} onClick={e=>this.submit()}>Salvar</BtnAction>
                 }
               </BoxOpcoes>
             </BoxEdit>

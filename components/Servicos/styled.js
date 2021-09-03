@@ -143,12 +143,12 @@ export const Item = styled.div`
     align-items:center;
     justify-content:center;
     text-align:center;
-    border:${(props) => props.status == 0 ? '5px solid #57F2EB' : '5px solid #6E3534'};
-    background-color:${(props) => props.status == 0 ? '#57F2EB' : '#6E3534'};
+    border:${(props) => props.status == 0 ? '5px solid #2B5277' : '5px solid #573535'};
+    background-color:${(props) => props.status == 0 ? '#2B5277' : '#573535'};
     border-radius:5px;
     margin:5px;
     color:#FFF;
-    font-weight:700;;
+    font-weight:600;;
 
     &:hover{
         opacity:0.9;

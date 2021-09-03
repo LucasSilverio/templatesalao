@@ -285,14 +285,9 @@ submit(){
             </Topo>
             <Corpo>
               <Opcoes>
-                <BtnAction bgColor={'#63ADF2'} onClick={this.handleModalNovo}>Cadastrar Serviço</BtnAction>
+                <BtnAction bgColor={'#2B5277'} onClick={this.handleModalNovo}>Cadastrar Serviço</BtnAction>
               </Opcoes>
               <Box>
-                {/* <BoxTop>
-                  <Paragrafo>Informe os horários de abertura, intervalo (caso houver) e fechamento de cada dia da semana.</Paragrafo>
-                  <BoxRow>
-                  </BoxRow>
-                </BoxTop> */}
                 <ItemDia>
                   {this.state.servicos.map((i, index) => (
                     <Item key={index} onClick={e=>this.handleEdit(i.id, i.nome, i.descricao, i.preco, i.tempo, i.img, i.pontosservicos, i.pontostroca, i.desativado)} status={i.desativado}>
@@ -301,10 +296,6 @@ submit(){
                     </Item>
                   ))}
                 </ItemDia>
-                <Opcoes>
-                  <BtnAction bgColor={'#63ADF2'} onClick={this.submit}>Salvar Alterações</BtnAction>
-                  <BtnAction bgColor={'#F2A57C'} onClick={this.handleHorarios}>Próximo Passo</BtnAction>
-                </Opcoes>
               </Box>
             </Corpo>
             <Modal 

@@ -21,6 +21,7 @@ import {
     Container,
     Icone,
     Input,
+    InputLg,
     Item,
     Label,
     Opcoes,
@@ -30,6 +31,7 @@ import {
 } from './styled';
 import osAPI from '../../services/osAPI';
 import ecommerceAPI from '../../services/ecommerceAPI';
+import { LoaderArea } from '../ModalNovoCliente/styled';
 
 class ModalCliente extends Component {
   constructor({props, initialQtdValue, test}){
@@ -83,6 +85,7 @@ class ModalCliente extends Component {
   }
 
   submit(){
+    this.setState({loading:true})
     fetch(ecommerceAPI.BASE_URL_API+'users/updateUserPainel', {
       method:'POST',
       body:JSON.stringify({
@@ -102,6 +105,8 @@ class ModalCliente extends Component {
         // this.props.closeModal();
         // this.props.getAgenda(this.props.dataselecionada);
       }
+
+      this.setState({loading:false})
     })
   }
   
@@ -111,7 +116,7 @@ class ModalCliente extends Component {
         <>
           <BackArea visible={this.props.visible} onClick={this.props.handleModal}/>
           <Container visible={this.props.visible}>
-            {!this.state.editavel &&
+            {!this.state.editavel && 
               <>
                 <Top>
                   <Avatar src={this.props.infos.avatar != null ? this.props.infos.avatar : 'https://theshave.com.br/api-barbershop/images/usersprofile/man.png'} />
@@ -137,11 +142,11 @@ class ModalCliente extends Component {
                   </BoxTop>
                 </Top>
                 <Opcoes>
-                  <BtnAction bgColor={'#F2A57C'} onClick={e=>this.handleEdit()}>Editar Cadastro</BtnAction>
+                  <BtnAction bgColor={'#2B5277'} onClick={e=>this.handleEdit()}>Editar Cadastro</BtnAction>
                 </Opcoes>
                 <Box>
                   {this.props.historico.map((i, index) => (
-                    <Item bgColor={i.statusval == 2 ? '#63ADF2' : '#6E3534'}>
+                    <Item bgColor={i.statusval == 2 ? '#709BFF' : '#573535'}>
                       <ParagrafoSm><strong>{i.data}</strong></ParagrafoSm>
                       <ParagrafoSm>{'Profissional: '+i.profissional}</ParagrafoSm>
                       <ParagrafoSm>{i.servico}</ParagrafoSm>
@@ -151,12 +156,12 @@ class ModalCliente extends Component {
                 </Box>
               </>
             }
-            {this.state.editavel &&
+            {this.state.editavel && !this.state.loading &&
               <BoxEdit>
                 <Avatar src={this.props.infos.avatar != null ? this.props.infos.avatar : 'https://theshave.com.br/api-barbershop/images/usersprofile/man.png'} />
                 <BoxTop>
                   <Label>Nome</Label>
-                  <Input type='text' value={this.props.nomecliente} onChange={e=>this.props.handleNome(e.target.value)}/>
+                  <InputLg type='text' value={this.props.nomecliente} onChange={e=>this.props.handleNome(e.target.value)}/>
                   <BoxLinha>
                     <BoxColuna>
                       <Label>E-mail</Label>
@@ -175,10 +180,21 @@ class ModalCliente extends Component {
                   </BoxLinha>
                 </BoxTop>
                 <BoxOpcoes>
-                  <BtnAction onClick={e=>this.handleEdit()} bgColor={'#6E3534'}>Cancelar</BtnAction>
-                  <BtnAction bgColor={'#63ADF2'} onClick={e=>this.submit()}>Salvar</BtnAction>
+                  <BtnAction onClick={e=>this.handleEdit()} bgColor={'#573535'}>Cancelar</BtnAction>
+                  <BtnAction bgColor={'#2B5277'} onClick={e=>this.submit()}>Salvar</BtnAction>
                 </BoxOpcoes>
               </BoxEdit>
+            }
+            {this.state.loading &&
+              <LoaderArea>
+                <Loader
+                  type="TailSpin"
+                  color="#5C6BF2"
+                  height={80}
+                  width={80}
+                />
+              </LoaderArea>
+              
             }
           </Container>
         </>

@@ -97,30 +97,30 @@ handleModal(){
               <Subtitulo>Agenda Lotada</Subtitulo>
             </Topo>
             <Corpo>
-              <Opcoes>
-                <BtnOpcao onClick={e=>this.getAusentes(this.state.hoje7dias, this.state.hoje7dias, '7 dias hoje')} bgColor={this.state.ausentesDesc == '7 dias hoje' ? '#716FF2' : '#F2A57C'}>
+              <Opcoes> 
+                <BtnOpcao onClick={e=>this.getAusentes(this.state.hoje7dias, this.state.hoje7dias, '7 dias hoje')} bgColor={this.state.ausentesDesc == '7 dias hoje' ? '#716FF2' : '#2B5277'}>
                   Completando 7 dias Hoje
                 </BtnOpcao>
-                <BtnOpcao onClick={e=>this.getAusentes(this.state.amanha7dias, this.state.amanha7dias, '7 dias amanhã')} bgColor={this.state.ausentesDesc == '7 dias amanhã' ? '#716FF2' : '#F2A57C'}>
+                <BtnOpcao onClick={e=>this.getAusentes(this.state.amanha7dias, this.state.amanha7dias, '7 dias amanhã')} bgColor={this.state.ausentesDesc == '7 dias amanhã' ? '#716FF2' : '#2B5277'}>
                   Completando 7 dias Amanhã
                 </BtnOpcao>
-                <BtnOpcao onClick={e=>this.getAusentes(this.state.depoisDeAmanha7dias, this.state.depoisDeAmanha7dias, '7 dias depois de amanhã')} bgColor={this.state.ausentesDesc == '7 dias depois de amanhã' ? '#716FF2' : '#F2A57C'}>
+                <BtnOpcao onClick={e=>this.getAusentes(this.state.depoisDeAmanha7dias, this.state.depoisDeAmanha7dias, '7 dias depois de amanhã')} bgColor={this.state.ausentesDesc == '7 dias depois de amanhã' ? '#716FF2' : '#2B5277'}>
                   Completando 7 dias depois de Amanhã
                 </BtnOpcao>
-                <BtnOpcao onClick={e=>this.getAusentes(this.state.dataInicial, this.state.dataInicial, '1 mês hoje')} bgColor={this.state.ausentesDesc == '1 mês hoje' ? '#716FF2' : '#F2A57C'}>
+                <BtnOpcao onClick={e=>this.getAusentes(this.state.dataInicial, this.state.dataInicial, '1 mês hoje')} bgColor={this.state.ausentesDesc == '1 mês hoje' ? '#716FF2' : '#2B5277'}>
                   Completando 1 mês Hoje
                 </BtnOpcao>
-                <BtnOpcao onClick={e=>this.getAusentes(this.state.amanha, this.state.amanha, '1 mês amanhã')} bgColor={this.state.ausentesDesc == '1 mês amanhã' ? '#716FF2' : '#F2A57C'}>
+                <BtnOpcao onClick={e=>this.getAusentes(this.state.amanha, this.state.amanha, '1 mês amanhã')} bgColor={this.state.ausentesDesc == '1 mês amanhã' ? '#716FF2' : '#2B5277'}>
                   Completando 1 mês Amanhã
                 </BtnOpcao>
-                <BtnOpcao onClick={e=>this.getAusentes(this.state.proximo2dias, this.state.proximo2dias, '1 mês dia '+this.state.data2dias)} bgColor={this.state.ausentesDesc == '1 mês dia '+this.state.data2dias ? '#716FF2' : '#F2A57C'}>
+                <BtnOpcao onClick={e=>this.getAusentes(this.state.proximo2dias, this.state.proximo2dias, '1 mês dia '+this.state.data2dias)} bgColor={this.state.ausentesDesc == '1 mês dia '+this.state.data2dias ? '#716FF2' : '#2B5277'}>
                   Completando 1 mês dia {this.state.data2dias}
                 </BtnOpcao>
-                <BtnOpcao onClick={e=>this.getAusentes(this.state.proximo3dias, this.state.proximo3dias, '1 mês dia '+this.state.data3dias)} bgColor={this.state.ausentesDesc == '1 mês dia '+this.state.data3dias ? '#716FF2' : '#F2A57C'}>
+                <BtnOpcao onClick={e=>this.getAusentes(this.state.proximo3dias, this.state.proximo3dias, '1 mês dia '+this.state.data3dias)} bgColor={this.state.ausentesDesc == '1 mês dia '+this.state.data3dias ? '#716FF2' : '#2B5277'}>
                   Completando 1 mês dia {this.state.data3dias}
                 </BtnOpcao>
 
-                <BtnOpcao onClick={e=>this.getAusentes(this.state.seisMeses, this.state.ontem, 'mais de 30 dias')} bgColor={this.state.ausentesDesc == 'mais de 30 dias' ? '#716FF2' : '#F2A57C'}>
+                <BtnOpcao onClick={e=>this.getAusentes(this.state.seisMeses, this.state.ontem, 'mais de 30 dias')} bgColor={this.state.ausentesDesc == 'mais de 30 dias' ? '#716FF2' : '#2B5277'}>
                   Faz Mais de 30 dias
                 </BtnOpcao>
               </Opcoes>

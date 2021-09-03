@@ -22,6 +22,8 @@ import {
     Container,
     Icone,
     Input,
+    InputLg,
+    LoaderArea,
     Item,
     Label,
     Opcoes,
@@ -88,6 +90,7 @@ class ModalNovoCliente extends Component {
   }
 
   submit(){
+    this.setState({loading:true})
     fetch(ecommerceAPI.BASE_URL_API+'users/newuserpro', {
       method:'POST',
       body:JSON.stringify({
@@ -105,6 +108,7 @@ class ModalNovoCliente extends Component {
         this.props.handleModal();
         this.props.getClientes(0, 0);
       }
+      this.setState({loading:false})
     })
   }
   
@@ -112,36 +116,50 @@ class ModalNovoCliente extends Component {
     
     return(   
         <>
-          <BackArea visible={this.props.visible} onClick={this.props.handleModal}/>
+          <BackArea visible={this.props.visible} onClick={this.props.handleModal}/> 
           <Container visible={this.props.visible}>
-            <BoxEdit>
-              {/* <Avatar src={this.props.infos.avatar != null ? this.props.infos.avatar : 'https://theshave.com.br/api-barbershop/images/usersprofile/man.png'} /> */}
-              <Paragrafo>Cadastrar novo cliente</Paragrafo>
-              <BoxTop>
-                <Label>Nome</Label>
-                <Input type='text' value={this.state.nome} onChange={e=>this.setState({nome:e.target.value})}/>
-                <BoxLinha>
-                  <BoxColuna>
-                    <Label>E-mail</Label>
-                    <Input type='text' value={this.state.email} onChange={e=>this.setState({email:e.target.value})}/>                    
-                  </BoxColuna>
-                  <BoxColuna>
-                    <Label>Celular</Label>
-                    <Input type='text' value={this.state.celular} onChange={e=>this.setState({celular:phone(e.target.value)})}/>
-                  </BoxColuna>
-                </BoxLinha>
-                <BoxLinha>
-                  <BoxColuna>
-                    <Label>Data de Nascimento</Label>
-                    <Input type='date' value={this.state.datanascimento} onChange={e=>this.setState({datanascimento:e.target.value})}/>
-                  </BoxColuna>
-                </BoxLinha>
-              </BoxTop>
-              <BoxOpcoes>
-                <BtnAction onClick={this.close} bgColor={'#6E3534'}>Cancelar</BtnAction>
-                <BtnAction bgColor={'#63ADF2'} onClick={e=>this.submit()}>Salvar</BtnAction>
-              </BoxOpcoes>
-            </BoxEdit>
+            {!this.state.loading &&
+              <>
+                <BoxEdit>
+                  <Paragrafo>Cadastrar novo cliente</Paragrafo>
+                  <BoxTop>
+                    <Label>Nome</Label>
+                    <InputLg type='text' value={this.state.nome} onChange={e=>this.setState({nome:e.target.value})}/>
+                    <BoxLinha>
+                      <BoxColuna>
+                        <Label>E-mail</Label>
+                        <Input type='text' value={this.state.email} onChange={e=>this.setState({email:e.target.value})}/>                    
+                      </BoxColuna>
+                      <BoxColuna>
+                        <Label>Celular</Label>
+                        <Input type='text' value={this.state.celular} onChange={e=>this.setState({celular:phone(e.target.value)})}/>
+                      </BoxColuna>
+                    </BoxLinha>
+                    <BoxLinha>
+                      <BoxColuna>
+                        <Label>Data de Nascimento</Label>
+                        <Input type='date' value={this.state.datanascimento} onChange={e=>this.setState({datanascimento:e.target.value})}/>
+                      </BoxColuna>
+                    </BoxLinha>
+                  </BoxTop>
+                  <BoxOpcoes>
+                    <BtnAction onClick={this.close} bgColor={'#573535'}>Cancelar</BtnAction>
+                    <BtnAction bgColor={'#2B5277'} onClick={e=>this.submit()}>Salvar</BtnAction>
+                  </BoxOpcoes>
+                </BoxEdit>
+              </>
+            }
+            {this.state.loading &&
+              <LoaderArea>
+                <Loader
+                    type="TailSpin"
+                    color="#5C6BF2"
+                    height={80}
+                    width={80}
+                  />
+              </LoaderArea>
+            }
+            
           </Container>
         </>
     )

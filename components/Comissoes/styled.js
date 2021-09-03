@@ -37,7 +37,7 @@ export const BoxCalendario = styled.div`
 `;
 
 export const BtnAction = styled.div`
-    width:200px;
+    width:300px;
     height:40px;
     background-color:#F2A57C;
     border-radius:5px;
@@ -130,7 +130,7 @@ export const ProfissionalBox = styled.div`
     display:flex;
     width:150px;
     height:150px;
-    background-color:#63ADF2;
+    background-color:#2B5277;
     margin:5px;
     cursor:pointer;
     justify-content:center;
@@ -138,7 +138,7 @@ export const ProfissionalBox = styled.div`
     flex-direction:column;
     border-radius:5px;
     color:#FFF;
-    border:${(props) => props.destaque ? 'solid 5px #57F2EB' : 'none'};
+    border:${(props) => props.destaque ? 'solid 5px #709BFF' : 'none'};
 
     &:hover{
         transform:scale(1.03);
@@ -151,9 +151,10 @@ export const ResumoArea = styled.div`
     height:140px;
     display:flex;
     flex-direction:column;
-    background-color:#63ADF2;
+    background-color:#2B5277;
     padding:10px;
     margin-top:20px;
+    border-radius:10px;
 
     @media (max-width:1024px){
         max-width:760px;
