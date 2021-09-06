@@ -11,7 +11,7 @@ import Bottom from '../../components/BottomCli';
 import Maps from '../../components/Maps'; 
 import Logo from '../../components/LogoCli'; 
 import TopBar from '../../components/TopBarCli'; 
-import Servicos from '../../components/CliServicos'; 
+import Servicos from '../../components/CliServicos';  
 import InfosFuncionamento from '../../components/InfosFuncionamento';
 import DestaquesImagens from '../../components/DestaquesImagens';
 

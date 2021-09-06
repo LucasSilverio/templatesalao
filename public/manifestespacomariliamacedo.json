@@ -1,0 +1,52 @@
+{
+  "name": "Espaço Marilia Macedo",
+  "short_name": "Espaço Marilia Macedo",
+  "theme_color": "#396186",
+  "background_color": "#396186",
+  "display": "minimal-ui",
+  "Scope": "/espacomariliamacedo",
+  "start_url": "/espacomariliamacedo",
+  "icons": [
+    {
+      "src": "images/icons/mariliamacedo_72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/mariliamacedo_96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/mariliamacedo_128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/mariliamacedo_144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/mariliamacedo_152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/mariliamacedo_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/mariliamacedo_384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/mariliamacedo_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}
