@@ -303,13 +303,13 @@ submitNewHour(e){
                   <BoxTop>
                     <Paragrafo>Informe os horários de abertura, intervalo (caso houver) e fechamento de cada dia da semana.</Paragrafo>
                     <BoxRow>
-                      <Dia bgColor={this.state.selectedDay == 'Sun' ? '#63ADF2' : '#F2A57C'} onClick={e=>this.handleDay('Sun', 'Domingo')}>Domingo</Dia>
-                      <Dia bgColor={this.state.selectedDay == 'Mon' ? '#63ADF2' : '#F2A57C'} onClick={e=>this.handleDay('Mon', 'Segunda')}>Segunda</Dia>
-                      <Dia bgColor={this.state.selectedDay == 'Tue' ? '#63ADF2' : '#F2A57C'} onClick={e=>this.handleDay('Tue', 'Terça')}>Terça</Dia>
-                      <Dia bgColor={this.state.selectedDay == 'Wed' ? '#63ADF2' : '#F2A57C'} onClick={e=>this.handleDay('Wed', 'Quarta')}>Quarta</Dia>
-                      <Dia bgColor={this.state.selectedDay == 'Thu' ? '#63ADF2' : '#F2A57C'} onClick={e=>this.handleDay('Thu', 'Quinta')}>Quinta</Dia>
-                      <Dia bgColor={this.state.selectedDay == 'Fri' ? '#63ADF2' : '#F2A57C'} onClick={e=>this.handleDay('Fri', 'Sexta')}>Sexta</Dia>
-                      <Dia bgColor={this.state.selectedDay == 'Sat' ? '#63ADF2' : '#F2A57C'} onClick={e=>this.handleDay('Sat', 'Sábado')}>Sábado</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Sun' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Sun', 'Domingo')}>Domingo</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Mon' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Mon', 'Segunda')}>Segunda</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Tue' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Tue', 'Terça')}>Terça</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Wed' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Wed', 'Quarta')}>Quarta</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Thu' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Thu', 'Quinta')}>Quinta</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Fri' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Fri', 'Sexta')}>Sexta</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Sat' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Sat', 'Sábado')}>Sábado</Dia>
                     </BoxRow>
                   </BoxTop>
                   <ItemDia>
@@ -344,8 +344,8 @@ submitNewHour(e){
                     }
                     {!this.state.loading && 
                       <>
-                        <BtnAction bgColor={'#63ADF2'} onClick={this.submit}>Salvar Alterações</BtnAction>
-                        <BtnAction bgColor={'#F2A57C'} onClick={this.handleHorarios}>Próximo Passo</BtnAction>
+                        <BtnAction bgColor={'#2B5277'} onClick={this.submit}>Salvar</BtnAction>
+                        <BtnAction bgColor={'#709BFF'} onClick={this.handleHorarios}>Horários</BtnAction>
                       </>
                     }
                   </Opcoes>
@@ -354,13 +354,11 @@ submitNewHour(e){
               {this.state.horariosVisible &&
                 <Box>
                   <BoxTop>
-                    <Paragrafo>Cadastre os horários de atendimento, considerando o serviço oferecido cuja realização demanda menor tempo.</Paragrafo>
-                    <Paragrafo>Por exemplo, suponhamos que ofereça o serviço de "Corte de Cabelo" com duração de 40 minutos e "Fazer a Barba", com duração de 30 minutos. Você irá considerar a duração de 30 minutos, pois é o serviço que demanda menor tmepo de realização. </Paragrafo>
-                    <Paragrafo>Você pode contar com nosso suporte a qualquer momento para realizar este cadastro com você, caso  haja dúvidas. </Paragrafo>
+                    <Paragrafo>Cadastre os horários que ficarão disponiveis para agendamento.</Paragrafo>
                   </BoxTop>
                   <Opcoes>
                     <Input type='text' value={this.state.horario} onChange={e=>this.setState({horario:horario(e.target.value)})}/>
-                    <BtnAction bgColor={'#57F2EB'} onClick={this.submitNewHour}>Adicionar</BtnAction>
+                    <BtnAction bgColor={'#709BFF'} onClick={this.submitNewHour}>Adicionar</BtnAction>
                   </Opcoes>
                   <BoxHorarios>
                     {this.state.horarios.map((i, index) => (
@@ -370,7 +368,7 @@ submitNewHour(e){
                     ))}
                   </BoxHorarios>
                   <Opcoes>
-                    <BtnAction bgColor={'#F2A57C'} onClick={this.handleHorarios}>Voltar</BtnAction>
+                    <BtnAction bgColor={'#573535'} onClick={this.handleHorarios}>Voltar</BtnAction>
                   </Opcoes>
                 </Box>
               }

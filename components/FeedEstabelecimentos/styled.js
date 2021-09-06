@@ -73,7 +73,7 @@ export const Preco = styled.p`
 `;
 
 export const Reservar = styled.a`
-    background-color:#8B7CF2;
+    background-color:#709BFF;
     padding:5px;
     border-radius:5px;
     color:#FFF;
@@ -138,5 +138,5 @@ export const Title = styled.h2`
 export const Traco = styled.div`
     width:100px;
     height:5px;
-    background-color:#8B7CF2;
+    background-color:#709BFF;
 `;

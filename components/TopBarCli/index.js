@@ -104,11 +104,11 @@ class TopBarCli extends Component {
   render(){      
     
     return(       
-      <Container bgcolor={'#FFF'} altura={this.props.altura} visible={this.props.visible}>
+      <Container bgcolor={'#396186'} altura={this.props.altura} visible={this.props.visible}>
           <PageArea>
             <EstabelecimentoArea>
                 <EstabelecimentoTitulo>
-                    <Titulo bgcolor={'#333'}>{this.props.infos.nomeestabelecimento}</Titulo>
+                    <Titulo bgcolor={'#FFF'}>{this.props.infos.nomeestabelecimento}</Titulo>
                 </EstabelecimentoTitulo>
             </EstabelecimentoArea>
             <OpcoesArea>              

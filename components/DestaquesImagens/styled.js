@@ -1,7 +1,17 @@
 import styled, { css } from 'styled-components';
 
 export const BoxDesk = styled.div`
+    display:block;
+    @media (max-width:600px){
+        display:none;
+    }
+`;
 
+export const BoxMob = styled.div`
+    display:none;
+    @media (max-width:600px){
+        display:block;
+    }
 `;
 
 export const Container = styled.div`
@@ -30,7 +40,7 @@ export const Container = styled.div`
 
 export const Imagem = styled.img`
     margin:10px;
-    border:1px solid rgba(5,5,5,0.5);
+    border:4px solid #FFF;
     border-radius:5px;
 `;
 

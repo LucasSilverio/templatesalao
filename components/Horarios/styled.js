@@ -29,13 +29,14 @@ export const Avatar = styled.img`
 
 export const BtnAction = styled.button`
     width:120px;
-    height:30px;
+    height:40px;
     background-color:${(props) => props.bgColor};
     border:none;
     color:#FFF;
     border-radius:5px;
     margin-left:10px;
     cursor:pointer;
+    font-weight:600;
 
     &:hover{
         opacity:0.9;
@@ -167,14 +168,15 @@ export const ItemDia = styled.div`
 `;
 
 export const Input = styled.input`
-    border:1px solid rgba(5,5,5,0.2)
+    border:1px solid rgba(5,5,5,0.2);
     border-radius:5px;
+    height:30px;
 `;
 
 export const Horario = styled.div`
-    width:100px;
-    height:50px;
-    background-color:#716FF2;
+    width:80px;
+    height:40px;
+    background-color:#2B5277;
     margin:5px;
     display:flex;
     color:#FFF;
@@ -183,6 +185,8 @@ export const Horario = styled.div`
     border-radius:5px;
     cursor:pointer;
     flex-direction:column;
+    align-items:center;
+    justify-content:center;
 
     &:hover{
         opacity:0.9;
