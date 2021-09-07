@@ -1,19 +1,8 @@
 import React, { Component } from 'react';
-import Cookie from 'js-cookie';
 import Head from 'next/head';
-import Router from 'next/router';
-
-import Banner from '../../components/BannerLp'; 
-import Comecar from '../../components/Comecar';
 import TopBar from '../../components/TopBarFeed'; 
-import Recursos from '../../components/Recursos';
-import Example from '../../components/ExampleLp';
-import Divisao from '../../components/Divisao';
 import Bottom from '../../components/Bottom';
 import FeedEstabelecimentos from '../../components/FeedEstabelecimentos';
-import Vantagens from '../../components/Vantagens';
-import Garantias from '../../components/Garantias';
-import PrecoLp from '../../components/PrecoLp';
 
 class Home extends Component {
 

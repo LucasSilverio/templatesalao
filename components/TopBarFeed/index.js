@@ -30,7 +30,7 @@ class TopBarFeed extends Component {
   }
 
   render(){     
-
+ 
     return(       
       <Container bgcolor={'#396186'} altura={this.props.altura}> 
           <PageArea>

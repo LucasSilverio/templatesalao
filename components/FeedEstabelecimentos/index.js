@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { 
     Area,
@@ -58,7 +59,21 @@ class Componente extends Component {
                 <Row key={index}>
                   <ItemArea>
                     <LogoArea>
-                      <Logo src={i.logo}   />
+                      {i.imagens.length == 0 &&
+                        <Logo src={i.logo}   />
+                      }
+                      {i.imagens.length > 0 &&
+                        <Carousel showStatus={false}>
+                            <div>
+                              <Logo src={i.logo} />
+                            </div>
+                            {i.imagens.map((k, kindex) => (
+                              <div>
+                                  <Logo src={k.caminho} />
+                              </div>
+                            ))}
+                        </Carousel>
+                      }
                     </LogoArea>                  
                   </ItemArea>
                   <ItemArea>

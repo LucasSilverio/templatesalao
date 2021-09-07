@@ -8,7 +8,7 @@ export const Container = styled.div`
     top:0;
     position:fixed;
     z-index:20;
-    height:80px;
+    height:60px;
     background-color:${(props) => props.bgcolor};
     box-shadow:${(props) => props.altura < 100 ? '0 0 0 0 rgba(5,5,5,.5)' : '-2px 2px 10px 0 rgba(207,212,214,.5)'};
     color:#FFF;
@@ -98,7 +98,7 @@ export const Lk = styled.a`
 `;
 
 export const Logo = styled.img`
-    width:200px;
+    width:160px;
     height:auto;
 `;
 
@@ -118,7 +118,7 @@ export const OpcoesArea = styled.div`
 `;
 
 export const PageArea = styled.div`
-    max-width:1200px;
+    max-width:900px;
     width:100%;
     margin:auto;
     display:flex;
