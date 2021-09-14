@@ -185,6 +185,10 @@ export const ResumoArea = styled.div`
     flex-direction:column;
     padding-bottom:5px;
     margin-bottom:30px;
+
+    .swt {
+        margin-bottom:20px;
+    }
 `;
 
 export const BottomArea = styled.div`
@@ -358,6 +362,14 @@ export const SignUp = styled.div`
         width:90%;
         margin-left:-45%;
     }
+`;
+
+export const TipoLogin = styled.div`
+    width:150px;
+    position:absolute;
+    left:${(props) => props.right ? '10px' : '-70px'};
+    line-height:24px;
+    color:#FFF;
 `;
 
 export const Titulo = styled.p`

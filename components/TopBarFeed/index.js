@@ -32,14 +32,21 @@ class TopBarFeed extends Component {
   render(){     
  
     return(       
-      <Container bgcolor={'#396186'} altura={this.props.altura}> 
+      <Container bgcolor={'#FFF'} altura={this.props.altura}> 
           <PageArea>
             <EstabelecimentoArea>
                 <EstabelecimentoTitulo>
                     <Logo src={'/logo.png'} />
                 </EstabelecimentoTitulo>
+                <Link href={'//wa.me/5534996960659'}>
+                  <a target={"_blank"}>
+                    <Lk>
+                        Cadastrar
+                    </Lk>
+                  </a>
+                </Link> 
             </EstabelecimentoArea>
-            <FiltroArea>
+            {/* <FiltroArea>
               <form onSubmit={this.handleSubmit}>
                 <Select>
                   <option value='1' selected={this.props.tipo == 1 ? true : false}>Barbearia</option>
@@ -52,8 +59,8 @@ class TopBarFeed extends Component {
                 </Select>
                 <Btn>Ok</Btn>
               </form>
-            </FiltroArea>
-            <OpcoesArea>
+            </FiltroArea> */}
+            {/* <OpcoesArea>
                 <Link href={'//wa.me/5534996960659'}>
                   <a target={"_blank"}>
                     <Lk>
@@ -61,7 +68,7 @@ class TopBarFeed extends Component {
                     </Lk>
                   </a>
                 </Link>                
-            </OpcoesArea>
+            </OpcoesArea> */}
           </PageArea>
       </Container>
     )

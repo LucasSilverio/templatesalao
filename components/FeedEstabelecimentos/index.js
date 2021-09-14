@@ -4,12 +4,16 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { 
     Area,
+    BtnForm,
     ItemArea,
     ItemText,
     ItemTitle,
     ItemTitleSm,
     ItemDesc,
+    ItemCheck,
     Icon,
+    Input,
+    IptFiltro,  
     LogoArea,
     Logo,
     LinhaArea,
@@ -52,8 +56,23 @@ class Componente extends Component {
       <> 
         <PageContainer>
           <Area>
-            <Title>{this.props.categoria+" em "+this.props.cidade}</Title>
+            <Title>{this.props.categoria+" em "+this.props.cidade[0].toUpperCase()+this.props.cidade.substr(1)}</Title>
             <Traco />
+            <Row cl={true}>
+              <form>
+                <p>Pesquise sua cidade e encontre as melhores barbearias, salões de estética e manicúres. </p>
+                <IptFiltro placeholder={this.props.cidade[0].toUpperCase()+this.props.cidade.substr(1)} required/>
+                <Row justify={'initial'} alinhar='flex-start'>
+                  <ItemCheck>
+                    <Input type='radio' name='tipo' checked={this.props.categoria == 'Barbearia' ? true : false} />Barbearias
+                  </ItemCheck>
+                  <ItemCheck>
+                    <Input type='radio' name='tipo' checked={this.props.categoria != 'Barbearia' ? true : false}/>Salões de Beleza e Centros de Estética
+                  </ItemCheck>
+                </Row>
+                <BtnForm>Buscar</BtnForm>
+              </form>
+            </Row>
             {this.state.feed.map((i, index) => (
               <>
                 <Row key={index}>

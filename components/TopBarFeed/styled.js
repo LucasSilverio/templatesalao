@@ -10,13 +10,10 @@ export const Container = styled.div`
     z-index:20;
     height:60px;
     background-color:${(props) => props.bgcolor};
-    box-shadow:${(props) => props.altura < 100 ? '0 0 0 0 rgba(5,5,5,.5)' : '-2px 2px 10px 0 rgba(207,212,214,.5)'};
+    box-shadow:${(props) => props.altura < 0 ? '0 0 0 0 rgba(5,5,5,.5)' : '-2px 10px 10px 0 rgba(207,212,214,.5)'};
     color:#FFF;
 
-    @media (max-width:600px){
-        height:130px;
-        flex-direction:column;
-    }
+    
 `;
 
 export const Btn = styled.button`
@@ -40,10 +37,20 @@ export const EstabelecimentoArea = styled.div`
     height:60px;
     padding-left:10px;
     line-height:60px;
-    @media (max-width:600px){
-        justify-content:center;
-        line-height:20px;
-        margin-bottom:5px;
+    justify-content:center;
+    position:relative;
+    width:100%;
+
+    a{
+        position:absolute;
+        right:0;
+    }
+
+    @media (max-width:500px){
+        justify-content:space-around;
+        a{
+            position:unset;
+        }
     }
 `;
 
@@ -84,13 +91,12 @@ export const FiltroArea = styled.div`
 
 export const Lk = styled.a`
     cursor:pointer;
-    margin:0px 10px 0px 10px;
     color:#444;
     background-color:#FFF;
-    padding:10px;
     cursor:pointer;
     border-radius:5px;
     color:#544F7B;
+    width:150px;
 
     &:hover{
         opacity:0.8;

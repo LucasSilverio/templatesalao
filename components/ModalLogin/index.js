@@ -7,6 +7,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import Switch from "react-switch";
 import { 
     AlertArea,
     Alerta,
@@ -46,6 +47,7 @@ import {
     ParagrafoSm,
     Top,
     Titulo,
+    TipoLogin,
     TextTks,
     TksTitle,
     TksSub,
@@ -78,7 +80,8 @@ class ModalLogin extends Component {
       resetSenha:false,
       resetSenhaOk:false,
       sucessoVisible:false,
-      codigo:''
+      codigo:'',
+      checked:true,
     } 
     this.handleEdit = this.handleEdit.bind(this);
     this.listarHorarios = this.listarHorarios.bind(this)
@@ -96,6 +99,7 @@ class ModalLogin extends Component {
     this.doLogin = this.doLogin.bind(this)
     this.resetSenhaBack = this.resetSenhaBack.bind(this)
     this.resend = this.resend.bind(this)
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount(){
@@ -324,7 +328,8 @@ class ModalLogin extends Component {
       body:JSON.stringify({
           email:this.state.email,
           pass:this.state.pass,
-          slug:this.props.slug
+          slug:this.props.slug,
+          celular:this.state.celular
       })
     })
     .then(r=>r.json())
@@ -337,6 +342,7 @@ class ModalLogin extends Component {
         this.setState({signUpVisible:false})
         this.setState({confirmCodeVisible:false})
         this.setState({email:''})
+        this.setState({celular:''})
         this.setState({pass:''})
         this.props.handleModal();
         this.alerta("Bem vindo. Login efetuado com suceso!");
@@ -374,6 +380,10 @@ class ModalLogin extends Component {
     })
   }
 
+  handleChange(checked) {
+    this.setState({ checked });
+  }
+
 
   
   render(){     
@@ -386,8 +396,28 @@ class ModalLogin extends Component {
                 <Login> 
                   <Titulo>ACESSE PARA CONTINUAR</Titulo>
                   <ResumoArea>
-                    <Label>Seu E-mail</Label>
-                    <Input type='email' value={this.state.email} onChange={e=>this.setState({email:e.target.value})}/>
+                    <Switch 
+                      onChange={this.handleChange} 
+                      checked={this.state.checked} 
+                      uncheckedIcon={<TipoLogin>Login com o celular</TipoLogin>}
+                      checkedIcon={<TipoLogin right={true}>Login com o e-mail</TipoLogin>}
+                      width={150}
+                      onColor='#2B5277'
+                      offColor='#709BFF'
+                      className='swt'
+                    />
+                    {this.state.checked &&
+                      <>
+                        <Label>Seu E-mail</Label>
+                        <Input type='email' value={this.state.email} onChange={e=>this.setState({email:e.target.value})}/>
+                      </>
+                    }
+                    {!this.state.checked &&
+                      <>
+                        <Label>Seu Celular</Label>
+                        <Input type='email' placeholder={'(99)999999999'} value={this.state.celular} onChange={e=>this.setState({celular:phone(e.target.value)})} />
+                      </>
+                    }
                     <Label>Sua Senha</Label>
                     <Input type='password' value={this.state.pass} onChange={e=>this.setState({pass:e.target.value})}/>
                     
@@ -426,7 +456,7 @@ class ModalLogin extends Component {
                     <Label>Sobrenome</Label>
                     <Input type='text' value={this.state.sobrenome} onChange={e=>this.setState({sobrenome:e.target.value})}/>
                     <Label>* Seu celular (Whatsapp) - <small>Enviaremos um código de verificação gratuitamente para validar</small></Label>
-                    <Input type='email' placeholder={'(99)999999999'} value={this.state.celular} onChange={e=>this.setState({celular:phone(e.target.value)})}/>
+                    <Input type='text' placeholder={'(99)999999999'} value={this.state.celular} onChange={e=>this.setState({celular:phone(e.target.value)})}/>
                     <Label>* Sua Senha</Label>
                     <Input type='password' onChange={e=>this.setState({pass:e.target.value})}/>
                     <Alerta>{this.state.alert}</Alerta>

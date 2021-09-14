@@ -4,12 +4,34 @@ export const Area = styled.div`
     width:100%;
     max-width:1100px;
     margin:auto;
+    padding:5px;
+`;
+
+export const BtnForm = styled.button`
+    width:200px;
+    height:40px;
+    border-radius:5px;
+    color:#FFF;
+    background-color:#2B5277;
+    border:1px solid rgba(5,5,5,0.2);
+    cursor:pointer;
+    &:hover{
+        opacity:0.9;
+    }
+
+    @media (max-width:700px){
+        width:100%;
+    }
 `;
 
 export const ItemArea = styled.div`
     display:flex;
     flex:1;
     flex-direction:column;
+
+    @media (max-width:700px){
+        margin-bottom:50px;
+    }
 `;
 
 export const ItemTitle = styled.h1`
@@ -60,7 +82,9 @@ export const Linha = styled.div`
     margin-top:10px;
 `;
 
-export const ItemText = styled.div``;
+export const ItemText = styled.div`
+    max-width:100%;
+`;
 
 export const Icon = styled.img`
     width:30px;
@@ -73,7 +97,7 @@ export const Preco = styled.p`
 `;
 
 export const Reservar = styled.a`
-    background-color:#709BFF;
+    background-color:#396186;
     padding:5px;
     border-radius:5px;
     color:#FFF;
@@ -87,9 +111,21 @@ export const VerMais = styled.a`
     margin-top:14px;
     position:absolute;
     cursor:pointer;
+    background-color:#2B5378;
+    width:400px;
+    height:40px;
+    border-radius:5px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#FFF;
 
     &:hover {
         opacity:0.8;
+    }
+
+    @media (max-width:700px){
+        max-width:90%;
     }
 `;
 
@@ -102,6 +138,7 @@ export const PageContainer = styled.div`
     margin:auto;
     margin-top:80px;
     margin-bottom:100px;
+    min-height:300px;
 
     .carousel .control-next.control-arrow::before{
         border-left: 8px solid #E887B2;
@@ -117,15 +154,36 @@ export const PageContainer = styled.div`
     }
 `;
 
+export const Input = styled.input``;
+
+export const IptFiltro = styled.input`
+    width:100%;
+    height:50px;
+    border-radius:5px;
+    border:none;
+    box-shadow: 1px 0px 8px 0px rgba(0,0,0,0.44);
+    -webkit-box-shadow: 1px 0px 8px 0px rgba(0,0,0,0.44);
+    -moz-box-shadow: 1px 0px 8px 0px rgba(0,0,0,0.44);
+    padding-left:10px;
+`;
+
+export const ItemCheck = styled.div`
+    display:flex;
+    flex-direction:row;
+    margin-right:25px;
+`;
+
 export const Row = styled.div`
     display:flex;
-    justify-content:space-between;
+    justify-content:${(props) => props.justify || 'space-between'};
     padding-top:20px;
     padding-bottom:20px;
+    flex-direction:${(props) => props.cl ? 'column' : 'row'};
 
 
     @media (max-width:700px){
         flex-direction:column;
+        align-items:${(props) => props.alinhar || 'center'};
     }
 `;
 
@@ -138,5 +196,5 @@ export const Title = styled.h2`
 export const Traco = styled.div`
     width:100px;
     height:5px;
-    background-color:#709BFF;
+    background-color:#396186;
 `;
