@@ -30,7 +30,7 @@ class Home extends Component {
     import('react-facebook-pixel')
     .then((x) => x.default)
     .then((ReactPixel) => {
-      ReactPixel.init('135083928579550'); 
+      ReactPixel.init('283705506614869'); 
       ReactPixel.pageView();
       ReactPixel.track('ViewContent',{
         content_name:'Página Home'
