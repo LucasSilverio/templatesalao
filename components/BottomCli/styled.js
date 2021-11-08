@@ -77,9 +77,10 @@ export const Lk = styled.a`
     color:#FFF;
     display:flex;
     flex-direction:column;
-    font-size:11px;
+    font-size:13px;
     align-items:center;
     justify-content:center;
+    font-weight:600;
 
     &:hover{
         opacity:0.8;

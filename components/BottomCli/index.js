@@ -15,31 +15,6 @@ import {
 } from './styled';
 import { Icon } from '../Bottom/styled';
 
-// window.addEventListener('beforeinstallprompt', (e) => {
-//   // Prevent Chrome 67 and earlier from automatically showing the prompt
-//   e.preventDefault();
-//   // Stash the event so it can be triggered later.
-//   deferredPrompt = e;
-//   // Update UI to notify the user they can add to home screen
-//   addBtn.style.display = 'block';
-
-//   addBtn.addEventListener('click', () => {
-//     // hide our user interface that shows our A2HS button
-//     addBtn.style.display = 'none';
-//     // Show the prompt
-//     deferredPrompt.prompt();
-//     // Wait for the user to respond to the prompt
-//     deferredPrompt.userChoice.then((choiceResult) => {
-//       if (choiceResult.outcome === 'accepted') {
-//         console.log('User accepted the A2HS prompt');
-//       } else {
-//         console.log('User dismissed the A2HS prompt');
-//       }
-//       deferredPrompt = null;
-//     });
-//   });
-// });
-
 
 class BottomCli extends Component {
   constructor({props, initialQtdValue, test}){
@@ -49,57 +24,9 @@ class BottomCli extends Component {
   }
 
   componentDidMount(){
-    // let deferredPrompt;
-    // const addBtn = document.querySelector('.add-button');
-    // const boxView = document.querySelector('.box-view');
-    // addBtn.style.display = 'none';
-    // // boxView.style.display = 'none';
-    // window.addEventListener('beforeinstallprompt', (e) => {
-    //   // Prevent Chrome 67 and earlier from automatically showing the prompt
-    //   e.preventDefault();
-    //   // Stash the event so it can be triggered later.
-    //   deferredPrompt = e;
-    //   // Update UI to notify the user they can add to home screen
-    //   addBtn.style.display = 'block';
-    //   // boxView.style.display = 'block';
-    //   console.log('xxx')
-    //   addBtn.addEventListener('click', () => {
-    //     console.log('clicou')
-    //     // hide our user interface that shows our A2HS button
-    //     addBtn.style.display = 'none';
-    //     // boxView.style.display = 'none';
-    //     // Show the prompt
-    //     deferredPrompt.prompt();
-    //     // Wait for the user to respond to the prompt 
-    //     deferredPrompt.userChoice.then((choiceResult) => {
-    //       if (choiceResult.outcome === 'accepted') {
-    //         console.log('User accepted the A2HS prompt');
-    //       } else {
-    //         console.log('User dismissed the A2HS prompt');
-    //       }
-    //       deferredPrompt = null;
-    //     });
-    //   });
-    // });
   }
 
   installApp() {
-    // alert('Instalar app');
-    // // Show the prompt
-    // deferredPrompt.prompt();
-    // setupButton.disabled = true;
-    // // Wait for the user to respond to the prompt
-    // deferredPrompt.userChoice
-    //     .then((choiceResult) => {
-    //         if (choiceResult.outcome === 'accepted') {
-    //             console.log('PWA setup accepted');
-    //             // hide our user interface that shows our A2HS button
-    //             setupButton.style.display = 'none';
-    //         } else {
-    //             console.log('PWA setup rejected');
-    //         }
-    //         deferredPrompt = null;
-    //     });
   }
 
   render(){     
@@ -109,11 +36,16 @@ class BottomCli extends Component {
           <PageArea>
             <Link href='/'>
               <Lk>
-                <Logo src={'/logo.png'} />
-                Crie sua agenda
+                {/* <Logo src={'/logo.png'} /> */}
+                Cadastre seu Salão
               </Lk>
-            </Link>
-            
+            </Link>    
+            <Link href='/'>
+              <Lk>
+                {/* <Logo src={'/logo.png'} /> */}
+                Entre em Contato Conosco
+              </Lk>
+            </Link>          
           </PageArea>
           <Notificacao>
             <div class='onesignal-customlink-container'></div>

@@ -20,6 +20,10 @@ export const AlertArea = styled.div`
     }
 `;
 
+export const AlertaRetorno = styled.p`
+    color:#800000;
+`;
+
 export const Alerta = styled.p`
     font-size:13px;
     color:#800000;
@@ -418,7 +422,7 @@ export const LinkArea = styled.div`
     margin-top:-40px;
     margin-bottom:20px;
     display:flex;
-    justify-content:flex-end;
+    justify-content:space-between;
 `;
 
 export const Lk = styled.button`

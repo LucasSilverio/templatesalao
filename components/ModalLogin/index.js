@@ -12,6 +12,7 @@ import {
     AlertArea,
     Alerta,
     AreaBotoes,
+    AlertaRetorno,
     Avatar,
     BackArea,
     BotaoC,
@@ -64,6 +65,7 @@ class ModalLogin extends Component {
       loading:false,
       editavel:false,
       alert:'',
+      alertaLogin:'',
       nome:'',
       email:'',
       celular:'',
@@ -224,7 +226,8 @@ class ModalLogin extends Component {
         this.setState({loading:false})
       })
     }else{
-      alert("Os campos com (*) são de preenchimento obrigatório!");
+      
+      this.alerta("Os campos com (*) são de preenchimento obrigatório!");
       this.setState({loading:false})
     }
   }
@@ -347,6 +350,8 @@ class ModalLogin extends Component {
         this.props.handleModal();
         this.alerta("Bem vindo. Login efetuado com suceso!");
         Cookie.set('token', json.jwt, {expires:700})
+      }else{
+        this.alerta(json.error);
       }
       this.setState({loading:false})
     })
@@ -423,6 +428,7 @@ class ModalLogin extends Component {
                     
                   </ResumoArea>
                   <LinkArea>
+                    {/* <AlertaRetorno>Teste</AlertaRetorno> */}
                     <Lk onClick={this.handleSenha}>Esqueci a senha</Lk>
                   </LinkArea>
                   <BottomArea>

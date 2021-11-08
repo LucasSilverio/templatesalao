@@ -301,7 +301,8 @@ class ModalAgenda extends Component {
                   onChange={this.onChange}
                   value={this.state.data}
                 />     
-              </CalendarioArea>    
+              </CalendarioArea>   
+              <Titulo>ESCOLHA UM PROFISSIONAL</Titulo> 
               <ProfissionaisArea> 
                 {this.props.profissionais.map((i, index) => (
                   <Profissional key={index} onClick={e=>this.handleProfissional(i.id)} destaque={this.state.profissional == i.id ? true : false}>

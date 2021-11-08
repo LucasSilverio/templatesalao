@@ -113,12 +113,13 @@ export const Profissional = styled.div`
     text-align:center;
     display:flex;
     flex-direction:column;
-    color:#000;
+    color:${(props) => props.destaque ? '#FFF' : '#333'};
     align-items:center;
     justify-content:center;
 
-    border:${(props) => props.destaque ? '1px solid #00f' : 'none'};
-    border-radius:5px;
+    border:${(props) => props.destaque ? '1px solid #396186' : 'none'};
+    background-color:${(props) => props.destaque ? '#396186' : 'none'};
+    border-radius:50px;
 
     &:hover{
         opacity:0.7;
