@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Head from 'next/head';
 import TopBar from '../../components/TopBarFeed'; 
 import Bottom from '../../components/Bottom';
-import FeedEstabelecimentos from '../../components/FeedEstabelecimentos';
+import FeedEstabelecimentos from '../../components/FeedEstabelecimentos'; 
 
 class Home extends Component {
 
