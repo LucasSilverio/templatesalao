@@ -201,7 +201,7 @@ submit(e){
                 ))}                
               </ProfissionaisArea>
               {this.state.profissionalNome == '' &&
-                <SubtituloCorpo>Selecione um parceiro</SubtituloCorpo>
+                <SubtituloCorpo>Selecione um profissional</SubtituloCorpo>
               }
 
               {this.state.profissionalNome != '' &&
