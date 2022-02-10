@@ -31,18 +31,17 @@ class TopBar extends Component {
     .then(r=>r.json())
     .then(json=>{
       this.setState({link:json.data.linkproprio})
+      // console.log(json.data);
     })
   }
 
   getInfos(){
-    // osAPI.getInfosPanel(Cookie.get('token'))
+    // osAPI.getInfosPanel(Cookie.get('token')) 
     // .then(r=>r.json())
     // .then(json=>{
     //   this.setState({slug:json.data.slug})
     // })
-  }
-
-  
+  }  
 
   handleLogout(){
     Cookie.remove('token');
