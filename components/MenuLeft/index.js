@@ -111,13 +111,18 @@ class TopBar extends Component {
                       <li>Profissionais</li>
                     </Lk>
                 </Link>
-                <Link  href={this.state.link}>
+                <Link href='/gestao/whatsapp'>
+                    <Lk>
+                      <li>Integrar WhatsApp</li>
+                    </Lk>
+                </Link>
+                {/* <Link  href={this.state.link}>
                     <a target={"_blank"}>
                       <Lk >
                         <li>Integrar WhatsApp</li> 
                       </Lk>
                     </a>
-                </Link>
+                </Link> */}
                 <LineSoft />
                 <Lk onClick={this.handleLogout}>
                   <li>Sair</li>
