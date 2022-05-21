@@ -1,7 +1,7 @@
 import qs from 'qs';
 
 // const BASEAPI = 'https://theshave.com.br/api-barbershop/';
-const BASEAPI = 'https://elleservicos.net/api-barbershop/';
+const BASEAPI = 'https://elleservicos.net/api/';
 const company = 1;
 // const endpoint = 'colecoes/getcolecoes';
 
