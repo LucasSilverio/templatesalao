@@ -99,8 +99,6 @@ class TopBarCli extends Component {
     })
   }
 
-
-
   render(){      
     
     return(       
@@ -115,9 +113,9 @@ class TopBarCli extends Component {
               <BtnAction2 onClick={this.handleScroll}>
                 Agendar horário
               </BtnAction2>
-              <BtnOpcoes onClick={this.handleMenu}>
+              {/* <BtnOpcoes onClick={this.handleMenu}>
                 <Icone src='/user.svg' />
-              </BtnOpcoes>
+              </BtnOpcoes> */}
               <MenuArea visible={this.state.menuVisible}>
                 {Cookie.get('token') != undefined &&
                   <>

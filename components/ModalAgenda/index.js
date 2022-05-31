@@ -45,6 +45,7 @@ import {
 import osAPI from '../../services/osAPI';
 import ecommerceAPI from '../../services/ecommerceAPI';
 import ModalLogin from '../ModalLogin';
+import ModalIdentificacao from '../ModalIdentificacao';
 import {onlyNumbers, phone} from '../../services/formMask';
 
 class ModalAgenda extends Component {
@@ -179,11 +180,11 @@ class ModalAgenda extends Component {
 
   handleConfirm(){
     this.setState({loading:true})
-    if(Cookie.get('token') !== undefined){
+    if(Cookie.get('anw_nome') !== undefined && Cookie.get('anw_celular') !== undefined){
       fetch(ecommerceAPI.BASE_URL_API+'agenda/agendarSite', {
         method:'POST',
         body:JSON.stringify({
-            jwt:Cookie.get('token'),
+            celular:Cookie.get('anw_celular'),
             idbarbeiro:this.state.profissional,
             dateStr:this.state.dataEscolhida,
             horario:this.state.horarioSelecionado,
@@ -206,7 +207,7 @@ class ModalAgenda extends Component {
         
       })
     }else{
-      this.setState({modalLoginVisible:true})
+      this.setState({ModalIdentificacao:true})
     }
   }
 
@@ -257,9 +258,10 @@ class ModalAgenda extends Component {
     });
   }
 
+  //verifica se usuario esta identificado
   checkConfirm = (e) =>{
     e.preventDefault();    
-    if(Cookie.get('token') !== undefined){
+    if(Cookie.get('anw_nome') !== undefined && Cookie.get("anw_celular") !== undefined){
       confirmAlert({
         customUI: ({ onClose }) => {
           return (
@@ -282,7 +284,7 @@ class ModalAgenda extends Component {
         }
       });
     }else{
-      this.setState({modalLoginVisible:true})
+      this.setState({modalLoginVisible:true}) 
     }
     
   }
@@ -346,7 +348,7 @@ class ModalAgenda extends Component {
                   </LoaderArea>
                 }
               </BottomArea>
-              <ModalLogin
+              <ModalIdentificacao
                 visible={this.state.modalLoginVisible}
                 handleModal={this.handleModal}
                 slug={this.props.slug}
