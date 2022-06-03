@@ -37,6 +37,12 @@ export const BoxLinha = styled.div`
     flex-direction:row;
     align-items:center;
     border-bottom:1px solid rgba(10,10,10,0.2);
+
+    @media (max-width:600px){
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
 `;
 
 export const BoxOpcoes = styled.div`
@@ -44,6 +50,11 @@ export const BoxOpcoes = styled.div`
     flex-direction:row;
     align-items:center;
     padding:10px;
+
+    @media (max-width:600px){
+        flex-wrap:wrap;
+        justify-content:center;
+    }
 `;
 
 export const BtnAction = styled.div`
@@ -146,6 +157,7 @@ export const Container = styled.div`
     cursor:pointer;
     padding:20px;
     flex-direction:column;
+    overflow:auto;
 
     form{
         display:flex;
@@ -185,6 +197,10 @@ export const Texto = styled.p`
     font-weight:600;
     margin-right:25px;
     color:${(props) => props.color};
+
+    @media (max-width:600px){
+        font-size:16px;
+    }
 `;
 
 export const TextoSm = styled.p`
@@ -194,6 +210,10 @@ export const TextoSm = styled.p`
     margin-top:5px;
     margin-bottom:5px;
     color:${(props) => props.color};
+
+    @media (max-width:600px){
+        text-align:center;
+    }
 `;
 
 export const TextoStatus = styled.p`

@@ -70,7 +70,6 @@ class Painel extends Component {
           <title>The Shave | App de Agendamento para Barbearias e Salões de Beleza</title>
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content={'#FFF'}/>
-         {/* <script src="//code.jivosite.com/widget/kKrv7B4GQd" async></script> */} 
        </Head>
        <TopBar />
        <MenuLeft />

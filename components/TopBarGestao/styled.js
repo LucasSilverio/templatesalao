@@ -14,8 +14,11 @@ export const Container = styled.div`
     color:#FFF;
 
     @media (max-width:600px){
-        height:130px;
+        height:60px;
         flex-direction:column;
+        display:flex;
+        justify-content:center;
+        
     }
 `;
 
@@ -34,6 +37,9 @@ export const EstabelecimentoArea = styled.div`
 
 export const EstabelecimentoTitulo = styled.p`
     margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 `;
 
 export const Icone = styled.img`
@@ -76,7 +82,7 @@ export const OpcoesArea = styled.div`
     justify-content:flex-end;
 
     @media (max-width:600px){
-        height:40px;
+        display:none;
     }
 
     

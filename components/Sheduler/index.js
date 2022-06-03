@@ -16,6 +16,7 @@ import {
     BoxHorarioInter,
     BtnAction,
     CalendarioArea,
+    CalendarioAreaMob,
     Calendario,
     Corpo,
     ColunaHorarios,
@@ -115,7 +116,7 @@ clickHorario(profissional, horario, idprofissinal){
   this.setState({nomeProfissionalBloqueio:profissional})
   this.setState({horarioBloqueio:horario})
   this.setState({idProfissionalBloqueio:idprofissinal})
-  // alert(idprofissinal)
+  // alert(idprofissinal) 
 }
 
 getProfessionals(){
@@ -216,11 +217,22 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                 <Atualizacao onClick={e=>this.getAgenda(this.state.data)}>
                   {'Atualizado às '+moment(this.state.atualizacao).format('HH:mm')}
                 </Atualizacao>
-                {/* <Erro>{this.state.errorAlert}</Erro> */}
               </CalendarioArea> 
               <CalendarioArea>
                 <BtnAction bgColor={'#573535'} onClick={this.handleModalBlock}>Bloquear Horário</BtnAction>
               </CalendarioArea>
+              <CalendarioAreaMob>
+                  <Calendario type='date' onChange={e=>this.handleData(e.target.value)} />
+                  <ParagrafoDestaque> - {moment(this.state.data).format('DD/MM/YY')}</ParagrafoDestaque>
+              </CalendarioAreaMob>
+              <CalendarioAreaMob>
+                <Atualizacao onClick={e=>this.getAgenda(this.state.data)}>
+                  {'Atualizado às '+moment(this.state.atualizacao).format('HH:mm')}
+                </Atualizacao>
+                <BtnAction onClick={e=>this.handleModalNovo()} bgColor={'#2B5277'}>Novo Agendamento</BtnAction>
+              </CalendarioAreaMob>
+
+
               <ColunaHorarios>
                   {this.state.horarios.map((i, index) => ( 
                     <Linha>

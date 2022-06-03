@@ -81,6 +81,10 @@ export const BtnAction = styled.button`
         opacity:0.9;
         transform:scale(1.02);
     }
+
+    @media (max-width:600px){
+        margin-left:5px;
+    }
 `;
 
 export const CalendarioArea = styled.div`
@@ -88,6 +92,23 @@ export const CalendarioArea = styled.div`
     flex-direction:row;
     margin-bottom:10px;
     align-items:center;
+
+    @media (max-width:600px){
+        display:none;
+    }
+`;
+
+export const CalendarioAreaMob = styled.div`
+    display:none;
+    flex-direction:row;
+    margin-bottom:10px;
+    align-items:center;
+
+    @media (max-width:600px){
+        display:flex;
+        flex-wrap:wrap;       
+        justify-content:center; 
+    }
 `;
 
 export const Calendario = styled.input`
@@ -95,6 +116,10 @@ export const Calendario = styled.input`
     border-radius:3px;
     border:1px solid #999;
     height:30px;
+
+    @media (max-width:600px){
+        width:100px;
+    }
 `;
 
 export const Corpo = styled.div`
@@ -232,4 +257,9 @@ export const Topo = styled.div`
     height:60px;
     background-color:#FFF;
     padding-left:10px;
+
+    @media (max-width:600px){
+        display:flex;
+        justify-content:center;      
+    }
 `;

@@ -188,7 +188,7 @@ class Modal extends Component {
       this.setState({loading:false})
     })
   }
-  
+   
   render(){     
     
     return(   
@@ -198,16 +198,18 @@ class Modal extends Component {
             {!this.state.loading &&
               <>
                 <BoxLinha>
-                <Texto color={'#333'}>{'Cliente: '+this.props.cliente}</Texto>  
-                <Texto color={'#333'}>{'Tel: '+this.props.phone}</Texto>  
-                  <Link href={'//wa.me/55'+this.props.phone} >
-                    <a target={"_blank"}>
-                        <Icone src='/whatsapp.png' />
-                    </a>
-                  </Link>
+                  <Texto color={'#333'}>{'Cliente: '+this.props.cliente}</Texto>  
+                  <Texto color={'#333'}>{'Tel: '+this.props.phone}</Texto>  
+                    <Link href={'//wa.me/55'+this.props.phone} >
+                      <a target={"_blank"}>
+                          <Icone src='/whatsapp.png' />
+                      </a>
+                    </Link>
                 </BoxLinha>
                 <BoxLinha>
-                  <TextoSm color={'#555'}>{'Serviço: '+this.props.servico+' - Horário: '+this.props.hora+'h às '+this.props.horafim+'h - Profissional: '+this.props.barbeiro}</TextoSm>
+                  <TextoSm color={'#555'}>{'Serviço: '+this.props.servico}</TextoSm>
+                  <TextoSm color={'#555'}>{'Horário: '+this.props.hora+'h às '+this.props.horafim+'h'}</TextoSm>
+                  <TextoSm color={'#555'}>{'Profissional: '+this.props.barbeiro}</TextoSm>
                 </BoxLinha>
                 <BoxLinha>
                   <TextoSm>Valor do Cobrado(R$): <Preco type={'text'} value={this.props.preco} onChange={e=>this.props.handlePreco(preco(e.target.value))}/></TextoSm>

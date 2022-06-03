@@ -103,6 +103,20 @@ export const BoxCliente = styled.div`
     height:auto;
     display:flex;
     flex-direction:row;
+    @media (max-width:600px){
+        justify-content:center;
+    }
+`;
+
+export const BoxClienteMob = styled.div`
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+
+    @media (max-width:600px){
+        justify-content:center;
+    }
 `;
 
 export const Box = styled.div`
@@ -111,6 +125,10 @@ export const Box = styled.div`
     display:flex;
     flex-direction:column;
     padding:5px;
+
+    @media (max-width:600px){
+        justify-content:center;
+    }
 `;
 
 export const Container = styled.div`
@@ -226,13 +244,18 @@ export const ItemServico = styled.div`
 `;
 
 export const Label = styled.label`
-
+    text-align:center;
 `;
 
 export const Paragrafo = styled.p`
     font-size:24px;
     color:#333;
     margin:0;
+
+    @media (max-width:600px){
+        font-size:16px;
+        text-align:center;
+    }
 `;
 
 export const ResultItem = styled.div`
@@ -252,6 +275,11 @@ export const Result = styled.div`
     width:100%;
     height:auto;
     flex-wrap:wrap;
+
+    @media (max-width:600px){
+        justify-content:center;
+    }
+    
     
 `;
 
@@ -261,5 +289,9 @@ export const TopModal = styled.div`
     width:100%;
     height:40px;
     border-bottom:1px solid rgba(5,5,5,0.1);
+
+    @media (max-width:600px){
+        justify-content:center;
+    }
 `;
 

@@ -17,6 +17,7 @@ import {
     BotaoC,
     BodyModal,
     BoxCliente,
+    BoxClienteMob,
     Box,
     Container,
     IptBusca,
@@ -223,13 +224,13 @@ class ModalNovo extends Component {
         <>
           <BackArea visible={this.props.visible} onClick={this.close}/>
           <Container visible={this.props.visible}>
-            {!this.state.loading &&
+            {!this.state.loading && 
               <>
                 <TopModal>
                   <Paragrafo>Verificar agenda para o dia {moment(this.props.data).format('DD/MM/YY')}</Paragrafo>
                 </TopModal>
                 <BodyModal>
-                  <BoxCliente>
+                  <BoxClienteMob>
                     <Box>
                       <Label>Informe o cliente</Label>
                       <IptBusca type='text' value={this.state.nomeCliente} onChange={e=>this.handleCliente(e.target.value)} placeholder='Pesquise aqui o nome do(a) cliente'/>
@@ -247,7 +248,7 @@ class ModalNovo extends Component {
                         <AlertMsg>{this.state.errorAlert}</AlertMsg>
                       }
                     </Box>
-                  </BoxCliente>
+                  </BoxClienteMob>
                   <BoxCliente>
                     <Box>
                       <Label>Selecione o Profissional</Label>
