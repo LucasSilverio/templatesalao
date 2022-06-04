@@ -96,6 +96,10 @@ export const BotaoC = styled.a`
 export const BodyModal = styled.div`
     width:100%;
     height:auto;
+
+    @media (max-width:799px){
+        padding-top:40px;
+    }
 `;
 
 export const BoxCliente = styled.div`
