@@ -34,8 +34,9 @@ export const InfoAreaUnder = styled.div`
     padding:20px;
 
     @media (max-width:799px){
-        left:0;
+        left:${(props) => props.left || 0};
         width:100%;
+        transition: 1s;
     }
 `;
 

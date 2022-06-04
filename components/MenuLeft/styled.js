@@ -149,7 +149,7 @@ export const PageArea = styled.div`
     position:fixed;
 
     @media (max-width:799px){
-        display:none;
+        // display:none;
     }
 `;
 
@@ -161,4 +161,20 @@ export const Suporte = styled.div`
     bottom:80px;
     left:10px;
     padding:20px;
+`;
+
+export const HamburgerMenu = styled.div`
+    width:50px;
+    height:40px;
+    background-color:#800000;
+    position:absolute;
+    top:10px;
+    right:20px;
+    z-index:100;
+    cursor:pointer;
+    border-radius:5px;
+    color:#FFF;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 `;

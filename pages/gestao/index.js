@@ -18,7 +18,9 @@ class Painel extends Component {
       logged:0,
       exibirModal:false,
       popup:false,
+      left:'0'
     }
+    this.showMenu = this.showMenu.bind(this);
   }
   
   static async getInitialProps({res, req}){
@@ -58,6 +60,15 @@ class Painel extends Component {
 
   } 
 
+  showMenu(){
+    if(this.state.left == 'none'){
+      this.setState({left:'0'})
+    }else{
+      this.setState({left:'none'})
+    }
+    
+  }
+
   render(){
     return(
       <>
@@ -72,8 +83,8 @@ class Painel extends Component {
           <meta name="theme-color" content={'#FFF'}/>
        </Head>
        <TopBar />
-       <MenuLeft />
-       <InfoAreaUnder>
+       <MenuLeft showMenu={this.showMenu}/>
+       <InfoAreaUnder left={this.state.left}>
          <Sheduler />
        </InfoAreaUnder>   
       </>

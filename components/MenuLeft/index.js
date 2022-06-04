@@ -7,6 +7,7 @@ import Router from 'next/router';
 import { 
     Container,
     Drawer,
+    HamburgerMenu,
     Line,
     Lk,
     LineSoft,
@@ -48,91 +49,100 @@ class TopBar extends Component {
     Router.replace('/login');
   }
 
+  teste(){
+    alert("Teste");
+  }
+
   render(){     
  
     return(   
-      <PageArea> 
-        <Container>
-          <ul className='vendasArea'>
-            <Link href={'/gestao'}>
-              <a>Agenda</a>
-            </Link>
-          </ul>         
-          <Line />
-          <ul className='vendasArea'>
-            <Link href={'/gestao/agenda-lotada'}>
-              <a>Agenda Lotada</a>
-            </Link>
-          </ul>           
-          <Line />
-          <ul className='vendasArea'>
-            <Link href={'/gestao/comissoes'}>
-              <a>Comissões</a>
-            </Link>
-          </ul>        
-          <Line />
-          <ul className='vendasArea'>
-            <Link href={'/gestao/clientes'}>
-              <a>Clientes</a>
-            </Link>
-          </ul>    
-          <Line />
-          <ul className='vendasArea'>
-            <Link href={'/gestao/financeiro'}>
-              <a>Gestão Financeira</a>
-            </Link>
-          </ul>
-          <Line />
-          <ul className='vendasArea'>
-            <Link href={'/gestao/produtos'}>
-              <a>Vendas</a>
-            </Link>
-          </ul>    
-          <Line />
-            <ul className='produtosArea'>
-              <Lk icon={'produtos.png'}>Configurações</Lk>
-              <ul className='subProdutos'>
-                <LineSoft />
-                  <Link href='/gestao/horarios'>
-                    <Lk>
-                      <li>Horários de Atendimento</li>
-                    </Lk>
-                  </Link>
-                <LineSoft />
-                <LineSoft />
-                  <Link href='/gestao/servicos'>
-                    <Lk>
-                      <li>Serviços Oferecidos</li>
-                    </Lk>
-                  </Link>
-                <LineSoft />
-                <Link href='/gestao/profissionais'>
-                    <Lk>
-                      <li>Profissionais</li>
-                    </Lk>
-                </Link>
-                <Link href='/gestao/whatsapp'>
-                    <Lk>
-                      <li>Integrar WhatsApp</li>
-                    </Lk>
-                </Link>
-                {/* <Link  href={this.state.link}>
-                    <a target={"_blank"}>
-                      <Lk >
-                        <li>Integrar WhatsApp</li> 
-                      </Lk>
-                    </a>
-                </Link> */}
-                <LineSoft />
-                <Lk onClick={this.handleLogout}>
-                  <li>Sair</li>
-                </Lk>
-                {/* <LineSoft /> */}
-              </ul>
+      <>
+        <PageArea> 
+          <Container>
+            <ul className='vendasArea'>
+              <Link href={'/gestao'}>
+                <a>Agenda</a>
+              </Link>
+            </ul>         
+            <Line />
+            <ul className='vendasArea'>
+              <Link href={'/gestao/agenda-lotada'}>
+                <a>Agenda Lotada</a>
+              </Link>
+            </ul>           
+            <Line />
+            <ul className='vendasArea'>
+              <Link href={'/gestao/comissoes'}>
+                <a>Comissões</a>
+              </Link>
+            </ul>        
+            <Line />
+            <ul className='vendasArea'>
+              <Link href={'/gestao/clientes'}>
+                <a>Clientes</a>
+              </Link>
+            </ul>    
+            <Line />
+            <ul className='vendasArea'>
+              <Link href={'/gestao/financeiro'}>
+                <a>Gestão Financeira</a>
+              </Link>
             </ul>
-          <Line />
-        </Container>
-      </PageArea>
+            <Line />
+            <ul className='vendasArea'>
+              <Link href={'/gestao/produtos'}>
+                <a>Vendas</a>
+              </Link>
+            </ul>    
+            <Line />
+              <ul className='produtosArea'>
+                <Lk icon={'produtos.png'}>Configurações</Lk>
+                <ul className='subProdutos'>
+                  <LineSoft />
+                    <Link href='/gestao/horarios'>
+                      <Lk>
+                        <li>Horários de Atendimento</li>
+                      </Lk>
+                    </Link>
+                  <LineSoft />
+                  <LineSoft />
+                    <Link href='/gestao/servicos'>
+                      <Lk>
+                        <li>Serviços Oferecidos</li>
+                      </Lk>
+                    </Link>
+                  <LineSoft />
+                  <Link href='/gestao/profissionais'>
+                      <Lk>
+                        <li>Profissionais</li>
+                      </Lk>
+                  </Link>
+                  <Link href='/gestao/whatsapp'>
+                      <Lk>
+                        <li>Integrar WhatsApp</li>
+                      </Lk>
+                  </Link>
+                  {/* <Link  href={this.state.link}>
+                      <a target={"_blank"}>
+                        <Lk >
+                          <li>Integrar WhatsApp</li> 
+                        </Lk>
+                      </a>
+                  </Link> */}
+                  <LineSoft />
+                  <Lk onClick={this.handleLogout}>
+                    <li>Sair</li>
+                  </Lk>
+                  {/* <LineSoft /> */}
+                </ul>
+              </ul>
+            <Line />
+          </Container>
+        </PageArea>
+        <HamburgerMenu onClick={this.props.showMenu}>
+            <text>Menu</text>
+        </HamburgerMenu>
+      </>
     )
   }
 }
