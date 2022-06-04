@@ -209,7 +209,7 @@ setObservacao(e){
       let totalcomissao = 0;
         return(    
           <Container>
-            <Topo>
+            <Topo> 
               <Subtitulo>Gestão Financeira</Subtitulo>
             </Topo>
             <Corpo>   

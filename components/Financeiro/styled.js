@@ -34,6 +34,10 @@ export const BoxCalendario = styled.div`
     flex-direction:column;
     margin-left:5px;
     margin-right:5px;
+
+    @media (max-width:799px){
+        max-width:100%;
+    }
 `;
 
 export const BoxRow = styled.div`
@@ -58,6 +62,10 @@ export const BtnAction = styled.div`
     &:hover {
         opacity:0.9;
         transform:scale(1.02);
+    }
+
+    @media (max-width:799px){
+        width:92%;
     }
 `;
 
@@ -90,6 +98,11 @@ export const BoxOpcoes = styled.div`
     flex-direction:row;
     align-items:center;
     padding:10px;
+
+    @media (max-width:799px){
+        width:100%;
+        flex-wrap:wrap;
+    }
 `;
 
 export const Botao = styled.div`
@@ -118,6 +131,10 @@ export const BoxLancamento = styled.div`
     display:flex;
     flex-direction:column;
     margin-top:20px;
+
+    @media (max-width:799px){
+        align-items:center;
+    }
 `;
 
 export const BoxLinha = styled.div`
@@ -169,6 +186,10 @@ export const CalendarioArea = styled.div`
     @media (max-width:1024px){
         max-width:760px;
     }
+
+    @media (max-width:799px){
+        justify-content:center;
+    }
 `;
 
 export const Calendario = styled.input`
@@ -195,6 +216,10 @@ export const Input = styled.input`
     border:1px solid #999;
     height:30px;
     margin-right:20px;
+
+    @media (max-width:799px){
+        width:100%;
+    }
 `;
 
 export const Label = styled.label`
@@ -269,6 +294,12 @@ export const ResumoArea = styled.div`
     padding:10px;
     margin-top:20px;
     border-radius:10px;
+
+    @media (max-width:799px){
+        max-width:92%;
+        justify-content:center;
+        align-items:center;
+    }
 `;
 
 export const ResultadoBox = styled.div`
@@ -287,6 +318,10 @@ export const SubtituloCorpo = styled.h2`
     color:#333;
     font-size:20px;
     font-weight:600;
+
+    @media (max-width:799px){
+        text-align:center;
+    }
 `;
 
 export const Tabela = styled.table`
@@ -307,12 +342,21 @@ export const Tabela = styled.table`
     @media (max-width:1024px){
         max-width:760px;
     }
+
+    @media (max-width:799px){
+        max-width:100%;
+        overflow:auto;
+    }
 `;
 
 export const TextArea = styled.textarea`
     width:450px;
     height:80px;
     margin-bottom:30px;
+
+    @media (max-width:799px){
+        max-width:92%;
+    }
 `;
 
 export const Topo = styled.div`
@@ -321,4 +365,9 @@ export const Topo = styled.div`
     height:60px;
     background-color:#FFF;
     padding-left:10px;
+
+    @media (max-width:799px){
+        justify-content:center;
+        align-items:center;
+    }
 `;
