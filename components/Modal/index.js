@@ -190,7 +190,7 @@ class Modal extends Component {
   }
    
   render(){     
-    
+     
     return(   
         <> 
           <BackArea visible={this.props.visible} onClick={this.props.handleModal}/>

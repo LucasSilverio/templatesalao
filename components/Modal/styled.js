@@ -27,7 +27,7 @@ export const BackArea = styled.div`
     width:20000px;
     height:100%;
     background-color:rgba(5,5,5,0.9);
-    z-index:10;
+    z-index:99;
     top:0;
     left:-300px;
 `;
@@ -150,7 +150,7 @@ export const Container = styled.div`
     display:${(props) => props.visible ? 'flex' : 'none'};
     left:50%;
     margin-left:-400px;
-    z-index:20;
+    z-index:100;
     border-radius:5px;
     color:#555;
     font-size:12px;

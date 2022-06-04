@@ -37,6 +37,7 @@ export const InfoAreaUnder = styled.div`
         left:${(props) => props.left || 0};
         width:100%;
         transition: 1s;
+        z-index:1000;
     }
 `;
 
