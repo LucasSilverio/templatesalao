@@ -231,6 +231,9 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                 </Atualizacao>
                 <BtnAction onClick={e=>this.handleModalNovo()} bgColor={'#2B5277'}>Novo Agendamento</BtnAction>
               </CalendarioAreaMob>
+              <CalendarioAreaMob>
+                <BtnAction bgColor={'#573535'} onClick={this.handleModalBlock}>Bloquear Horário</BtnAction>
+              </CalendarioAreaMob>
 
 
               <ColunaHorarios>

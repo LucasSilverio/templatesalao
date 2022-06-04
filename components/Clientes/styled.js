@@ -101,6 +101,14 @@ export const IptBusca = styled.input`
     border-radius:5px;
     border:1px solid rgba(5,5,5,0.2);,
     padding-left:5px;
+
+    @media (max-width:799px){
+        width:80%;
+        margin:auto;
+        height:40px;
+        margin-left:5px;
+        margin-bottom:20px;
+    }
 `;
 
 export const Opcoes = styled.div`
@@ -110,6 +118,17 @@ export const Opcoes = styled.div`
     display:flex;
     background-color:#FFF;
     align-items:center;
+
+    @media (max-width:799px){
+        display:none;
+    }
+
+`;
+
+export const OpcoesMob = styled.div`
+    @media (max-width:799px){
+        display:flex;
+    }
 `;
 
 export const PaginacaoArea = styled.div`

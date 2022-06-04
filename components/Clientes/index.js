@@ -19,6 +19,7 @@ import {
     Item,
     IptBusca,
     Opcoes,
+    OpcoesMob,
     PaginacaoArea,
     Paragrafo,
     Pg,
@@ -218,8 +219,7 @@ closeModal(){
 }
 
 
-    render(){  
-      console.log('offset '+this.state.offset)   
+    render(){     
         return(    
           <Container>
             <Topo>
@@ -232,7 +232,16 @@ closeModal(){
                 </Paragrafo>
                 <BtnAction bgColor={'#2B5277'} onClick={this.handleModalNovo}>+ Novo Cadastro</BtnAction>
                 <IptBusca type='text' value={this.state.nomeCliente} onChange={e=>this.filtrarCliente(e.target.value)} placeholder={'Buscar cliente por nome'}/>
-              </Opcoes>
+              </Opcoes> 
+              <OpcoesMob>
+                <Paragrafo> 
+                  {this.state.totalClientes+' clientes cadastrados.'}
+                </Paragrafo>
+                <BtnAction bgColor={'#2B5277'} onClick={this.handleModalNovo}>+ Novo Cadastro</BtnAction>
+              </OpcoesMob>
+              <OpcoesMob>
+                <IptBusca type='text' value={this.state.nomeCliente} onChange={e=>this.filtrarCliente(e.target.value)} placeholder={'Buscar cliente por nome'}/>
+              </OpcoesMob>
               {this.state.clientes.map((i, index) => (
                 <Item onClick={e=>this.handleClient(i.id)}>
                   <Avatar src={i.avatar != null ? i.avatar : 'https://theshave.com.br/api-barbershop/images/usersprofile/man.png'} />

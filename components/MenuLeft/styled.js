@@ -166,7 +166,7 @@ export const Suporte = styled.div`
 export const HamburgerMenu = styled.div`
     width:50px;
     height:40px;
-    background-color:#800000;
+    background-color:#5C6BF2;
     position:absolute;
     top:10px;
     right:20px;
@@ -174,7 +174,11 @@ export const HamburgerMenu = styled.div`
     cursor:pointer;
     border-radius:5px;
     color:#FFF;
-    display:flex;
+    display:none;
     justify-content:center;
     align-items:center;
+
+    @media (max-width:799px){
+        display:flex;
+    }
 `;
