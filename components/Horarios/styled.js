@@ -176,7 +176,7 @@ export const Input = styled.input`
 export const Horario = styled.div`
     width:80px;
     height:40px;
-    background-color:#2B5277;
+    background-color:#5C6BF2;
     margin:5px;
     display:flex;
     color:#FFF;

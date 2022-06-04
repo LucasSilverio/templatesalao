@@ -78,7 +78,7 @@ class Painel extends Component {
           <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
           <meta name='description' content={'Escritório de contabilidade em Frutal-Mg.'}/>
           <meta name='keywords' content='Keywords' />
-          <title>The Shave | App de Agendamento para Barbearias e Salões de Beleza</title>
+          <title>Agenda na Web | App de Agendamento para Barbearias e Salões de Beleza</title>
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content={'#FFF'}/>
        </Head>

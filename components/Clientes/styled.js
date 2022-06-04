@@ -154,7 +154,7 @@ export const Pg = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    background-color:#2B5277;
+    background-color:#5C6BF2;
     color:#FFF;
     border:1px solid #FFF;
     cursor:pointer;

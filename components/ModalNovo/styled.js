@@ -204,7 +204,7 @@ export const ItemHorario = styled.div`
     align-items:center;
     justify-content:center;
     margin:5px;
-    background-color:#2B5277;
+    background-color:#5C6BF2;
     text-align:center;
     font-weight:700;
     padding:3px;

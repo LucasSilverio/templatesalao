@@ -143,8 +143,8 @@ class ModalNovoCliente extends Component {
                     </BoxLinha>
                   </BoxTop>
                   <BoxOpcoes>
-                    <BtnAction onClick={this.close} bgColor={'#573535'}>Cancelar</BtnAction>
-                    <BtnAction bgColor={'#2B5277'} onClick={e=>this.submit()}>Salvar</BtnAction>
+                    <BtnAction onClick={this.close} bgColor={'#F22E33'}>Cancelar</BtnAction>
+                    <BtnAction bgColor={'#5C6BF2'} onClick={e=>this.submit()}>Salvar</BtnAction>
                   </BoxOpcoes>
                 </BoxEdit>
               </>

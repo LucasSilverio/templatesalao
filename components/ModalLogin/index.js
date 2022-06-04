@@ -407,7 +407,7 @@ class ModalLogin extends Component {
                       uncheckedIcon={<TipoLogin>Login com o celular</TipoLogin>}
                       checkedIcon={<TipoLogin right={true}>Login com o e-mail</TipoLogin>}
                       width={150}
-                      onColor='#2B5277'
+                      onColor='#5C6BF2'
                       offColor='#709BFF'
                       className='swt'
                     />

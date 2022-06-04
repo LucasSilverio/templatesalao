@@ -130,7 +130,7 @@ export const ProfissionalBox = styled.div`
     display:flex;
     width:150px;
     height:150px;
-    background-color:#2B5277;
+    background-color:#5C6BF2;
     margin:5px;
     cursor:pointer;
     justify-content:center;
@@ -151,7 +151,7 @@ export const ResumoArea = styled.div`
     height:140px;
     display:flex;
     flex-direction:column;
-    background-color:#2B5277;
+    background-color:#5C6BF2;
     padding:10px;
     margin-top:20px;
     border-radius:10px;

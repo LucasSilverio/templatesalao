@@ -285,7 +285,7 @@ submit(){
             </Topo>
             <Corpo>
               <Opcoes>
-                <BtnAction bgColor={'#2B5277'} onClick={this.handleModalNovo}>Cadastrar Serviço</BtnAction>
+                <BtnAction bgColor={'#5C6BF2'} onClick={this.handleModalNovo}>Cadastrar Serviço</BtnAction>
               </Opcoes>
               <Box>
                 <ItemDia>

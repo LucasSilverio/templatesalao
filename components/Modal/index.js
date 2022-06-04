@@ -246,8 +246,8 @@ class Modal extends Component {
                 <BoxOpcoes>
                   {this.props.status == 1 &&
                     <>
-                      <BtnAction onClick={e=>this.checkDesmarcar()} bgColor={'#573535'}>Desmarcar</BtnAction>
-                      <BtnAction onClick={e=>this.checkDuplicar()} bgColor={'#2B5277'}>Duplicar</BtnAction>
+                      <BtnAction onClick={e=>this.checkDesmarcar()} bgColor={'#F22E33'}>Desmarcar</BtnAction>
+                      <BtnAction onClick={e=>this.checkDuplicar()} bgColor={'#5C6BF2'}>Duplicar</BtnAction>
                     </>
                   }
                   {this.props.status == 2 &&

@@ -59,7 +59,7 @@ export const BtnAction = styled.button`
     border-radius:5px;
     cursor:pointer;
     color:#FFF;
-    background-color:#2B5277;
+    background-color:#5C6BF2;
     font-weight:700;
     display:flex;
     justify-content:center;

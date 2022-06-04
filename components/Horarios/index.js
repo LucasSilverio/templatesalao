@@ -303,13 +303,13 @@ submitNewHour(e){
                   <BoxTop>
                     <Paragrafo>Informe os horários de abertura, intervalo (caso houver) e fechamento de cada dia da semana.</Paragrafo>
                     <BoxRow>
-                      <Dia bgColor={this.state.selectedDay == 'Sun' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Sun', 'Domingo')}>Domingo</Dia>
-                      <Dia bgColor={this.state.selectedDay == 'Mon' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Mon', 'Segunda')}>Segunda</Dia>
-                      <Dia bgColor={this.state.selectedDay == 'Tue' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Tue', 'Terça')}>Terça</Dia>
-                      <Dia bgColor={this.state.selectedDay == 'Wed' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Wed', 'Quarta')}>Quarta</Dia>
-                      <Dia bgColor={this.state.selectedDay == 'Thu' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Thu', 'Quinta')}>Quinta</Dia>
-                      <Dia bgColor={this.state.selectedDay == 'Fri' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Fri', 'Sexta')}>Sexta</Dia>
-                      <Dia bgColor={this.state.selectedDay == 'Sat' ? '#709BFF' : '#2B5277'} onClick={e=>this.handleDay('Sat', 'Sábado')}>Sábado</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Sun' ? '#709BFF' : '#5C6BF2'} onClick={e=>this.handleDay('Sun', 'Domingo')}>Domingo</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Mon' ? '#709BFF' : '#5C6BF2'} onClick={e=>this.handleDay('Mon', 'Segunda')}>Segunda</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Tue' ? '#709BFF' : '#5C6BF2'} onClick={e=>this.handleDay('Tue', 'Terça')}>Terça</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Wed' ? '#709BFF' : '#5C6BF2'} onClick={e=>this.handleDay('Wed', 'Quarta')}>Quarta</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Thu' ? '#709BFF' : '#5C6BF2'} onClick={e=>this.handleDay('Thu', 'Quinta')}>Quinta</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Fri' ? '#709BFF' : '#5C6BF2'} onClick={e=>this.handleDay('Fri', 'Sexta')}>Sexta</Dia>
+                      <Dia bgColor={this.state.selectedDay == 'Sat' ? '#709BFF' : '#5C6BF2'} onClick={e=>this.handleDay('Sat', 'Sábado')}>Sábado</Dia>
                     </BoxRow>
                   </BoxTop>
                   <ItemDia>
@@ -344,7 +344,7 @@ submitNewHour(e){
                     }
                     {!this.state.loading && 
                       <>
-                        <BtnAction bgColor={'#2B5277'} onClick={this.submit}>Salvar</BtnAction>
+                        <BtnAction bgColor={'#5C6BF2'} onClick={this.submit}>Salvar</BtnAction>
                         <BtnAction bgColor={'#709BFF'} onClick={this.handleHorarios}>Horários</BtnAction>
                       </>
                     }
@@ -368,7 +368,7 @@ submitNewHour(e){
                     ))}
                   </BoxHorarios>
                   <Opcoes>
-                    <BtnAction bgColor={'#573535'} onClick={this.handleHorarios}>Voltar</BtnAction>
+                    <BtnAction bgColor={'#F22E33'} onClick={this.handleHorarios}>Voltar</BtnAction>
                   </Opcoes>
                 </Box>
               }

@@ -172,7 +172,7 @@ class ModalServicoNovo extends Component {
                 </BoxLinha>
               </BoxTop>
               <BoxOpcoes>
-                <BtnAction onClick={e=>this.close()} bgColor={'#573535'}>Cancelar</BtnAction>
+                <BtnAction onClick={e=>this.close()} bgColor={'#F22E33'}>Cancelar</BtnAction>
                 {this.props.loading &&
                   <Loader
                       type="TailSpin"
@@ -182,7 +182,7 @@ class ModalServicoNovo extends Component {
                   />
                 }
                 {!this.props.loading &&
-                  <BtnAction bgColor={'#2B5277'} onClick={e=>this.submit()}>Salvar</BtnAction>
+                  <BtnAction bgColor={'#5C6BF2'} onClick={e=>this.submit()}>Salvar</BtnAction>
                 }
               </BoxOpcoes>
             </BoxEdit>

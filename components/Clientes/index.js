@@ -230,14 +230,14 @@ closeModal(){
                 <Paragrafo> 
                   {this.state.totalClientes+' clientes cadastrados.'}
                 </Paragrafo>
-                <BtnAction bgColor={'#2B5277'} onClick={this.handleModalNovo}>+ Novo Cadastro</BtnAction>
+                <BtnAction bgColor={'#5C6BF2'} onClick={this.handleModalNovo}>+ Novo Cadastro</BtnAction>
                 <IptBusca type='text' value={this.state.nomeCliente} onChange={e=>this.filtrarCliente(e.target.value)} placeholder={'Buscar cliente por nome'}/>
               </Opcoes> 
               <OpcoesMob>
                 <Paragrafo> 
                   {this.state.totalClientes+' clientes cadastrados.'}
                 </Paragrafo>
-                <BtnAction bgColor={'#2B5277'} onClick={this.handleModalNovo}>+ Novo Cadastro</BtnAction>
+                <BtnAction bgColor={'#5C6BF2'} onClick={this.handleModalNovo}>+ Novo Cadastro</BtnAction>
               </OpcoesMob>
               <OpcoesMob>
                 <IptBusca type='text' value={this.state.nomeCliente} onChange={e=>this.filtrarCliente(e.target.value)} placeholder={'Buscar cliente por nome'}/>

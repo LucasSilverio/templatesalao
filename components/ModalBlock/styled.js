@@ -56,7 +56,7 @@ export const BtnAction = styled.div`
     font-weight:700;
     font-size:14px;
     color:#FFF;
-    background-color:#573535;
+    background-color:#F22E33;
     cursor:pointer;
 
     &:hover{

@@ -6,7 +6,7 @@ import Router from 'next/router';
 import MenuLeft from '../../components/MenuLeft';
 import TopBar from '../../components/TopBarGestao';
 import { InfoAreaUnder } from '../../components/MainStyled';
-import Financeiro from '../../components/Financeiro';
+import Financeiro from '../../components/Financeiro'; 
 import osAPI from '../../services/osAPI';
  
 class Painel extends Component {
@@ -77,7 +77,7 @@ class Painel extends Component {
           <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
           <meta name='description' content={'Escritório de contabilidade em Frutal-Mg.'}/>
           <meta name='keywords' content='Keywords' />
-          <title>TheShaveApp - Painel</title>
+          <title>Agenda na Web - Painel</title>
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content={'#FFF'}/>
          {/* <script src="//code.jivosite.com/widget/kKrv7B4GQd" async></script> */}

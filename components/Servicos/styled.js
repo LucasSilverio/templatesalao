@@ -143,8 +143,8 @@ export const Item = styled.div`
     align-items:center;
     justify-content:center;
     text-align:center;
-    border:${(props) => props.status == 0 ? '5px solid #2B5277' : '5px solid #573535'};
-    background-color:${(props) => props.status == 0 ? '#2B5277' : '#573535'};
+    border:${(props) => props.status == 0 ? '5px solid #5C6BF2' : '5px solid #F22E33'};
+    background-color:${(props) => props.status == 0 ? '#5C6BF2' : '#F22E33'};
     border-radius:5px;
     margin:5px;
     color:#FFF;

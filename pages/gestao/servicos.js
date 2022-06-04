@@ -66,7 +66,7 @@ class Painel extends Component {
           <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
           <meta name='description' content={'Escritório de contabilidade em Frutal-Mg.'}/>
           <meta name='keywords' content='Keywords' />
-          <title>Contonline - Painel</title>
+          <title>Agenda na Web - Painel</title>
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content={'#FFF'}/>
          {/* <script src="//code.jivosite.com/widget/kKrv7B4GQd" async></script> */}

@@ -48,7 +48,7 @@ export const BoxRow = styled.div`
 export const BtnAction = styled.div`
     width:200px;
     height:40px;
-    background-color:#2B5277;
+    background-color:#5C6BF2;
     border-radius:5px;
     color:#FFF;
     display:flex;
@@ -290,7 +290,7 @@ export const ResumoArea = styled.div`
     height:140px;
     display:flex;
     flex-direction:column;
-    background-color:#2B5277;
+    background-color:#5C6BF2;
     padding:10px;
     margin-top:20px;
     border-radius:10px;

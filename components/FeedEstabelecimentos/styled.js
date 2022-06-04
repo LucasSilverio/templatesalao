@@ -12,7 +12,7 @@ export const BtnForm = styled.button`
     height:40px;
     border-radius:5px;
     color:#FFF;
-    background-color:#2B5277;
+    background-color:#5C6BF2;
     border:1px solid rgba(5,5,5,0.2);
     cursor:pointer;
     &:hover{

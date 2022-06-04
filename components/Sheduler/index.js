@@ -213,26 +213,28 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                   <Calendario type='date' onChange={e=>this.handleData(e.target.value)} />
                 </BoxCalendario>
                 <ParagrafoDestaque>Data selecionada: {moment(this.state.data).format('DD/MM/YY')}</ParagrafoDestaque>
-                <BtnAction onClick={e=>this.handleModalNovo()} bgColor={'#2B5277'}>Novo Agendamento</BtnAction>
+                <BtnAction onClick={e=>this.handleModalNovo()} bgColor={'#5C6BF2'}>Novo Agendamento</BtnAction>
                 <Atualizacao onClick={e=>this.getAgenda(this.state.data)}>
                   {'Atualizado às '+moment(this.state.atualizacao).format('HH:mm')}
                 </Atualizacao>
               </CalendarioArea> 
               <CalendarioArea>
-                <BtnAction bgColor={'#573535'} onClick={this.handleModalBlock}>Bloquear Horário</BtnAction>
+                <BtnAction bgColor={'#F22E33'} onClick={this.handleModalBlock}>Bloquear Horário</BtnAction>
               </CalendarioArea>
               <CalendarioAreaMob>
                   <Calendario type='date' onChange={e=>this.handleData(e.target.value)} />
                   <ParagrafoDestaque> - {moment(this.state.data).format('DD/MM/YY')}</ParagrafoDestaque>
               </CalendarioAreaMob>
-              <CalendarioAreaMob>
+              <CalendarioAreaMob> 
                 <Atualizacao onClick={e=>this.getAgenda(this.state.data)}>
                   {'Atualizado às '+moment(this.state.atualizacao).format('HH:mm')}
                 </Atualizacao>
-                <BtnAction onClick={e=>this.handleModalNovo()} bgColor={'#2B5277'}>Novo Agendamento</BtnAction>
+              </CalendarioAreaMob>
+              <CalendarioAreaMob> 
+                <BtnAction onClick={e=>this.handleModalNovo()} bgColor={'#5C6BF2'}>Novo Agendamento</BtnAction>
               </CalendarioAreaMob>
               <CalendarioAreaMob>
-                <BtnAction bgColor={'#573535'} onClick={this.handleModalBlock}>Bloquear Horário</BtnAction>
+                <BtnAction bgColor={'#F22E33'} onClick={this.handleModalBlock}>Bloquear Horário</BtnAction>
               </CalendarioAreaMob>
 
 

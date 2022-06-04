@@ -142,11 +142,11 @@ class ModalCliente extends Component {
                   </BoxTop>
                 </Top>
                 <Opcoes>
-                  <BtnAction bgColor={'#2B5277'} onClick={e=>this.handleEdit()}>Editar Cadastro</BtnAction>
+                  <BtnAction bgColor={'#5C6BF2'} onClick={e=>this.handleEdit()}>Editar Cadastro</BtnAction>
                 </Opcoes>
                 <Box>
                   {this.props.historico.map((i, index) => (
-                    <Item bgColor={i.statusval == 2 ? '#709BFF' : '#573535'}>
+                    <Item bgColor={i.statusval == 2 ? '#709BFF' : '#F22E33'}>
                       <ParagrafoSm><strong>{i.data}</strong></ParagrafoSm>
                       <ParagrafoSm>{'Profissional: '+i.profissional}</ParagrafoSm>
                       <ParagrafoSm>{i.servico}</ParagrafoSm>
@@ -180,8 +180,8 @@ class ModalCliente extends Component {
                   </BoxLinha>
                 </BoxTop>
                 <BoxOpcoes>
-                  <BtnAction onClick={e=>this.handleEdit()} bgColor={'#573535'}>Cancelar</BtnAction>
-                  <BtnAction bgColor={'#2B5277'} onClick={e=>this.submit()}>Salvar</BtnAction>
+                  <BtnAction onClick={e=>this.handleEdit()} bgColor={'#F22E33'}>Cancelar</BtnAction>
+                  <BtnAction bgColor={'#5C6BF2'} onClick={e=>this.submit()}>Salvar</BtnAction>
                 </BoxOpcoes>
               </BoxEdit>
             }

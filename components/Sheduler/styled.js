@@ -17,6 +17,10 @@ export const Atualizacao = styled.div`
         height:24px;
     }
 
+    @media (max-width:799px){
+        margin-left:0;
+    }
+
 `;
 
 export const Container = styled.div`
@@ -84,6 +88,7 @@ export const BtnAction = styled.button`
 
     @media (max-width:600px){
         margin-left:5px;
+        width:80%;
     }
 `;
 
@@ -107,7 +112,6 @@ export const CalendarioAreaMob = styled.div`
     @media (max-width:600px){
         display:flex;
         flex-wrap:wrap;       
-        justify-content:center; 
     }
 `;
 
