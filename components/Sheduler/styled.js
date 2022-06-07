@@ -31,6 +31,10 @@ export const Container = styled.div`
     margin-top:40px;
     flex-direction:column;
     overflow:auto;
+
+    @media (max-width:600px){
+        margin-top:0;
+    }
 `;
 
 export const Box = styled.div`
