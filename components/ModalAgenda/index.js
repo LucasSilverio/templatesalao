@@ -185,6 +185,7 @@ class ModalAgenda extends Component {
         method:'POST',
         body:JSON.stringify({
             celular:Cookie.get('anw_celular'),
+            nome:Cookie.get('anw_nome'),
             idbarbeiro:this.state.profissional,
             dateStr:this.state.dataEscolhida,
             horario:this.state.horarioSelecionado,
