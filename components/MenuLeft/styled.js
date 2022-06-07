@@ -134,7 +134,7 @@ export const Logo = styled.img`
     top:-70px;
     width:230px;
     height:auto;
-    z-index:30;
+    z-index:1000;
 `;
 
 export const PageArea = styled.div`
@@ -149,7 +149,6 @@ export const PageArea = styled.div`
     position:fixed;
 
     @media (max-width:799px){
-        // display:none;
     }
 `;
 
@@ -180,5 +179,6 @@ export const HamburgerMenu = styled.div`
 
     @media (max-width:799px){
         display:flex;
+        z-index:10000;
     }
 `;
