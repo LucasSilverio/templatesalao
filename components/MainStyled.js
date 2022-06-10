@@ -38,6 +38,7 @@ export const InfoAreaUnder = styled.div`
         width:100%;
         transition: 1s;
         z-index:1000;
+        padding:0;
     }
 `;
 

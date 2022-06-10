@@ -221,9 +221,11 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
               <CalendarioArea>
                 <BtnAction bgColor={'#F22E33'} onClick={this.handleModalBlock}>Bloquear Horário</BtnAction>
               </CalendarioArea>
+              <CalendarioAreaMob>                
+                <ParagrafoDestaque>  {moment(this.state.data).format('DD/MM/YY')}</ParagrafoDestaque>
+              </CalendarioAreaMob>
               <CalendarioAreaMob>
                   <Calendario type='date' onChange={e=>this.handleData(e.target.value)} />
-                  <ParagrafoDestaque> - {moment(this.state.data).format('DD/MM/YY')}</ParagrafoDestaque>
               </CalendarioAreaMob>
               <CalendarioAreaMob> 
                 <Atualizacao onClick={e=>this.getAgenda(this.state.data)}>

@@ -19,6 +19,10 @@ export const Atualizacao = styled.div`
 
     @media (max-width:799px){
         margin-left:0;
+        width:80%;
+        display:flex;
+        justify-content:center;
+        border:1px solid rgba(10,10,10,0.5);
     }
 
 `;
@@ -115,7 +119,7 @@ export const CalendarioAreaMob = styled.div`
 
     @media (max-width:600px){
         display:flex;
-        flex-wrap:wrap;       
+        justify-content:center;      
     }
 `;
 
@@ -126,7 +130,8 @@ export const Calendario = styled.input`
     height:30px;
 
     @media (max-width:600px){
-        width:100px;
+        width:80%;
+        height:40px;
     }
 `;
 
