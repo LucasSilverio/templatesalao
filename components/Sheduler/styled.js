@@ -44,7 +44,8 @@ export const Container = styled.div`
 export const Box = styled.div`
     display:flex;
     flex-direction:column;
-    max-height:60px;
+    // max-height:60px;
+    max-height:${(props) => props.altura+'px'};
 `;
 
 export const BoxHorarioInter = styled.div`
@@ -59,6 +60,8 @@ export const BoxHorarioInter = styled.div`
     margin-top:${(props) => props.tp+'px'};
     cursor:pointer;
     border:1px solid #FFF;
+    top:0;
+    z-index:${(props) => props.zindex ? 10 : 0};
 
     &:hover{
         opacity:0.9;
@@ -175,11 +178,12 @@ export const Horario = styled.div`
     flex-direction:column;
     max-width:120px;
     flex:1;
-    min-height:60px;
+    min-height:${(props) => props.altura+'px'};
     background-color:#FFF;
     border:1px solid rgba(5,5,5,0.1);
     align-items:center;
     padding:5px;
+    justify-content:center;
 `;
 
 export const HorarioDesc = styled.p`
@@ -212,7 +216,7 @@ export const HorarioPro = styled.div`
     display:flex;
     flex-direction:column;
     width:150px;
-    min-height:60px;
+    // min-height:60px;
     height:${(props) => props.height+'px'};
     background-color:#FFF;
     border:1px solid rgba(5,5,5,0.1);
@@ -237,11 +241,12 @@ export const Linha = styled.div`
     display:flex;
     flex-direction:row;
     width:100%;
-    min-height:60px;
+    height:${(props) => props.altura+'px'};
     background-color:#FFF;
     border:1px solid rgba(5,5,5,0.1);
     align-items:center;
     padding:5px;
+    position:relative;
 `;
 
 export const ProId = styled.div`

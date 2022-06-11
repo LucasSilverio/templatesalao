@@ -43,31 +43,83 @@ class Sheduler extends Component {
     this.state={
       horarios:[
         '08:00',
+        '08:10',
+        '08:20',
         '08:30',
+        '08:40',
+        '08:50',
         '09:00',
+        '09:10',
+        '09:20',
         '09:30',
+        '09:40',
+        '09:50',
         '10:00',
+        '10:10',
+        '10:20',
         '10:30',
+        '10:40',
+        '10:50',
         '11:00',
+        '11:10',
+        '11:20',
         '11:30',
+        '11:40',
+        '11:50',
         '12:00',
+        '12:10',
+        '12:20',
         '12:30',
+        '12:40',
+        '12:50',
         '13:00',
+        '13:10',
+        '13:20',
         '13:30',
+        '13:40',
+        '13:50',
         '14:00',
+        '14:10',
+        '14:20',
         '14:30',
+        '14:40',
+        '14:50',
         '15:00',
+        '15:10',
+        '15:20',
         '15:30',
+        '15:40',
+        '15:50',
         '16:00',
+        '16:10',
+        '16:20',
         '16:30',
+        '16:40',
+        '16:50',
         '17:00',
+        '17:10',
+        '17:20',
         '17:30',
+        '17:40',
+        '17:50',
         '18:00',
+        '18:10',
+        '18:20',
         '18:30',
+        '18:40',
+        '18:50',
         '19:00',
+        '19:10',
+        '19:20',
         '19:30',
+        '19:40',
+        '19:50',
         '20:00',
+        '20:10',
+        '20:20',
         '20:30',
+        '20:40',
+        '20:50',
         '21:00'
       ],
       data:moment().format('YYYY-MM-DD'),
@@ -90,7 +142,10 @@ class Sheduler extends Component {
       nomeProfissionalBloqueio:'',
       horarioBloqueio:'',
       idProfissionalBloqueio:'',
-      preco:''
+      preco:'',
+      alturaMinima:40,
+      intervalo:10,
+      indiceIntervalo:6
     }    
     this.getAgenda = this.getAgenda.bind(this);
     this.getProfessionals = this.getProfessionals.bind(this);
@@ -242,21 +297,22 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
 
               <ColunaHorarios>
                   {this.state.horarios.map((i, index) => ( 
-                    <Linha>
-                      <Horario>
+                    <Linha altura={this.state.alturaMinima}>
+                      <Horario altura={this.state.alturaMinima}>
                         <HorarioDesc>{i}</HorarioDesc>
-                      </Horario>
+                      </Horario> 
                       
                     {this.state.agendadia.map((l, lindex) => (
-                      <Box>
+                      <Box altura={this.state.alturaMinima}>
                         {this.state.agendadia[lindex].agenda.map((j, jindex) => (
                           <>
                             {i == j.hora && j.servicoid != 100 &&
-                              <HorarioPro height={((j.duracao.replace(':', '.') * 60) / 30)} bgColor={'#fff'} p={'unset'} > {/* FÓRMULA: ((DURAÇÃO * ALTURA MÍNIMA) / INTERVALO EM MINUTOS) */}
-                                <BoxHorarioInter height={((parseInt(j.duracao_hora) * 60 + parseInt(j.duracao_minutos)) * 60) / 30} bgColor={l.cor} p={'absolute'} tp={j.minuto_inicio >= 30 ? (j.minuto_inicio - 30)*2 : j.minuto_inicio} onClick={e=>this.showDetails(j.id, j.hora, j.horafim, j.barbeiro, j.servico, j.cliente, j.idcliente, j.phone, j.status, j.preco)}>
-                                  <HorarioProDesc>{j.hora+' àsx '+j.horafim}</HorarioProDesc>
+                              <HorarioPro height={((j.duracao.replace(':', '.') * this.state.alturaMinima) / this.state.intervalo)} bgColor={'#fff'} p={'unset'} > {/* FÓRMULA: ((DURAÇÃO * ALTURA MÍNIMA) / INTERVALO EM MINUTOS) */}
+                                <BoxHorarioInter  altura={this.state.alturaMinima} height={(((parseInt(j.duracao_hora) * this.state.indiceIntervalo) + (parseInt(j.duracao_minutos) /10)) * this.state.alturaMinima)} bgColor={l.cor} p={'absolute'} tp={j.minuto_inicio >= 30 ? (j.minuto_inicio - 30)*2 : j.minuto_inicio} onClick={e=>this.showDetails(j.id, j.hora, j.horafim, j.barbeiro, j.servico, j.cliente, j.idcliente, j.phone, j.status, j.preco)} zindex={true}>
+                                  <HorarioProDesc>{j.hora+' às x'+j.horafim}</HorarioProDesc>
                                   <ParagrafoNm>{j.servico}</ParagrafoNm>
                                   <ParagrafoNm>{j.cliente}</ParagrafoNm>
+                                  <ParagrafoNm>{j.hora+':'+i}</ParagrafoNm>
                                   <ProId>{j.barbeiro}</ProId>
                                   {j.status == 2 &&
                                     <Concluido>Concluído</Concluido>
@@ -265,8 +321,8 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                               </HorarioPro>
                             }   
                             {i == j.hora && j.servicoid == 100 &&
-                              <HorarioPro height={((j.duracao.replace(':', '.') * 60) / 30)} bgColor={'#fff'} p={'unset'} > {/* FÓRMULA: ((DURAÇÃO * ALTURA MÍNIMA) / INTERVALO EM MINUTOS) */}
-                                <BoxHorarioInter height={((parseInt(j.duracao_hora) * 60 + parseInt(j.duracao_minutos)) * 60) / 30} bgColor={'#800000'} p={'absolute'} tp={j.minuto_inicio >= 30 ? (j.minuto_inicio - 30)*2 : 0} onClick={e=>this.showDetails(j.id, j.hora, j.horafim, j.barbeiro, j.servico, j.cliente, j.idcliente, j.phone, j.status)}>
+                              <HorarioPro height={((j.duracao.replace(':', '.') * this.state.alturaMinima) / this.state.intervalo)} bgColor={'#fff'} p={'unset'} > {/* FÓRMULA: ((DURAÇÃO * ALTURA MÍNIMA) / INTERVALO EM MINUTOS) */}
+                                <BoxHorarioInter height={(((parseInt(j.duracao_hora) * this.state.indiceIntervalo) + (parseInt(j.duracao_minutos) /10)) * this.state.alturaMinima)} bgColor={'#800000'} p={'absolute'} tp={j.minuto_inicio >= 30 ? (j.minuto_inicio - 30)*2 : 0} onClick={e=>this.showDetails(j.id, j.hora, j.horafim, j.barbeiro, j.servico, j.cliente, j.idcliente, j.phone, j.status)} zindex={true}>
                                   <ParagrafoNm>Bloqueado</ParagrafoNm>
                                   <ProId>{j.barbeiro}</ProId>
                                 </BoxHorarioInter>
@@ -274,8 +330,8 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                             }                        
                             
                             {j.hora > this.state.horarios[index] && j.hora < this.state.horarios[index + 1] && j.servicoid != 100 &&
-                              <HorarioPro height={((j.duracao.replace(':', '.') * 60) / 30)} bgColor={'#fff'} p={'unset'}>
-                                <BoxHorarioInter height={((parseInt(j.duracao_hora) * 60 + parseInt(j.duracao_minutos)) * 60) / 30} bgColor={l.cor} p={'absolute'} tp={j.minuto_inicio > 30 ? (j.minuto_inicio - 60)*(-1) : (j.minuto_inicio - 60)*(-1)} onClick={e=>this.showDetails(j.id, j.hora, j.horafim, j.barbeiro, j.servico, j.cliente, j.idcliente, j.phone, j.status, j.preco)}>
+                              <HorarioPro height={((j.duracao.replace(':', '.') * this.state.alturaMinima) / this.state.intervalo)} bgColor={'#fff'} p={'unset'}>
+                                <BoxHorarioInter height={(((parseInt(j.duracao_hora) * this.state.indiceIntervalo) + (parseInt(j.duracao_minutos) /10)) * this.state.alturaMinima)} bgColor={l.cor} p={'absolute'} tp={j.minuto_inicio > 30 ? (j.minuto_inicio - 60)*(-1) : (j.minuto_inicio - 60)*(-1)} onClick={e=>this.showDetails(j.id, j.hora, j.horafim, j.barbeiro, j.servico, j.cliente, j.idcliente, j.phone, j.status, j.preco)} zindex={true}>
                                   <HorarioProDesc>{j.hora+' às '+j.horafim}</HorarioProDesc>
                                   <ParagrafoNm>{j.servico}</ParagrafoNm>
                                   <ParagrafoNm>{j.cliente}</ParagrafoNm>
@@ -288,8 +344,8 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                             }
 
                             {j.hora > this.state.horarios[index] && j.hora < this.state.horarios[index + 1] && j.servicoid == 100 &&
-                              <HorarioPro height={((j.duracao.replace(':', '.') * 60) / 30)} bgColor={'#fff'} p={'unset'} > {/* FÓRMULA: ((DURAÇÃO * ALTURA MÍNIMA) / INTERVALO EM MINUTOS) */}
-                                <BoxHorarioInter height={((parseInt(j.duracao_hora) * 60 + parseInt(j.duracao_minutos)) * 60) / 30} bgColor={'#800000'} p={'absolute'} tp={j.minuto_inicio} onClick={e=>this.showDetails(j.id, j.hora, j.horafim, j.barbeiro, j.servico, j.cliente, j.idcliente, j.phone, j.status)}>
+                              <HorarioPro height={((j.duracao.replace(':', '.') * this.state.alturaMinima) / this.state.intervalo)} bgColor={'#fff'} p={'unset'} > {/* FÓRMULA: ((DURAÇÃO * ALTURA MÍNIMA) / INTERVALO EM MINUTOS) */}
+                                <BoxHorarioInter height={(((parseInt(j.duracao_hora) * this.state.indiceIntervalo) + (parseInt(j.duracao_minutos) /10)) * this.state.alturaMinima)} bgColor={'#800000'} p={'absolute'} tp={j.minuto_inicio} onClick={e=>this.showDetails(j.id, j.hora, j.horafim, j.barbeiro, j.servico, j.cliente, j.idcliente, j.phone, j.status)} zindex={true}>
                                 <ParagrafoNm>Bloqueado</ParagrafoNm>
                                 <ProId>{j.barbeiro}</ProId>
                                 </BoxHorarioInter>
@@ -297,16 +353,16 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                             }
 
                             {j.hora > this.state.horarios[index] && j.hora > this.state.horarios[index + 1] && j.servicoid != 100 &&
-                              <HorarioPro height={60} bgColor={'#FFF'} p={'unset'}>
-                                <BoxHorarioInter height={60} bgColor={'#FFF'} p={'unset'} onClick={e=>this.clickHorario(j.barbeiro, i, l.id)}> {/* Enviando: Nome do Profissinoal, horário, Id do Profissional */}
+                              <HorarioPro height={this.state.alturaMinima} bgColor={'#FFF'} p={'unset'}>
+                                <BoxHorarioInter height={this.state.alturaMinima} bgColor={'#FFF'} p={'unset'} onClick={e=>this.clickHorario(j.barbeiro, i, l.id)} zindex={false}> {/* Enviando: Nome do Profissinoal, horário, Id do Profissional */}
                                   <HorarioProDesc>{''}</HorarioProDesc>
                                 </BoxHorarioInter>
                               </HorarioPro>
                             }
                             {/* A condição abaixo pega o último horário do array da agenda do funcionario no momento que estiver percorrendo o array e comparar com o horario atual do array horarios*/}
                             {this.state.agendadia[lindex].agenda[this.state.agendadia[lindex].agenda.length - 1].hora < this.state.horarios[index] && j.servicoid != 100 &&
-                              <HorarioPro height={60} bgColor={'#FFF'} p={'unset'}>
-                                <BoxHorarioInter height={60} bgColor={'#FFF'} p={'unset'} onClick={e=>this.clickHorario(j.barbeiro, i, l.id)}>
+                              <HorarioPro height={this.state.alturaMinima} bgColor={'#FFF'} p={'unset'}>
+                                <BoxHorarioInter height={this.state.alturaMinima} bgColor={'#FFF'} p={'unset'} onClick={e=>this.clickHorario(j.barbeiro, i, l.id)} zindex={false}>
                                   <HorarioProDesc>{''}</HorarioProDesc>
                                   {/* <ParagrafoNm>{this.state.agendadia[lindex].agenda.length+' - '+this.state.horarios[18]}</ParagrafoNm> */}
                                 </BoxHorarioInter>
@@ -321,6 +377,10 @@ showDetails(id, hora, horafim, barbeiro, servico, cliente, idcliente, phone, sta
                     </Linha>
                   ))}
               </ColunaHorarios> 
+
+
+
+
               <Modal 
                 visible={this.state.modalVisible}
                 handleModal={this.handleModal}
